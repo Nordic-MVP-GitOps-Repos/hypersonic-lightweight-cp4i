@@ -1,8 +1,5 @@
 resources:
-  - cert-manager.yaml
-  - api-connect-operator.yaml
-  - gatewaycluster.yaml
-  - analyticscluster.yaml
+  - common.yaml
 
 patches:
 - target:
@@ -12,7 +9,7 @@ patches:
   patch: |-
     - op: add
       path: /spec/source/repoURL
-      value: https://github.com/Nordic-MVP-GitOps-Repos/apic-remote-gw.git
+      value: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
     - op: add
       path: /spec/source/targetRevision
       value: HEAD

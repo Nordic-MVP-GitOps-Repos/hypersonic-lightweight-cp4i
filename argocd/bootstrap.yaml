@@ -2,16 +2,15 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: bootstrap
-  namespace: argocd
+  namespace: openshift-gitops
 spec:
   destination:
-    namespace: argocd
+    namespace: openshift-gitops
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: ./argocd/
-    repoURL: https://github.com/Nordic-MVP-GitOps-Repos/apic-remote-gw.git
-    targetRevision: main
+    path: ./argocd
+    repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
   syncPolicy:
     automated:
       prune: true
