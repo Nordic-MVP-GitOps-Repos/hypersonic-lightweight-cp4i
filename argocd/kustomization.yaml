@@ -1,0 +1,18 @@
+resources:
+  - cert-manager.yaml
+  - api-connect-operator.yaml
+  - gatewaycluster.yaml
+  - analyticscluster.yaml
+
+patches:
+- target:
+    group: argoproj.io
+    kind: Application
+    labelSelector: group=applications
+  patch: |-
+    - op: add
+      path: /spec/source/repoURL
+      value: https://github.com/Nordic-MVP-GitOps-Repos/apic-remote-gw.git
+    - op: add
+      path: /spec/source/targetRevision
+      value: HEAD
