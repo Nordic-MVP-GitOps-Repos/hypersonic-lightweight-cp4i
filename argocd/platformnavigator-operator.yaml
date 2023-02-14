@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: common
+  name: platformnavigator-operator
   namespace: openshift-gitops
   labels:
     group: applications
