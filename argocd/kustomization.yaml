@@ -5,6 +5,7 @@ resources:
   - common.yaml
   - platformnavigator-operator.yaml
   - platformnavigator.yaml
+  - appconnect-operator.yaml
 
 patches:
 - target:
