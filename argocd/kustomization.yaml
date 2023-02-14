@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - common.yaml
+  - platformnavigator-operator.yaml
 
 patches:
 - target:
