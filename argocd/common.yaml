@@ -1,8 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bootstrap
+  name: common
   namespace: openshift-gitops
+  labels:
+    group: applications
 spec:
   destination:
     namespace: openshift-gitops
