@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: bootstrap
   namespace: openshift-gitops
-  labels:
-    group: applications
 spec:
   destination:
     namespace: openshift-gitops

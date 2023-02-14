@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: ./components/common/base
+    path: components/common/base
   syncPolicy:
     automated:
       prune: true
