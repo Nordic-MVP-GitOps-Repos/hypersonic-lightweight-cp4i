@@ -1,0 +1,13 @@
+apiVersion: integration.ibm.com/v1beta1
+kind: PlatformNavigator
+metadata:
+  name: platform-navigator
+spec:
+  license:
+    accept: true
+    license: L-RJON-CJR2RX
+  mqDashboard: true
+  replicas: 1
+  storage:
+    class: PATCHED_BY_KUSTOMIZE
+  version: 2022.4.1
