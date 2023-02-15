@@ -1,0 +1,6 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: APIConnectCluster
+metadata:
+  name: apic-cluster
+spec:
+  storageClassName: production
