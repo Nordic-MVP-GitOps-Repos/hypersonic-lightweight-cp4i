@@ -24,7 +24,7 @@ spec:
         memory: 1Gi
     mqsc:
     - configMap:
-        name: sample-qm1-cm.yaml
+        name: sample-qm1-cm
         items:
         - tls.mqsc
   version: 9.3.1.1-r1
