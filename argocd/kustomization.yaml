@@ -7,6 +7,7 @@ resources:
   - platformnavigator.yaml
   - appconnect-operator.yaml
   - mq-operator.yaml
+  - mq-queuemanagers.yaml
   - apiconnect-operator.yaml
   - apiconnect.yaml
 
