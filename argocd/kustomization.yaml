@@ -7,6 +7,7 @@ resources:
   - platformnavigator.yaml
   - appconnect-operator.yaml
   - mq-operator.yaml
+  - apiconnect-operator.yaml
 
 patches:
 - target:
