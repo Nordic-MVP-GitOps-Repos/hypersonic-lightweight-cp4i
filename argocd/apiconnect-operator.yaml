@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: apiconnect-operator
   namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "100"
   labels:
     group: applications
 spec:

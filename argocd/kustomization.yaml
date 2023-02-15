@@ -5,11 +5,11 @@ resources:
   - common.yaml
   - platformnavigator-operator.yaml
   - platformnavigator.yaml
-  #- appconnect-operator.yaml
-  #- mq-operator.yaml
-  #- mq-queuemanagers.yaml
-  #- apiconnect-operator.yaml
-  #- apiconnect.yaml
+  - appconnect-operator.yaml
+  - mq-operator.yaml
+  - mq-queuemanagers.yaml
+  - apiconnect-operator.yaml
+  - apiconnect.yaml
 
 patches:
 - target:

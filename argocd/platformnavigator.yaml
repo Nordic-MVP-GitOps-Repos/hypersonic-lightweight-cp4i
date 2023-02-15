@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: platformnavigator
   namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "200"
   labels:
     group: applications
 spec:
