@@ -3,6 +3,7 @@ kind: Kustomization
 
 components:
 - ../../../../components/mq/variants/cloudprovider/azure
+- ../../../../components/mq/variants/nonprod
 
 resources:
 - ../../../../components/mq/base
