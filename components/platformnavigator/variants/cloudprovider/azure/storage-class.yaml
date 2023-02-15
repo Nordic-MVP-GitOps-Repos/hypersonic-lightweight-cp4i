@@ -4,4 +4,4 @@ metadata:
   name: platform-navigator
 spec:
   storage:
-    class: managed-premium
+    class: ocs-storagecluster-ceph-rbd
