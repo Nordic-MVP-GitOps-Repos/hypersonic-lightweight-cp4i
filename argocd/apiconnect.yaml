@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apiconnect
+  namespace: openshift-gitops
+  labels:
+    group: applications
+spec:
+  destination:
+    namespace: cp4i
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: envs/azure/nonprod/apiconnect
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

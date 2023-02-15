@@ -8,6 +8,7 @@ resources:
   - appconnect-operator.yaml
   - mq-operator.yaml
   - apiconnect-operator.yaml
+  - apiconnect.yaml
 
 patches:
 - target:
