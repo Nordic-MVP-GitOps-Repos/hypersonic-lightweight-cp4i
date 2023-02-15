@@ -4,4 +4,4 @@ metadata:
   name: platform-navigator
 spec:
   storage:
-    class: ocs-storagecluster-ceph-rbd
+    class: ocs-storagecluster-cephfs
