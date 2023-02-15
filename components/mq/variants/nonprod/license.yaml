@@ -4,4 +4,4 @@ metadata:
   name: sample-qm-1
 spec:
   license:
-    use: Development
+    use: NonProduction
