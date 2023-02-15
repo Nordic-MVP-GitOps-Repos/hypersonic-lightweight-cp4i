@@ -4,7 +4,7 @@ metadata:
   name: platformnavigator
   namespace: openshift-gitops
   annotations:
-    argocd.argoproj.io/sync-wave: "200"
+    argocd.argoproj.io/sync-wave: "75"
   labels:
     group: applications
 spec:
