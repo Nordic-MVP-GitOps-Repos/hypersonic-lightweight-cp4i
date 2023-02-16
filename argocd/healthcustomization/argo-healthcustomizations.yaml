@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-health-customizations
+  labels:
+    group: applications
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight.git
+    targetRevision: HEAD
+    path: 'argocd/healthcustomization'
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openshift-gitops
+  syncPolicy:
+    automated:
+      selfHeal: true
