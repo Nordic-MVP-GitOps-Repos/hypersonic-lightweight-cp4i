@@ -1,7 +1,7 @@
 apiVersion: mq.ibm.com/v1beta1
 kind: QueueManager
 metadata:
-  name: sample-qm2
+  name: sample-qm3
 spec:
   queueManager:
     storage:
