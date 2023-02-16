@@ -8,6 +8,7 @@ rules:
     apiGroups:
       - apiextensions.k8s.io
       - apps
+      - nfs.rook.io
       - ""
     resources:
       - '*'
