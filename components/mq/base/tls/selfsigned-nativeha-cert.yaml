@@ -19,4 +19,4 @@ spec:
     - server auth
     - client auth
   issuerRef:
-    name: mq-ss-issuer
+    name: mq-selfsigned-issuer
