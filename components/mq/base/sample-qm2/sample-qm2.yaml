@@ -53,13 +53,13 @@ spec:
           items:
             - tls.mqsc
   version: 9.3.1.1-r1
-  pki:
-    keys:
-      - name: example
-        secret:
-          secretName: mq-server-tls
-          items:
-            - tls.key
-            - tls.crt
+ # pki:
+ #   keys:
+ #     - name: example
+ #       secret:
+ #         secretName: mq-server-tls
+ #         items:
+ #           - tls.key
+ #           - tls.crt
   web:
     enabled: true
