@@ -12,7 +12,7 @@ resources:
   - mq-queuemanagers.yaml
   - apiconnect-operator.yaml
   - apiconnect.yaml
-  - healthcustomization/argo-healthcustomizations.yaml
+ # - healthcustomization/argo-healthcustomizations.yaml
 
 patches:
 - target:
