@@ -4,7 +4,7 @@ metadata:
   name: nfs-pwx-claim
   namespace: rook-nfs
 spec:
-  storageClassName: platform-navigator-storage
+  storageClassName: managed-premium
   accessModes:
   - ReadWriteOnce
   resources:
