@@ -42,12 +42,16 @@ spec:
         memory: 2Gi
       requests:
         memory: 2Gi
+    ini:
+      - configMap:
+          name: sample-qm2-configmap
+          items:
+            - qm.ini
     mqsc:
       - configMap:
           name: sample-qm2-configmap
           items:
             - tls.mqsc
-            - 
   version: 9.3.1.1-r1
   pki:
     keys:
