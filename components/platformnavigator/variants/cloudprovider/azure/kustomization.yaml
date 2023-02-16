@@ -10,6 +10,7 @@ resources:
 - nfs-roles.yaml
 - pvc.yaml
 - nfs-server.yaml
+- platform-navigator-storageclass.yaml
 
 patchesStrategicMerge:
 - storage-class.yaml
