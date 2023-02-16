@@ -14,5 +14,4 @@ resources:
 - zen-configmap.yaml
 
 patchesStrategicMerge:
-# - storage-class.yaml
 - pn-noreconcile.yaml
