@@ -10,4 +10,5 @@ resources:
   
   - tls/issuer.yaml
   - tls/selfsigned-nativeha-cert.yaml
-  - tls/haqmchl-route.yaml 
+  - tls/haqmchl-route.yaml
+  - tls/mq-server-tls.yaml
