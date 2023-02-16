@@ -11,6 +11,7 @@ resources:
 - pvc.yaml
 - nfs-server.yaml
 - platform-navigator-storageclass.yaml
+- zen-configmap.yaml
 
 patchesStrategicMerge:
 - storage-class.yaml
