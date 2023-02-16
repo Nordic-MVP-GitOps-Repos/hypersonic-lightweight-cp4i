@@ -11,7 +11,7 @@ spec:
   destination:
     namespace: cp4i
     server: https://kubernetes.default.svc
-  project: default
+  project: cp4i-operators
   source:
     path: components/common/base
   syncPolicy:
