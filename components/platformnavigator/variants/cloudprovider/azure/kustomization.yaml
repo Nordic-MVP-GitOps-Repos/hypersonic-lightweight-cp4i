@@ -8,6 +8,8 @@ resources:
 - rook-argo-role.yaml
 - privileged-scc-rb.yaml
 - nfs-roles.yaml
+- pvc.yaml
+- nfs-server.yaml
 
 patchesStrategicMerge:
 - storage-class.yaml
