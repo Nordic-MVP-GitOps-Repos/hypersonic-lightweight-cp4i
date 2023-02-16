@@ -3,16 +3,13 @@ apiVersion: v1
 metadata:
   name: sample-qm2-configmap
 data:
-  qm.ini: |
-  Channels:
-   MaxChannels=200
-   MaxActiveChannels=100
-  
+  myqm.ini: "Service:\n\tName=AuthorizationService\n\tEntryPoints=14\n\tSecurityPolicy=UserExternal"
+
   tls.mqsc: >-
     DEFINE QLOCAL('QUEUE1') DEFPSIST(YES) REPLACE 
     DEFINE QLOCAL('QUEUE2') DEFPSIST(YES) REPLACE
     DEFINE QLOCAL('QUEUE3') DEFPSIST(YES) REPLACE
     DEFINE QLOCAL('QUEUE4') DEFPSIST(YES) REPLACE
-    
+
     DEFINE CHANNEL(HAQMCHL) CHLTYPE(SVRCONN) TRPTYPE(TCP) SSLCAUTH(OPTIONAL) SSLCIPH('ANY_TLS12_OR_HIGHER')
     SET CHLAUTH(HAQMCHL) TYPE(BLOCKUSER) USERLIST('nobody') ACTION(ADD)
