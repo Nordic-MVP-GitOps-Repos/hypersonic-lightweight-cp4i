@@ -5,6 +5,7 @@ resources:
 
 - rook-crds.yaml
 - rook-operator.yaml
+- rook-argo-role.yaml
 
 patchesStrategicMerge:
 - storage-class.yaml

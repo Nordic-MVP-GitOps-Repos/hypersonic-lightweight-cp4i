@@ -16,8 +16,5 @@ rules:
       - image.openshift.io
       - route.openshift.io
       - triggers.tekton.dev
-      - apiextensions.k8s.io
-      - apps
-      - ""
     resources:
       - '*'
