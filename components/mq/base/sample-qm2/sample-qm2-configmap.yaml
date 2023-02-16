@@ -3,8 +3,6 @@ apiVersion: v1
 metadata:
   name: sample-qm2-configmap
 data:
-  qm.ini:
-
   tls.mqsc: |
     DEFINE QLOCAL('ALPHA.QUEUE1') DEFPSIST(YES) REPLACE 
     DEFINE QLOCAL('ALPHA.QUEUE2') DEFPSIST(YES) REPLACE
