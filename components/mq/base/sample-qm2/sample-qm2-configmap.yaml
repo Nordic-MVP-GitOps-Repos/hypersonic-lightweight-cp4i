@@ -3,6 +3,11 @@ apiVersion: v1
 metadata:
   name: sample-qm2-configmap
 data:
+  mq.ini: |
+    Channels:
+      MaxChannels=200
+      MaxActiveChannels=100
+
   tls.mqsc: |
     DEFINE QLOCAL('ALPHA.QUEUE1') DEFPSIST(YES) REPLACE 
     DEFINE QLOCAL('ALPHA.QUEUE2') DEFPSIST(YES) REPLACE
