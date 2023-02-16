@@ -1,9 +1,0 @@
-apiVersion: mq.ibm.com/v1beta1
-kind: QueueManager
-metadata:
-  name: sample-qm-1
-spec:
-  queueManager:
-    storage:
-      queueManager:
-        type: managed-premium

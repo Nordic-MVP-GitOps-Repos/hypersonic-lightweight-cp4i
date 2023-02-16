@@ -1,0 +1,15 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: haqmchl-route
+spec:
+  host: haqmchl.chl.mq.ibm.com
+  to:
+    kind: Service
+    name: sample-qm2-ibm-mq
+    weight: 100
+  port:
+    targetPort: qmgr
+  tls:
+    termination: passthrough
+  wildcardPolicy: None

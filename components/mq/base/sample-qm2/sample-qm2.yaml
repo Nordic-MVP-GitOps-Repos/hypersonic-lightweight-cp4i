@@ -1,0 +1,61 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: sample-qm2
+spec:
+  license:
+    accept: true
+    license: L-RJON-CD3JKX
+    metric: VirtualProcessorCore
+    use: PATCHED_BY_KUSTOMIZE
+  securityContext:
+    supplementalGroups: [99]
+  template:
+    pod:
+      containers:
+        - env:
+            - name: MQSNOAUT
+              value: "yes"
+          name: qmgr
+  queueManager:
+    route:
+      enabled: true
+    name: SAMPLEQM2
+    availability:
+      type: NativeHA
+      tls:
+        secretName: queue-manager-ha-secret-internal
+    storage:
+      queueManager:
+        class: PATCHED_BY_KUSTOMIZE
+        deleteClaim: true
+      persistedData:
+        enabled: false
+        class: PATCHED_BY_KUSTOMIZE
+        deleteClaim: true
+      recoveryLogs:
+        enabled: false
+        class: PATCHED_BY_KUSTOMIZE
+        deleteClaim: true
+    resources:
+      limits:
+        memory: 2Gi
+      requests:
+        memory: 2Gi
+    mqsc:
+      - configMap:
+          name: sample-qm2-configmap
+          items:
+            - tls.mqsc
+            - 
+  version: 9.3.1.1-r1
+  pki:
+    keys:
+      - name: example
+        secret:
+          secretName: mq-server-tls-alpha
+          items:
+            - tls.key
+            - tls.crt
+  web:
+    enabled: true
