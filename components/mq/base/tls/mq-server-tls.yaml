@@ -1,9 +1,9 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: mq-nativeha-internal-tls
+  name: mq-server-tls
 spec:
-  secretName: queue-manager-ha-secret-internal
+  secretName: mq-server-tls
   duration: 2160h0m0s # 90d
   renewBefore: 360h0m0s # 15d
   subject:
@@ -17,7 +17,6 @@ spec:
     - key encipherment
     - digital signature
     - server auth
-    - client auth
   dnsNames:
     - '*.cp4i.svc'
     - '*.cp4i.svc.local'
