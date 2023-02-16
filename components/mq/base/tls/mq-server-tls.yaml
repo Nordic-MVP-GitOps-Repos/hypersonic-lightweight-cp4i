@@ -17,6 +17,7 @@ spec:
     - key encipherment
     - digital signature
     - server auth
+    - client auth
   dnsNames:
     - '*.cp4i.svc'
     - '*.cp4i.svc.local'
