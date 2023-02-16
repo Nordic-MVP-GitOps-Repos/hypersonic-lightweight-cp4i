@@ -1,7 +1,7 @@
 apiVersion: mq.ibm.com/v1beta1
 kind: QueueManager
 metadata:
-  name: sample-qm3
+  name: sample-qm2
 spec:
   license:
     accept: true
@@ -47,14 +47,19 @@ spec:
           name: sample-qm2-configmap
           items:
             - tls.mqsc
+    ini:
+      - configMap:
+          name: sample-qm2-configmap
+          items:
+            - mq.ini
   version: 9.3.1.1-r1
- # pki:
- #   keys:
- #     - name: example
- #       secret:
- #         secretName: mq-server-tls
- #         items:
- #           - tls.key
- #           - tls.crt
+  pki:
+    keys:
+      - name: example
+        secret:
+          secretName: mq-server-tls
+          items:
+            - tls.key
+            - tls.crt
   web:
     enabled: true
