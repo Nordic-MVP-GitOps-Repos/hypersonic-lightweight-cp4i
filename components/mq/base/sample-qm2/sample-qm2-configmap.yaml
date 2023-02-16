@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: sample-qm2-configmap
 data:
-  myqm.ini: "Service:\n\tName=AuthorizationService\n\tEntryPoints=14\n\tSecurityPolicy=UserExternal"
+  qm.ini: "Service:\n\tName=AuthorizationService\n\tEntryPoints=14\n\tSecurityPolicy=UserExternal"
 
   tls.mqsc: >-
     DEFINE QLOCAL('QUEUE1') DEFPSIST(YES) REPLACE 
