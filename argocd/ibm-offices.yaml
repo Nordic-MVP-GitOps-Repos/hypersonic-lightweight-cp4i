@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: ibm-offices
   source:
-    path: ././envs/azure/non-prod/ci
+    path: ./envs/azure/non-prod/ci
     repoURL: https://github.com/Nordic-MVP-GitOps-Repos/ibm-offices-gitops.git
   syncPolicy:
     automated:
