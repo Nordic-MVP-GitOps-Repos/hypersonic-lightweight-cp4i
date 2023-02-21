@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: ibmoffices
     server: https://kubernetes.default.svc
-  project: default
+  project: ibm-offices
   source:
     path: ./envs/azure/non-prod/ci
     repoURL: https://github.com/Nordic-MVP-GitOps-Repos/ibm-offices-gitops.git
