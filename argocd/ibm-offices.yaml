@@ -7,7 +7,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "100"
 spec:
   destination:
-    namespace: cp4i
+    namespace: ibmoffices
     server: https://kubernetes.default.svc
   project: ibm-offices
   source:
@@ -27,7 +27,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "100"
 spec:
   destination:
-    namespace: cp4i
+    namespace: ibmoffices
     server: https://kubernetes.default.svc
   project: ibm-offices
   source:
