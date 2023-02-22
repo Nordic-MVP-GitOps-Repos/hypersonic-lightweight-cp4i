@@ -9,6 +9,7 @@ metadata:
     group: applications
 spec:
   destination:
+    namespace: openshift-operators
     server: https://kubernetes.default.svc
   project: cp4i-operators
   source:
