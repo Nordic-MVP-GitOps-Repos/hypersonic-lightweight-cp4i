@@ -13,6 +13,7 @@ resources:
   - apiconnect-operator.yaml
   - apiconnect.yaml
   - ibm-offices.yaml
+  - ace-hello-world.yaml
  # - healthcustomization/argo-healthcustomizations.yaml
 
 patches:
