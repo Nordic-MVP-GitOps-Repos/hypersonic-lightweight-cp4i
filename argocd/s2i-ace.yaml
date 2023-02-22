@@ -1,19 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: apiconnect-operator
+  name: s2i-ace
   namespace: openshift-gitops
   annotations:
     argocd.argoproj.io/sync-wave: "100"
-  labels:
-    group: applications
 spec:
   destination:
     namespace: cp4i
     server: https://kubernetes.default.svc
-  project: cp4i-operators
+  project: cp4i-capabilities
   source:
-    path: components/apiconnect/operator
+    path: tekton/tasks
+    repoUrl: https://github.com/thomas-mattsson/s2i-ace/
   syncPolicy:
     automated:
       prune: true
