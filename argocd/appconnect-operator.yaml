@@ -13,7 +13,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cp4i-operators
   source:
-    path: components/appconnect
+    path: components/appconnect/operator
   syncPolicy:
     automated:
       prune: true
