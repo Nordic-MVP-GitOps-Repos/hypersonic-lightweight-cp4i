@@ -2,6 +2,7 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   name: ibm-appconnect
+  namespace: openshift-operators
 spec:
   channel: "v7.0"
   name: ibm-appconnect
