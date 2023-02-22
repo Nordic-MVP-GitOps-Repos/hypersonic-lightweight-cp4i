@@ -12,7 +12,7 @@ spec:
   project: cp4i-capabilities
   source:
     path: tekton/tasks
-    repoUrl: https://github.com/thomas-mattsson/s2i-ace/
+    repoURL: https://github.com/thomas-mattsson/s2i-ace/
   syncPolicy:
     automated:
       prune: true
