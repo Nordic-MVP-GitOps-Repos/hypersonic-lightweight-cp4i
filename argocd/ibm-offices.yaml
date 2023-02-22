@@ -14,9 +14,6 @@ spec:
     path: ./envs/azure/non-prod/ci
     repoURL: https://github.com/Nordic-MVP-GitOps-Repos/ibm-offices-gitops.git
   syncPolicy:
-    syncOptions:
-      - Validate=false
-      - ServerSideApply=true
     automated:
       prune: true
       selfHeal: true
