@@ -27,3 +27,14 @@ patches:
     - op: add
       path: /spec/source/targetRevision
       value: HEAD
+- target:
+    group: ''
+    kind: ServiceAccount
+    name: pipeline
+    namespace: ibmoffices
+  patch: |-
+    - op: add
+      path: /secrets/0/-
+      value: 
+        name: name
+        value: ibm-entitlement-key
