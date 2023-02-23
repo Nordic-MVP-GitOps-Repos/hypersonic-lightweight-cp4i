@@ -8,7 +8,6 @@ resources:
   - operators/platformnavigator-operator.yaml
   - operators/apiconnect-operator.yaml
  
-  - capabilities-project.yaml
   - common.yaml
   
   - operands/operand-project.yaml
