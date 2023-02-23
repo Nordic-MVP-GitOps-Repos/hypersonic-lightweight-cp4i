@@ -2,19 +2,22 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - operator-project.yaml
+  - operators/operator-project.yaml
+  - operators/appconnect-operator.yaml
+  - operators/mq-operator.yaml
+  - operators/platformnavigator-operator.yaml
+  - operators/apiconnect-operator.yaml
+ 
   - capabilities-project.yaml
   - common.yaml
-  - platformnavigator-operator.yaml
-  - platformnavigator.yaml
-  - appconnect-operator.yaml
-  - mq-operator.yaml
-  - mq-queuemanagers.yaml
-  - apiconnect-operator.yaml
-  - apiconnect.yaml
-  - ibm-offices.yaml
-  - ace-hello-world.yaml
   
+  - operands/platformnavigator.yaml
+  - operands/mq-queuemanagers.yaml
+  - operands/apiconnect.yaml
+ 
+  - apps/ibm-offices.yaml
+  - apps/ace-hello-world.yaml
+
 patches:
 - target:
     group: argoproj.io
