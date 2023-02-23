@@ -14,8 +14,7 @@ resources:
   - apiconnect.yaml
   - ibm-offices.yaml
   - ace-hello-world.yaml
- # - healthcustomization/argo-healthcustomizations.yaml
-
+  
 patches:
 - target:
     group: argoproj.io
