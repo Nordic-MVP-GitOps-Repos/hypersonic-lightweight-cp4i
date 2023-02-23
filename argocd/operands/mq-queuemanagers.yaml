@@ -11,7 +11,7 @@ spec:
   destination:
     namespace: cp4i
     server: https://kubernetes.default.svc
-  project: cp4i-capabilities
+  project: cp4i-operands
   source:
     path: envs/azure/nonprod/mq
   syncPolicy:
