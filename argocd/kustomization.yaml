@@ -7,6 +7,7 @@ resources:
   - operators/mq-operator.yaml
   - operators/platformnavigator-operator.yaml
   - operators/apiconnect-operator.yaml
+  - operators/eventstreams-operator.yaml
  
   - common.yaml
   
