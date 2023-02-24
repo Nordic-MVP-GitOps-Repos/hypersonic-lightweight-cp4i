@@ -8,6 +8,7 @@ resources:
   - operators/platformnavigator-operator.yaml
   - operators/apiconnect-operator.yaml
   - operators/eventstreams-operator.yaml
+  - operators/aspera-operator.yaml
  
   - common.yaml
   
