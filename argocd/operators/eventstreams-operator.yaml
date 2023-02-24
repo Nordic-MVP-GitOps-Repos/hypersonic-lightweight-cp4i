@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apiconnect-operator
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "100"
+  labels:
+    group: applications
+spec:
+  destination:
+    namespace: cp4i
+    server: https://kubernetes.default.svc
+  project: cp4i-operators
+  source:
+    path: components/eventstreams/operator
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
