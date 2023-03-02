@@ -14,11 +14,11 @@ resources:
   
   - operands/operand-project.yaml
   - operands/platformnavigator.yaml
-  #- operands/mq-queuemanagers.yaml
-  #- operands/apiconnect.yaml
+  - operands/mq-queuemanagers.yaml
+  - operands/apiconnect.yaml
  
-  #- apps/ibm-offices.yaml
-  #- apps/ace-hello-world.yaml
+  - apps/ibm-offices.yaml
+  - apps/ace-hello-world.yaml
 
 patches:
 - target:
