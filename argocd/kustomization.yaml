@@ -8,17 +8,17 @@ resources:
   - operators/platformnavigator-operator.yaml
   - operators/apiconnect-operator.yaml
   - operators/eventstreams-operator.yaml
-  - operators/aspera-operator.yaml
+  #- operators/aspera-operator.yaml
  
   - common.yaml
   
-  - operands/operand-project.yaml
-  - operands/platformnavigator.yaml
-  - operands/mq-queuemanagers.yaml
-  - operands/apiconnect.yaml
+  #- operands/operand-project.yaml
+  #- operands/platformnavigator.yaml
+  #- operands/mq-queuemanagers.yaml
+  #- operands/apiconnect.yaml
  
-  - apps/ibm-offices.yaml
-  - apps/ace-hello-world.yaml
+  #- apps/ibm-offices.yaml
+  #- apps/ace-hello-world.yaml
 
 patches:
 - target:
