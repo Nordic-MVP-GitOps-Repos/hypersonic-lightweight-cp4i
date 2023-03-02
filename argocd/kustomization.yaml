@@ -13,7 +13,7 @@ resources:
   - common.yaml
   
   #- operands/operand-project.yaml
-  #- operands/platformnavigator.yaml
+  - operands/platformnavigator.yaml
   #- operands/mq-queuemanagers.yaml
   #- operands/apiconnect.yaml
  
