@@ -9,7 +9,7 @@ metadata:
     group: applications
 spec:
   destination:
-    namespace: cp4i
+    namespace: cpopenshift-operators4i
     server: https://kubernetes.default.svc
   project: cp4i-operators
   source:
