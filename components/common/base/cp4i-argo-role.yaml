@@ -16,5 +16,6 @@ rules:
       - image.openshift.io
       - route.openshift.io
       - triggers.tekton.dev
+      - monitoringcontroller.cloud.ibm.com
     resources:
       - '*'
