@@ -38,7 +38,7 @@ spec:
       prune: true
       selfHeal: true
   ignoreDifferences:
-  - group: apps
+  - group: appconnect.ibm.com
     kind: IntegrationServer
     name: ace-hello-world-is
     namespace: ace-hello-world
