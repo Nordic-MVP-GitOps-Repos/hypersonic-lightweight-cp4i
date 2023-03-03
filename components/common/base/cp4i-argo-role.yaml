@@ -17,5 +17,6 @@ rules:
       - route.openshift.io
       - triggers.tekton.dev
       - monitoringcontroller.cloud.ibm.com
+      - autoscaling
     resources:
       - '*'
