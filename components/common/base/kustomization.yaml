@@ -7,3 +7,4 @@ resources:
   - operatorgroup.yaml
   - cp4i-argo-role.yaml
   - cp4i-argo-rb.yaml
+  - logging-operator.yaml
