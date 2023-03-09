@@ -9,3 +9,4 @@ resources:
   - cp4i-argo-rb.yaml
   - logging-operator.yaml
   - elasticsearch-operator.yaml
+  - logging-instance.yaml
