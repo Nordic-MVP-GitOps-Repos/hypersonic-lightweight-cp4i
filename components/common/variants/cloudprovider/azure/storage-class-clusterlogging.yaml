@@ -4,38 +4,8 @@ metadata:
   name: instance
   namespace: openshift-logging
 spec:
-  collection:
-    logs:
-      fluentd: {}
-      type: fluentd
   logStore:
     elasticsearch:
-      nodeCount: 3
-      proxy:
-        resources:
-          limits:
-            memory: 256Mi
-          requests:
-            memory: 256Mi
-      redundancyPolicy: SingleRedundancy
-      resources:
-        limits:
-          memory: 16Gi
-        requests:
-          memory: 16Gi
       storage:
-        size: 200G
         storageClassName: managed-premium
-    retentionPolicy:
-      application:
-        maxAge: 1d
-      audit:
-        maxAge: 7d
-      infra:
-        maxAge: 7d
-    type: elasticsearch
-  managementState: Managed
-  visualization:
-    kibana:
-      replicas: 1
-    type: kibana
+   
