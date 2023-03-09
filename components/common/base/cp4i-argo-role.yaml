@@ -18,5 +18,6 @@ rules:
       - triggers.tekton.dev
       - monitoringcontroller.cloud.ibm.com
       - autoscaling
+      - logging.openshift.io
     resources:
       - '*'
