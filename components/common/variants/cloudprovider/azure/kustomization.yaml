@@ -3,4 +3,4 @@ kind: Component
 
 patchesStrategicMerge:
 - storage-class-clusterlogging.yaml
-- storage-class-elasticsearch.yaml
+#- storage-class-elasticsearch.yaml
