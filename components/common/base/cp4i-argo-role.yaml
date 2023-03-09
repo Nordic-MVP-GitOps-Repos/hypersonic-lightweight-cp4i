@@ -19,5 +19,6 @@ rules:
       - monitoringcontroller.cloud.ibm.com
       - autoscaling
       - logging.openshift.io
+      - monitoring.coreos.com
     resources:
       - '*'
