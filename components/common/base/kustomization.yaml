@@ -10,4 +10,4 @@ resources:
   - logging-operator.yaml
   - elasticsearch-operator.yaml
   - logging-instance.yaml
-  - clustermonitoring-configmap.yaml
+  - cluster-monitoring-configmap.yaml
