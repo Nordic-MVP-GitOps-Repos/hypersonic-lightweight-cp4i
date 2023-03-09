@@ -13,7 +13,7 @@ spec:
     server: https://kubernetes.default.svc
   project: cp4i-operators
   source:
-    path: components/common/base
+    path: envs/azure/nonprod/common/
   syncPolicy:
     automated:
       prune: true
