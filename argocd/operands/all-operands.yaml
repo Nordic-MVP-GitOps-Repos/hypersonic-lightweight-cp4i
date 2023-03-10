@@ -12,7 +12,7 @@ spec:
           namespace: cp4i
         - name: mq
           namespace: cp4i
-        - name: platform-navigator
+        - name: platformnavigator
           namespace: cp4i
   template:
     metadata:
