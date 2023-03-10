@@ -4,10 +4,10 @@ kind: Kustomization
 resources:
   - catalogsource.yaml
   - namespace.yaml
-  - operatorgroup.yaml
+  - operator/operatorgroup.yaml
   - cp4i-argo-role.yaml
   - cp4i-argo-rb.yaml
-  - logging-operator.yaml
-  - elasticsearch-operator.yaml
+  - operator/logging-operator.yaml
+  - operator/elasticsearch-operator.yaml
   - logging-instance.yaml
   - cluster-monitoring-configmap.yaml
