@@ -4,13 +4,7 @@ kind: Kustomization
 resources:
   - operators/operator-project.yaml
   - operators/all-operators.yaml
-  #- operators/appconnect-operator.yaml
-  #- operators/mq-operator.yaml
-  #- operators/platformnavigator-operator.yaml
-  #- operators/apiconnect-operator.yaml
-  #- operators/eventstreams-operator.yaml
-  #- operators/aspera-operator.yaml
-
+ 
   - common.yaml
   
   - operands/operand-project.yaml

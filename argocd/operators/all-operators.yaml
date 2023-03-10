@@ -12,6 +12,7 @@ spec:
         - name: eventstreams
         - name: mq
         - name: platformnavigator
+        - name: aspera
   template:
     metadata:
       name: '{{name}}-operator'
