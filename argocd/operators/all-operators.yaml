@@ -7,12 +7,19 @@ spec:
   - list:
       elements:
         - name: apiconnect
+          namespace: openshift-operators
         - name: appconnect
+          namespace: openshift-operators
         - name: common
+          namespace: openshift-operators
         - name: eventstreams
+          namespace: openshift-operators
         - name: mq
+          namespace: openshift-operators
         - name: platformnavigator
+          namespace: openshift-operators
         - name: aspera
+          namespace: openshift-operators
   template:
     metadata:
       name: '{{name}}-operator'
@@ -26,7 +33,7 @@ spec:
         path: 'components/{{name}}/operator'
       destination:
         server: 'https://kubernetes.default.svc'
-        namespace: 'openshift-operators'
+        namespace: '{{namespace}}'
       syncPolicy:
         automated:
           selfHeal: true
