@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cp4i-operators
+spec:
+  generators:
+  - list:
+      elements:
+        - name: apiconnect
+        - name: appconnect
+        - name: common
+        - name: eventstreams
+        - name: mq
+        - name: platformnavigator
+  template:
+    metadata:
+      name: '{{name}}-operator'
+      labels:
+        group: applications
+    spec:
+      project: 'cp4i-operators'
+      source:
+        repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
+        targetRevision: '{{revision}}'
+        path: 'components/{{name}}/operator'
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: 'openshift-operators'
+      syncPolicy:
+        automated:
+          selfHeal: true
