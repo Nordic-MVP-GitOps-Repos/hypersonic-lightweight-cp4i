@@ -5,9 +5,8 @@ resources:
   - operators/operator-project.yaml
   - operators/all-operators.yaml
  
-  - common.yaml
-  
   - operands/operand-project.yaml
+  - operands/common.yaml 
   - operands/platformnavigator.yaml
   - operands/mq-queuemanagers.yaml
   - operands/apiconnect.yaml
