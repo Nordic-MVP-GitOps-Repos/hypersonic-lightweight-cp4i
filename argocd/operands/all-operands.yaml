@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cp4i-operands
+spec:
+  generators:
+  - list:
+      elements:
+        - name: apiconnect
+          namespace: cp4i
+        - name: common
+          namespace: cp4i
+        - name: mq
+          namespace: cp4i
+        - name: platformnavigator
+          namespace: cp4i
+  template:
+    metadata:
+      name: '{{name}}'
+      labels:
+        group: applications
+    spec:
+      project: 'cp4i-operands'
+      source:
+        repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
+        targetRevision: 'HEAD'
+        path: 'envs/azure/nonprod/{{name}}/'
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: '{{namespace}}'
+      syncPolicy:
+        automated:
+          selfHeal: true

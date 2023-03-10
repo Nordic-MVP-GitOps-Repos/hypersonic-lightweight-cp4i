@@ -6,10 +6,12 @@ resources:
   - operators/all-operators.yaml
  
   - operands/operand-project.yaml
-  - operands/common.yaml 
-  - operands/platformnavigator.yaml
-  - operands/mq-queuemanagers.yaml
-  - operands/apiconnect.yaml
+  - operands/all-operands.yaml
+
+  #- operands/common.yaml 
+  #- operands/platformnavigator.yaml
+  #- operands/mq-queuemanagers.yaml
+  #- operands/apiconnect.yaml
  
   - apps/ibm-offices.yaml
   - apps/ace-hello-world.yaml
