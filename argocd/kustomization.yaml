@@ -9,7 +9,7 @@ resources:
   - operators/apiconnect-operator.yaml
   - operators/eventstreams-operator.yaml
   #- operators/aspera-operator.yaml
-  - all-operators-argo-app.yaml
+  - operators/all-operators-argo-app.yaml
 
   - common.yaml
   
