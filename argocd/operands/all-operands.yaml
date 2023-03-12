@@ -24,7 +24,7 @@ spec:
       source:
         repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
         targetRevision: 'HEAD'
-        path: 'envs/azure/nonprod/{{name}}/'
+        path: 'envs/ibm-vpc/nonprod/{{name}}/'
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: '{{namespace}}'
