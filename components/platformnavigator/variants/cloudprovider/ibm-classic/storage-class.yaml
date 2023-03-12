@@ -4,4 +4,4 @@ metadata:
   name: platform-navigator
 spec:
   storage:
-    class: ibmc-block-gold-gid
+    class: ibmc-file-gold-gid
