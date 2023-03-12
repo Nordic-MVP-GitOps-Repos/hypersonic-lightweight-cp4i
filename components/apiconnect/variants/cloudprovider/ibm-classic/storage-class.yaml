@@ -7,4 +7,4 @@ metadata:
     app.kubernetes.io/managed-by: ibm-apiconnect
     app.kubernetes.io/name: apiconnect-small
 spec:
-  storageClassName: ibmc-block-gold
+  storageClassName: ibmc-block-gold-gid
