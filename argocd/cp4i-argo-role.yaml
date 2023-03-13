@@ -20,5 +20,6 @@ rules:
       - autoscaling
       - logging.openshift.io
       - monitoring.coreos.com
+      - apps
     resources:
       - '*'
