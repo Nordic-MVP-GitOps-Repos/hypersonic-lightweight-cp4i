@@ -8,8 +8,8 @@ resources:
 
   - common.yaml
 
-  #- operators/operator-project.yaml
-  #- operators/all-operators.yaml
+  - operators/operator-project.yaml
+  - operators/all-operators.yaml
  
   #- operands/operand-project.yaml
   #- operands/all-operands.yaml
