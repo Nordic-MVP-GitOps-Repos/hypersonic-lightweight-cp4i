@@ -10,8 +10,6 @@ spec:
           namespace: openshift-operators
         - name: appconnect
           namespace: openshift-operators
-        - name: common
-          namespace: openshift-operators
         - name: eventstreams
           namespace: openshift-operators
         - name: mq
@@ -20,11 +18,15 @@ spec:
           namespace: openshift-operators
         - name: aspera
           namespace: openshift-operators
+        - name: openshift-logging
+          namespace: openshift-logging
   template:
     metadata:
       name: '{{name}}-operator'
       labels:
         group: applications
+      annotations:
+        argocd.argoproj.io/sync-wave: "100"
     spec:
       project: 'cp4i-operators'
       source:

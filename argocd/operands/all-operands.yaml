@@ -8,17 +8,21 @@ spec:
       elements:
         - name: apiconnect
           namespace: cp4i
-        - name: common
-          namespace: cp4i
         - name: mq
           namespace: cp4i
         - name: platformnavigator
           namespace: cp4i
+        - name: openshift-logging
+          namespace: openshift-logging
+        - name: openshift-monitoring
+          namespace: openshift-monitoring
   template:
     metadata:
       name: '{{name}}'
       labels:
         group: applications
+      annotations:
+        argocd.argoproj.io/sync-wave: "200"
     spec:
       project: 'cp4i-operands'
       source:
