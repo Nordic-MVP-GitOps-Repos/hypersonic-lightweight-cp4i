@@ -16,8 +16,8 @@ spec:
           namespace: openshift-operators
         - name: platformnavigator
           namespace: openshift-operators
-        - name: aspera
-          namespace: openshift-operators
+        #- name: aspera
+        #  namespace: openshift-operators
         - name: openshift-logging
           namespace: openshift-logging
   template:
