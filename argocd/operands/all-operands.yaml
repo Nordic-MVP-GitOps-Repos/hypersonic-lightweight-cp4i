@@ -8,21 +8,26 @@ spec:
       elements:
         - name: apiconnect
           namespace: cp4i
+          sync-wave: 300
         - name: mq
           namespace: cp4i
+          sync-wave: 300
         - name: platformnavigator
           namespace: cp4i
+          sync-wave: 200
         - name: openshift-logging
           namespace: openshift-logging
+          sync-wave: 200
         - name: openshift-monitoring
           namespace: openshift-monitoring
+          sync-wave: 200
   template:
     metadata:
       name: '{{name}}'
       labels:
         group: applications
       annotations:
-        argocd.argoproj.io/sync-wave: "200"
+        argocd.argoproj.io/sync-wave: '{{sync-wave}}'
     spec:
       project: 'cp4i-operands'
       source:
