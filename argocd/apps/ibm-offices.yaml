@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: ibm-offices
   source:
-    path: ./envs/azure/non-prod/ci
+    path: ./envs/ibm-classic/non-prod/ci
     repoURL: https://github.com/Nordic-MVP-GitOps-Repos/ibm-offices-gitops.git
   syncPolicy:
     automated:
@@ -31,7 +31,7 @@ spec:
     server: https://kubernetes.default.svc
   project: ibm-offices
   source:
-    path: ./envs/azure/non-prod/app
+    path: ./envs/ibm-classic/non-prod/app
     repoURL: https://github.com/Nordic-MVP-GitOps-Repos/ibm-offices-gitops.git
   syncPolicy:
     automated:
