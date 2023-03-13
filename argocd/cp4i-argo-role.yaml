@@ -21,5 +21,6 @@ rules:
       - logging.openshift.io
       - monitoring.coreos.com
       - apps
+      - ""
     resources:
       - '*'
