@@ -3,5 +3,6 @@ kind: Kustomization
 
 resources:
   - namespace.yaml
+  - operatorgroup.yaml 
   - logging-operator.yaml
   - elasticsearch-operator.yaml
