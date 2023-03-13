@@ -11,8 +11,8 @@ resources:
   - operators/operator-project.yaml
   - operators/all-operators.yaml
  
- # - operands/operand-project.yaml
- # - operands/all-operands.yaml
+  - operands/operand-project.yaml
+  - operands/all-operands.yaml
  
  # - apps/ibm-offices.yaml
  # - apps/ace-hello-world.yaml
