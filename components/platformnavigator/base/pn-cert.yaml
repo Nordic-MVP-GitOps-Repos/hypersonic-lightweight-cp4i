@@ -1,0 +1,28 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: pn-lec-cert
+spec:
+  secretName: pn-lec-cert-secret
+  duration: 2160h0m0s # 90d
+  renewBefore: 360h0m0s # 15d
+  commonName: lhscp4i.ceibm.com
+  subject:
+    organizations:
+      - ce
+  privateKey:
+    algorithm: RSA
+    encoding: PKCS1
+    size: 2048
+  usages:
+    - key encipherment
+    - digital signature
+    - server auth
+    - client auth
+  dnsNames:
+    - 'cp-console.ocp412-fra02-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
+    - 'platform-navigator-pn-cp4i.ocp412-fra02-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
+    - 'cpd-cp4i.ocp412-fra02-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
+    - 'lhscp4i.ceibm.com'
+  issuerRef:
+    name: letsencrypt-issuer
