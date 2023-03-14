@@ -17,3 +17,4 @@ spec:
     serverCertificate: tls.crt
     caCertificate: tls.crt
     key: tls.key
+  uiHostname: "lhscp4i.ceibm.com"
