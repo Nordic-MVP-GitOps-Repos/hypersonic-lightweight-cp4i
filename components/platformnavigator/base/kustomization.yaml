@@ -3,3 +3,5 @@ kind: Kustomization
 
 resources:
   - platform-navigator.yaml
+  - letsencrypt-issuer.yaml
+  - pn-cert.yaml

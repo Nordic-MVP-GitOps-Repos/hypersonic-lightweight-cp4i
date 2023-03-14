@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-issuer
+spec:
+  acme:
+    privateKeySecretRef:
+      name: letsencrypt-issuer-account-key
+    server: 'https://acme-v02.api.letsencrypt.org/directory'
+    solvers:
+    - http01:
+        ingress:
+          class: openshift-default
