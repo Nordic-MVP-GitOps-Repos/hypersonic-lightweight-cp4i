@@ -11,3 +11,5 @@ spec:
   storage:
     class: PATCHED_BY_KUSTOMIZE
   version: 2022.4.1
+  tls:
+    secretName: "pn-lec-cert-secret-2"
