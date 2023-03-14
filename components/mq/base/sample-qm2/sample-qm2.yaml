@@ -57,9 +57,16 @@ spec:
     keys:
       - name: example
         secret:
-          secretName: mq-server-tls
+          secretName: mq-server-tls-secret
           items:
             - tls.key
             - tls.crt
+     trust:
+      - name: letsencrypt
+        secret:
+          secretName: letsencrypt-chain
+          items:
+            - root.crt
+            - intermediate.crt
   web:
     enabled: true

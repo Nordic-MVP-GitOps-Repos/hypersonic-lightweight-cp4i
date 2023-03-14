@@ -6,7 +6,9 @@ resources:
   - sample-qm2/sample-qm2.yaml
   - sample-qm2/sample-qm2-configmap.yaml
   
-  - tls/issuer.yaml
-  - tls/selfsigned-nativeha-cert.yaml
+  - tls/internal/issuer.yaml
+  - tls/internal/selfsigned-nativeha-cert.yaml
+
   - tls/haqmchl-route.yaml
   - tls/mq-server-tls.yaml
+  - tls/letsencrypt-chain.yaml

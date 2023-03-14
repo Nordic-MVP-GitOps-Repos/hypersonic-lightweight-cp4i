@@ -3,9 +3,10 @@ kind: Certificate
 metadata:
   name: mq-server-tls
 spec:
-  secretName: mq-server-tls
+  secretName: mq-server-tls-secret
   duration: 2160h0m0s # 90d
   renewBefore: 360h0m0s # 15d
+  commonName: lhscp4i.ceibm.com
   subject:
     organizations:
       - mq
@@ -19,8 +20,7 @@ spec:
     - server auth
     - client auth
   dnsNames:
-    - '*.cp4i.svc'
-    - '*.cp4i.svc.local'
-    - '*.cp4i.svc.local.cluster'
+    - 'sample-qm2-ibm-mq-qm-cp4i.ocp412-fra02-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
+    - 'lhscp4i.ceibm.com'
   issuerRef:
-    name: mq-selfsigned-issuer
+    name: letsencrypt-cluster-issuer
