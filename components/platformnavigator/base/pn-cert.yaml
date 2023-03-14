@@ -26,3 +26,4 @@ spec:
     - 'lhscp4i.ceibm.com'
   issuerRef:
     name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer
