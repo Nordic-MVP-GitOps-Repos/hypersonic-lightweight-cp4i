@@ -14,6 +14,6 @@ spec:
   # See: https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=certificates-using-custom-hostnames-platform-ui
   tls:
     secretName: "pn-lec-cert-secret"
-      serverCertificate: tls.crt
-      caCertificate: tls.crt
-      key: tls.key
+    serverCertificate: tls.crt
+    caCertificate: tls.crt
+    key: tls.key
