@@ -46,6 +46,10 @@ If you have enabled the webhook earlier, ArgoCD will refresh and trigger install
 
 The install takes somewhere between 30-60 minutes depending on the cluster resources. 
 
+### Create index patterns for OpenShift Logging
+
+Click the Logging menu item in the OpenShift Console. In the Kibana interface, create two index patterns: 'app' and 'infra' that map to '@timestamp'
+
 ### (Optional) Register DNS CNAME to enable generating certificates with LetsEncrypt
 
 Instead of self-signed certificates we can use LetsEncrypt certificates generated using cert-manager. First, find your ingress subdomain. Common names can be a maximum of 64 characters, which is shorter than what many cloud providers openshift offerings use. To overcome that, we need to add a CNAME to our DNS.  
