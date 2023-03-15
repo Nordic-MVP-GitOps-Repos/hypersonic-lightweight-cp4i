@@ -22,6 +22,7 @@ spec:
   dnsNames:
     - 'platform-navigator-pn-cp4i.ocp412-fra02-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
     - 'cpd-cp4i.ocp412-fra02-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
+    - 'ocp412-fra02-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
     #- 'cp-console.ocp412-fra02-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
     - 'lhscp4i.ceibm.com'
   issuerRef:

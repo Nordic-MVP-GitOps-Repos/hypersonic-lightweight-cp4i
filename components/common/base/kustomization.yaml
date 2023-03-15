@@ -5,4 +5,3 @@ resources:
   - catalogsource.yaml
   - namespace.yaml
   - operatorgroup.yaml
-  - letsencrypt-clusterissuer.yaml

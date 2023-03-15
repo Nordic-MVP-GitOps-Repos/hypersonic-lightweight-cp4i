@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - platform-navigator.yaml
   - pn-cert.yaml
+  - letsencrypt-clusterissuer.yaml
