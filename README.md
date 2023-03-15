@@ -52,7 +52,7 @@ Click the Logging menu item in the OpenShift Console. In the Kibana interface, c
 
 ### (Optional) Register DNS CNAME to enable generating certificates with LetsEncrypt
 
-Instead of self-signed certificates we can use LetsEncrypt certificates generated using cert-manager. First, find your ingress subdomain. Common names can be a maximum of 64 characters, which is shorter than what many cloud providers openshift offerings use. To overcome that, we need to add a CNAME to our DNS.  
+Instead of self-signed certificates we can use LetsEncrypt certificates generated using cert-manager. Common names can be a maximum of 64 characters, which is shorter than what many cloud providers openshift offerings use. To overcome that, we need to add a CNAME to our DNS. First, find your ingress subdomain:
 
 `oc get ingresses.config/cluster -o jsonpath={.spec.domain}`
 Depending on you cloud provuder, this will give you something like 'mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
@@ -64,3 +64,7 @@ your-cp4i.example.com --> mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3b
 When you generate certificates, the common name will be your-cp4i.example.com and you'll use mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud as DNS names.
 
 If you'd rather use self-signed certificates, this also works. TBW: files to update.
+
+### Enable MQ sample queue manager
+
+Using the ingress subdomain from the previous step, update the dns name and common name in [mq-server-tls.yaml](components/mq/base/tls/mq-server-tls.yaml)
