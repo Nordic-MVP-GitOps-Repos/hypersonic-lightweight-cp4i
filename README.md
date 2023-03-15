@@ -68,3 +68,7 @@ If you'd rather use self-signed certificates, this also works. TBW: files to upd
 ### Enable MQ sample queue manager
 
 Using the ingress subdomain from the previous step, update the dns name and common name in [mq-server-tls.yaml](components/mq/base/tls/mq-server-tls.yaml). Now, update the [all-operands.yaml](argocd/operands/all-operands.yaml) file and uncomment the three lines referring to MQ.
+
+### Enable sample applications
+
+### Change certificates and hostname for Platform Navigator
