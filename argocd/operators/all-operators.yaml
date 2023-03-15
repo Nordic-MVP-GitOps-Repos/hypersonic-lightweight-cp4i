@@ -16,10 +16,10 @@ spec:
           namespace: openshift-operators
         - name: platformnavigator
           namespace: openshift-operators
-        #- name: aspera
-        #  namespace: openshift-operators
         - name: openshift-logging
           namespace: openshift-logging
+        - name: openshift-pipelines
+          namespace: openshift-operators
   template:
     metadata:
       name: '{{name}}-operator'
