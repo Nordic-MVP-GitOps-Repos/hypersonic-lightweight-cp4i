@@ -46,4 +46,17 @@ If you have enabled the webhook earlier, ArgoCD will refresh and trigger install
 
 The install takes somewhere between 30-60 minutes depending on the cluster resources. 
 
-### 
+### (Optional) Register DNS CNAME to enable generating certificates with LetsEncrypt
+
+Instead of self-signed certificates we can use LetsEncrypt certificates generated using cert-manager. First, find your ingress subdomain. Common names can be a maximum of 64 characters, which is shorter than what many cloud providers openshift offerings use. To overcome that, we need to add a CNAME to our DNS.  
+
+`oc get ingresses.config/cluster -o jsonpath={.spec.domain}`
+Depending on you cloud provuder, this will give you something like 'mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
+
+With your DNS provider, register a new CNAME that you'll use for this installation. This will be of the form: 
+
+your-cp4i.example.com --> mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud
+
+When you generate certificates, the common name will be your-cp4i.example.com and you'll use mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud as DNS names.
+
+If you'd rather use self-signed certificates, this also works. TBW: files to update.
