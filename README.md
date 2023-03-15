@@ -24,7 +24,7 @@ Add a webhook to https://your-gitops-server.com/api/webhook for the push event. 
 
 ### Add the bootstrap ArgoCD application to install operators
 
-In the OpenShift Console, click the "plus" icon and paste the contents of [bootstrap.yaml](./argocd/bootstrap.yaml) to create the bootstrap ArgoCD application. This application will find the [kustomization.yaml](./argocd/kustomization.yaml) file which points to the [common.yaml](./argocd/common.yaml)  application and an ArgoCD ApplicationSets [all-operators.yaml](./argocd/operators/all-operators.yaml)
+In the OpenShift Console, click the "plus" icon and paste the contents of [bootstrap.yaml](./argocd/bootstrap.yaml) to create the bootstrap ArgoCD application. This application will find the [kustomization.yaml](./argocd/kustomization.yaml) file which points to the [common.yaml](./argocd/common.yaml)  application and an ArgoCD ApplicationSet [all-operators.yaml](./argocd/operators/all-operators.yaml)
 
 The "common" application creates a namespace (cp4i by default) and a catalogsource for the IBM operators. 
 
