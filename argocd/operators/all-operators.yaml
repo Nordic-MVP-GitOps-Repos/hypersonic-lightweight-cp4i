@@ -18,8 +18,8 @@ spec:
           namespace: openshift-operators
         - name: openshift-logging
           namespace: openshift-logging
-        #- name: openshift-pipelines
-        #  namespace: openshift-operators
+        - name: openshift-pipelines
+          namespace: openshift-operators
   template:
     metadata:
       name: '{{name}}-operator'
@@ -30,8 +30,8 @@ spec:
     spec:
       project: 'cp4i-operators'
       source:
-        repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
-        targetRevision: 'HEAD'
+        #repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
+        #targetRevision: 'HEAD'
         path: 'components/{{name}}/operator'
       destination:
         server: 'https://kubernetes.default.svc'

@@ -12,10 +12,10 @@ resources:
 
   - operators/all-operators.yaml
   
-  - operands/all-operands.yaml
+  #- operands/all-operands.yaml
  
-  - apps/ibm-offices.yaml
-  - apps/ace-hello-world.yaml
+  #- apps/ibm-offices.yaml
+  #- apps/ace-hello-world.yaml
 
 patches:
 - target:
