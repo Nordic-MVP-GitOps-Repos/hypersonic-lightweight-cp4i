@@ -17,15 +17,15 @@ resources:
   #- apps/ibm-offices.yaml
   #- apps/ace-hello-world.yaml
 
-patches:
-- target:
-    group: argoproj.io
-    kind: Application
-    labelSelector: group=applications
-  patch: |-
-    - op: add
-      path: /spec/source/repoURL
-      value: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
-    - op: add
-      path: /spec/source/targetRevision
-      value: HEAD
+#patches:
+#- target:
+#    group: argoproj.io
+#    kind: Application
+#    labelSelector: group=applications
+#  patch: |-
+#    - op: add
+#      path: /spec/source/repoURL
+#      value: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
+#    - op: add
+#      path: /spec/source/targetRevision
+#      value: HEAD

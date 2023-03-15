@@ -31,8 +31,8 @@ spec:
     spec:
       project: 'cp4i-operands'
       source:
-        #repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
-        #targetRevision: 'HEAD'
+        repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
+        targetRevision: 'HEAD'
         path: 'envs/ibm-classic/nonprod/{{name}}/'
       destination:
         server: 'https://kubernetes.default.svc'
