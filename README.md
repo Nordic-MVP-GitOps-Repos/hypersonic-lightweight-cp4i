@@ -72,7 +72,8 @@ For the ACE application, fork the repo [ace-hello-world-gitops](https://github.c
 Instead of self-signed certificates we can use LetsEncrypt certificates generated using cert-manager. Common names can be a maximum of 64 characters, which is shorter than what many cloud providers openshift offerings use. To overcome that, we need to add a CNAME to our DNS. First, find your ingress subdomain:
 
 `oc get ingresses.config/cluster -o jsonpath={.spec.domain}`
-Depending on you cloud provuder, this will give you something like 'mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
+Depending on you cloud provider, this will give you something like 'mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud' for IBM ROKS or 
+'apps.qnnof0ro.eastus.aroapp.io' for Azure ARO
 
 With your DNS provider, register a new CNAME that you'll use for this installation. This will be of the form: 
 
@@ -86,7 +87,7 @@ Using the ingress subdomain from the previous step, update the dns name and comm
 
 ### (Optional) Use LetsEncrypt Certificates with the Quarkus Java app
 
-In the ibm-offices-gitops repo that you forked, update the file 'components/app/base/kustomization.yaml' and uncomment the two lines referring to letsencrypt and comment the two lines referring to self-signed. Restart the deployment 'ibmoffice'. 
+In the ibm-offices-gitops repo that you forked, update the file 'components/app/base/tls/letsencrypt-cert.yaml' with your CNAME and ingress values. Then, update the file 'components/app/base/kustomization.yaml' and uncomment the two lines referring to letsencrypt and comment the two lines referring to self-signed. Restart the deployment 'ibmoffice'. 
 
 ### (Optional) Use LetsEncrypt certificates and a custom hostname for Platform Navigator
 
