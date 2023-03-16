@@ -24,7 +24,7 @@ spec:
     availability:
       type: NativeHA
       tls:
-        secretName: queue-manager-ha-secret-internal
+        secretName: mq-nativeha-internal-tls-secret
     storage:
       queueManager:
         class: PATCHED_BY_KUSTOMIZE
