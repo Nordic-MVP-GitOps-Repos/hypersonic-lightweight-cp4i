@@ -44,20 +44,20 @@ spec:
         memory: 2Gi
     mqsc:
       - configMap:
-          name: sample-qm2-configmap
+          name: wellknown-cert-qm-configmap
           items:
             - tls.mqsc
     ini:
       - configMap:
-          name: sample-qm2-configmap
+          name: wellknown-cert-qm-configmap
           items:
             - mq.ini
   version: 9.3.1.1-r1
   pki:
     keys:
-      - name: example
+      - name: default
         secret:
-          secretName: mq-server-tls-secret
+          secretName: mq-server-certificate-secret
           items:
             - tls.key
             - tls.crt

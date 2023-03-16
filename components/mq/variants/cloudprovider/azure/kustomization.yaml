@@ -3,3 +3,4 @@ kind: Component
 
 patchesStrategicMerge:
 - storage-class-nativeha.yaml
+- storage-class-nativeha-wellknown.yaml

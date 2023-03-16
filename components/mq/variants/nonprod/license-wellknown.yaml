@@ -1,0 +1,7 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: wellknown-cert-qm
+spec:
+  license:
+    use: NonProduction

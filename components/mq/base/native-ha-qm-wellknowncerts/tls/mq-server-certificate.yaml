@@ -1,9 +1,9 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: mq-server-tls
+  name: mq-server-certificate
 spec:
-  secretName: mq-server-tls-secret
+  secretName: mq-server-certificate-secret
   duration: 2160h0m0s # 90d
   renewBefore: 360h0m0s # 15d
   commonName: lhscp4i.ceibm.com
@@ -20,7 +20,7 @@ spec:
     - server auth
     - client auth
   dnsNames:
-    - 'sample-qm2-ibm-mq-qm-cp4i.ocp412-fra02-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
+    - 'wellknown-cert-qm.mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
     - 'lhscp4i.ceibm.com'
   issuerRef:
     name: letsencrypt-cluster-issuer

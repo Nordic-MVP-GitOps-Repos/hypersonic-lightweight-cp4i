@@ -1,0 +1,13 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: wellknown-cert-qm
+spec:
+  queueManager:
+    storage:
+      queueManager:
+        class: ibmc-vpc-block-10iops-tier
+      persistedData:
+        class: ibmc-vpc-block-10iops-tier
+      recoveryLogs:
+        class: ibmc-vpc-block-10iops-tier
