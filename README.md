@@ -34,7 +34,7 @@ After applying the bootstrap file, the operators will be installed. By default, 
 
 ### Add the IBM entitlement key to access the container registry
 
-Create an image pull secret in the 'cp4i' namespace with the name ibm-entitlement-key, address cp.icr.io, username cp and you entitlement key as password.
+Create an image pull secret in the 'cp4i' namespace with the name ibm-entitlement-key, address cp.icr.io, username cp and your entitlement key as password.
 
 ### Install operands / capabilities
 
