@@ -40,7 +40,7 @@ Create an image pull secret in the 'cp4i' namespace with the name ibm-entitlemen
 
 Now, uncomment the line referring to 'operands/all-operands.yaml' in [kustomization.yaml](./argocd/kustomization.yaml)
 
-The all-operands.yaml ApplicationSet generates ArgoCD applications for Platforn Navigator, API Connect, OpenShift Logging and OpenShift Monitoring by default. This is a good starting point, since some of the other capabilities require DNS setup to correctly generate certificates. In later steps you can add these capabilities. 
+The all-operands.yaml ApplicationSet generates ArgoCD applications for Platform Navigator, API Connect, MQ (a sample queue manager), OpenShift Logging and OpenShift Monitoring by default. 
 
 If you have enabled the webhook earlier, ArgoCD will refresh and trigger install of the capabilities. If you didn't, open ArgoCD and refresh the bootstrap application in the UI. This happens automatically after 3 minutes. 
 
@@ -49,6 +49,21 @@ The install takes somewhere between 30-60 minutes depending on the cluster resou
 ### Create index patterns for OpenShift Logging
 
 Click the Logging menu item in the OpenShift Console. In the Kibana interface, create two index patterns: 'app' and 'infra' that map to '@timestamp'
+
+### Enable sample applications
+
+Two sample applications are available: 
+
+* A Quarkus Java app implementing a REST endpoint which can be exposed in API Connect
+* A App Connect Enterprise application with two message flows
+
+The sample applications are used to illustrate how automating build and deploy can be done and as such are very simplistic. Each sample app has two repos, one that contains the actual code and one that contains the GitOps config for it. If you just want to try out the applications, fork only the GitOps repos.
+
+For the Java application, fork the repo [ibm-offices-gitops](https://github.com/Nordic-MVP-GitOps-Repos/ibm-offices-gitops). Then, in this repo (not the ibm-offices-gitops one), update the file [apps/ibm-offices.yaml](apps/ibm-offices.yaml) to point to your forked repository. Finally, update the file [argocd/kustomization.yaml](argocd/kustomization.yaml) and uncomment the line pointing to [apps/ibm-offices.yaml](apps/ibm-offices.yaml). You have now added the sample application.
+
+The sample application gets built using a pipeline, which also publishes the API to API Connect. You will need to setup API Connect provider organisations for this to work, but you can run the pipeline and it will just build the code and push the image to the internal registry.
+
+The pipeline interacts with API Connect using the APIC CLI in a Tekton task. To access the images for the APIC CLI, you need to follow the same steps to create the ibm-entitlement-key secret previously, but this time in the 'ibmoffices' namespace
 
 ### (Optional) Register DNS CNAME to enable generating certificates with LetsEncrypt
 
@@ -71,4 +86,3 @@ Using the ingress subdomain from the previous step, update the dns name and comm
 
 ### Change certificates and hostname for Platform Navigator
 
-### Enable sample applications
