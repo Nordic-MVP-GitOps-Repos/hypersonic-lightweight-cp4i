@@ -3,12 +3,21 @@ kind: Kustomization
 
 resources:
  
-  - sample-qm2/sample-qm2.yaml
-  - sample-qm2/sample-qm2-configmap.yaml
-  
-  - tls/internal/issuer.yaml
-  - tls/internal/selfsigned-nativeha-cert.yaml
 
-  - tls/haqmchl-route.yaml
-  - tls/mq-server-tls.yaml
-  - tls/letsencrypt-chain.yaml
+  # Resources for QM using a self signed cerver certificate.
+
+  - native-ha-qm/qm.yaml
+  - native-ha-qm/configmap.yaml
+  - native-ha-qm/sni-route.yaml
+
+  - native-ha-qm/tls/selfsigned-issuer.yaml
+  - native-ha-qm/tls/selfsigned-nativeha-cert.yaml
+
+  # Resources for QM using certificate from LetsEncrypt
+
+  #- native-ha-qm-wellknowcerts/qm.yaml
+  #- native-ha-qm-wellknowcerts/configmap.yaml
+  #- native-ha-qm-wellknowcerts/sni-route.yaml
+
+  #- native-ha-qm-wellknowcerts/tls/mq-server-certificate.yaml
+  #- native-ha-qm-wellknowcerts/tls/letsencrypt-chain.yaml

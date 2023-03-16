@@ -1,0 +1,15 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: native-ha-qm-configmap
+data:
+  mq.ini: |
+    Channels:
+      MaxChannels=200
+      MaxActiveChannels=100
+
+  tls.mqsc: |
+    DEFINE QLOCAL('QUEUE1') DEFPSIST(YES) REPLACE 
+    DEFINE QLOCAL('QUEUE2') DEFPSIST(YES) REPLACE
+    DEFINE CHANNEL(NATIVEHAQMCHL) CHLTYPE(SVRCONN) TRPTYPE(TCP) SSLCAUTH(OPTIONAL) SSLCIPH('ANY_TLS12_OR_HIGHER')
+    SET CHLAUTH(HAQMCHL) TYPE(BLOCKUSER) USERLIST('nobody') ACTION(ADD)

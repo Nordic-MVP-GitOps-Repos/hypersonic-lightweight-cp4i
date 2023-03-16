@@ -1,0 +1,65 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: native-ha-qm
+spec:
+  license:
+    accept: true
+    license: L-RJON-CD3JKX
+    metric: VirtualProcessorCore
+    use: PATCHED_BY_KUSTOMIZE
+  securityContext:
+    supplementalGroups: [99]
+  template:
+    pod:
+      containers:
+        - env:
+            - name: MQSNOAUT
+              value: "yes"
+          name: qmgr
+  queueManager:
+    route:
+      enabled: true
+    name: NATIVEHAQM
+    availability:
+      type: NativeHA
+      tls:
+        secretName: mq-nativeha-internal-tls-secret
+    storage:
+      queueManager:
+        class: PATCHED_BY_KUSTOMIZE
+        deleteClaim: true
+      persistedData:
+        enabled: false
+        class: PATCHED_BY_KUSTOMIZE
+        deleteClaim: true
+      recoveryLogs:
+        enabled: false
+        class: PATCHED_BY_KUSTOMIZE
+        deleteClaim: true
+    resources:
+      limits:
+        memory: 2Gi
+      requests:
+        memory: 1Gi
+    mqsc:
+      - configMap:
+          name: native-ha-qm-configmap
+          items:
+            - tls.mqsc
+    ini:
+      - configMap:
+          name: native-ha-qm-configmap
+          items:
+            - mq.ini
+  version: 9.3.1.1-r1
+  pki:
+    keys:
+      - name: example
+        secret:
+          secretName: mq-nativeha-internal-tls-secret
+          items:
+            - tls.key
+            - tls.crt
+  web:
+    enabled: true

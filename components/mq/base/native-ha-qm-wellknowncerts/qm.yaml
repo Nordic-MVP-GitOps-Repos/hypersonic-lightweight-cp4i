@@ -1,7 +1,7 @@
 apiVersion: mq.ibm.com/v1beta1
 kind: QueueManager
 metadata:
-  name: sample-qm2
+  name: wellknown-cert-qm
 spec:
   license:
     accept: true
@@ -20,7 +20,7 @@ spec:
   queueManager:
     route:
       enabled: true
-    name: SAMPLEQM2
+    name: CERTQM
     availability:
       type: NativeHA
       tls:

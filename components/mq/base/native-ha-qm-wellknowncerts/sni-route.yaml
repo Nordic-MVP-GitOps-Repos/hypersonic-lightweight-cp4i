@@ -6,7 +6,7 @@ spec:
   host: haqmchl.chl.mq.ibm.com
   to:
     kind: Service
-    name: sample-qm2-ibm-mq
+    name: wellknown-cert-qm-ibm-mq
     weight: 100
   port:
     targetPort: qmgr
