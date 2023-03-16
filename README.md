@@ -78,7 +78,11 @@ With your DNS provider, register a new CNAME that you'll use for this installati
 
 your-cp4i.example.com --> mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud
 
-When you generate certificates, the common name will be your-cp4i.example.com and you'll use mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud as DNS names.
+When you generate certificates, the common name will be your-cp4i.example.com and you'll use <something>.mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud as DNS names.
+
+### Enable the LetsEncrypt issuer
+
+In the file [components/platformnavigator/base/kustomization.yaml](components/platformnavigator/base/kustomization.yaml) uncomment the line referring to 'letsencrypt-clusterissuer.yaml'
 
 ### (Optional) Use LetsEncrypt Certificates with MQ
 
