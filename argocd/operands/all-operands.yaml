@@ -12,6 +12,9 @@ spec:
         - name: mq
           namespace: cp4i
           sync-wave: "300"
+        - name: eventstreams
+          namespace: cp4i
+          sync-wave: "300"
         - name: platformnavigator
           namespace: cp4i
           sync-wave: "200"

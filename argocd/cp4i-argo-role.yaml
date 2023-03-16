@@ -7,6 +7,7 @@ rules:
       - '*'
     apiGroups:
       - apiconnect.ibm.com
+      - eventstreams.ibm.com
       - integration.ibm.com
       - mq.ibm.com
       - appconnect.ibm.com
