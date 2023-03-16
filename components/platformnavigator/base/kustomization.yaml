@@ -5,4 +5,4 @@ resources:
   - platform-navigator.yaml
   #- pn-cert.yaml
   # Platform navigator brings in common services which brings in cert manager, so ClusterIssuer will be available.
-  - letsencrypt-clusterissuer.yaml
+  #- letsencrypt-clusterissuer.yaml
