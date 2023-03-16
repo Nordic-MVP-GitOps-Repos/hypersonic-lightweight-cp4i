@@ -55,7 +55,7 @@ Click the Logging menu item in the OpenShift Console. In the Kibana interface, c
 Two sample applications are available: 
 
 * A Quarkus Java app implementing a REST endpoint which can be exposed in API Connect
-* A App Connect Enterprise application with two message flows
+* An App Connect Enterprise application with two message flows
 
 The sample applications are used to illustrate how automating build and deploy can be done and as such are very simplistic. Each sample app has two repos, one that contains the actual code and one that contains the GitOps config for it. If you just want to try out the applications, fork only the GitOps repos.
 
@@ -64,6 +64,8 @@ For the Java application, fork the repo [ibm-offices-gitops](https://github.com/
 The sample application gets built using a pipeline, which also publishes the API to API Connect. You will need to setup API Connect provider organisations for this to work, but you can run the pipeline and it will just build the code and push the image to the internal registry.
 
 The pipeline interacts with API Connect using the APIC CLI in a Tekton task. To access the images for the APIC CLI, you need to follow the same steps to create the ibm-entitlement-key secret previously, but this time in the 'ibmoffices' namespace
+
+For the ACE application, fork the repo [ace-hello-world-gitops](https://github.com/Nordic-MVP-GitOps-Repos/ace-hello-world-gitops), update the file [apps/ace-hello-world.yaml](apps/ace-hello-world.yaml) with your forked repo URL. Again, update kustomization.yaml to uncomment the line pointing to 'apps/ace-hello-world.yaml'. This enables the ACE application and creates a namespace 'ace-hello-world'. For the S2I build process to work, you need to create the ibm-entitlement-key secret in this namespace also. The ACE application is built using a pipeline. Start the pipeline and the application will get built and pushed to the internal registry.
 
 ### (Optional) Register DNS CNAME to enable generating certificates with LetsEncrypt
 
@@ -78,11 +80,10 @@ your-cp4i.example.com --> mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3b
 
 When you generate certificates, the common name will be your-cp4i.example.com and you'll use mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud as DNS names.
 
-If you'd rather use self-signed certificates, this also works. TBW: files to update.
-
-### Enable MQ sample queue manager
+### (Optional) Use LetsEncrypt Certificates with MQ
 
 Using the ingress subdomain from the previous step, update the dns name and common name in [mq-server-tls.yaml](components/mq/base/tls/mq-server-tls.yaml). Now, update the [all-operands.yaml](argocd/operands/all-operands.yaml) file and uncomment the three lines referring to MQ.
 
-### Change certificates and hostname for Platform Navigator
+### (Optional) Use LetsEncrypt Certificates with the Quarkus Java app
 
+### (Optional) Use LetsEncrypt certificates and a custom hostname for Platform Navigator
