@@ -80,7 +80,7 @@ your-cp4i.example.com --> mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3b
 
 When you generate certificates, the common name will be your-cp4i.example.com and you'll use <something>.mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud as DNS names.
 
-### Enable the LetsEncrypt issuer
+### (Optional) Enable the LetsEncrypt issuer
 
 In the file [components/platformnavigator/base/kustomization.yaml](components/platformnavigator/base/kustomization.yaml) uncomment the line referring to 'letsencrypt-clusterissuer.yaml'
 
