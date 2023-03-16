@@ -82,8 +82,10 @@ When you generate certificates, the common name will be your-cp4i.example.com an
 
 ### (Optional) Use LetsEncrypt Certificates with MQ
 
-Using the ingress subdomain from the previous step, update the dns name and common name in [mq-server-tls.yaml](components/mq/base/tls/mq-server-tls.yaml). Now, update the [all-operands.yaml](argocd/operands/all-operands.yaml) file and uncomment the three lines referring to MQ.
+Using the ingress subdomain from the previous step, update the dns name and common name in [mq-server-tls.yaml](components/mq/base/native-ha-qm-wellknowncerts/tls/mq-server-certificate.yaml). Now, update the [components/mq/base/kustomization.yaml](components/mq/base/kustomization.yaml) file and uncomment the lines referring to 'native-ha-qm-wellknowncerts'.
 
 ### (Optional) Use LetsEncrypt Certificates with the Quarkus Java app
+
+In the ibm-offices-gitops repo that you forked, update the file 'components/app/base/kustomization.yaml' and uncomment the two lines referring to letsencrypt and comment the two lines referring to self-signed. Restart the deployment 'ibmoffice'. 
 
 ### (Optional) Use LetsEncrypt certificates and a custom hostname for Platform Navigator
