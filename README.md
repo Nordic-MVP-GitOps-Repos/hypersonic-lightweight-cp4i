@@ -95,6 +95,10 @@ Using the ingress subdomain from the previous step, update the dns name and comm
 
 In the ibm-offices-gitops repo that you forked, update the file 'components/app/base/tls/letsencrypt-cert.yaml' with your CNAME and ingress values. Then, update the file 'components/app/base/kustomization.yaml' and uncomment the two lines referring to letsencrypt and comment the two lines referring to self-signed. Restart the deployment 'ibmoffice'. 
 
+### (Optional) Use LetsEncrypt Certificates with the App Connect app
+
+In the ace-hello-world-gitops repo that you forked, add a letsencrypt issuer and a certificate with your CNAME and ingress values in the folder 'components/app/base'. Then, update the file 'components/app/base/kustomization.yaml' and add these two files. Change the reference to 'secretName' in 'ace-helloworld-integrationserver.yaml' to what you named your new certificate
+
 ### (Optional) Use LetsEncrypt certificates and a custom hostname for Platform Navigator
 
 https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=certificates-using-custom-hostnames-platform-ui
