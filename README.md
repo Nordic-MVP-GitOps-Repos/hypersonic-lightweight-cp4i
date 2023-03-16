@@ -89,3 +89,5 @@ Using the ingress subdomain from the previous step, update the dns name and comm
 In the ibm-offices-gitops repo that you forked, update the file 'components/app/base/kustomization.yaml' and uncomment the two lines referring to letsencrypt and comment the two lines referring to self-signed. Restart the deployment 'ibmoffice'. 
 
 ### (Optional) Use LetsEncrypt certificates and a custom hostname for Platform Navigator
+
+https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=certificates-using-custom-hostnames-platform-ui
