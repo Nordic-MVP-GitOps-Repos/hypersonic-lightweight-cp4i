@@ -85,6 +85,8 @@ When you generate certificates, the common name will be your-cp4i.example.com an
 
 In the file [components/platformnavigator/base/kustomization.yaml](components/platformnavigator/base/kustomization.yaml) uncomment the line referring to 'letsencrypt-clusterissuer.yaml'
 
+If on OpenShift 4.10, you need to configure security context, see https://cert-manager.io/docs/release-notes/release-notes-1.10/
+
 ### (Optional) Use LetsEncrypt Certificates with MQ
 
 Using the ingress subdomain from the previous step, update the dns name and common name in [mq-server-tls.yaml](components/mq/base/native-ha-qm-wellknowncerts/tls/mq-server-certificate.yaml). Now, update the [components/mq/base/kustomization.yaml](components/mq/base/kustomization.yaml) file and uncomment the lines referring to 'native-ha-qm-wellknowncerts'.
