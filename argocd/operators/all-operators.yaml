@@ -30,7 +30,7 @@ spec:
     spec:
       project: 'cp4i-operators'
       source:
-        repoURL: https://github.com/thomas-mattsson/hypersonic-lightweight-cp4i.git
+        repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
         targetRevision: 'HEAD'
         path: 'components/{{name}}/operator'
       destination:
