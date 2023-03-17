@@ -34,13 +34,13 @@ After applying the bootstrap file, the operators will be installed. By default, 
 
 ### Add the IBM entitlement key to access the container registry
 
-Create an image pull secret in the 'cp4i' namespace with the name ibm-entitlement-key, address cp.icr.io, username cp and you entitlement key as password.
+Create an image pull secret in the 'cp4i' namespace with the name ibm-entitlement-key, address cp.icr.io, username cp and your entitlement key as password.
 
 ### Install operands / capabilities
 
 Now, uncomment the line referring to 'operands/all-operands.yaml' in [kustomization.yaml](./argocd/kustomization.yaml)
 
-The all-operands.yaml ApplicationSet generates ArgoCD applications for Platform Navigator, API Connect, MQ (a sample queue manager), Event Streams (a non-secure, non-persistent instance) OpenShift Logging and OpenShift Monitoring by default. 
+The all-operands.yaml ApplicationSet generates ArgoCD applications for Platform Navigator, API Connect, MQ (a sample queue manager), Event Streams (a non-secure, non-persistent instance), OpenShift Logging and OpenShift Monitoring. 
 
 If you have enabled the webhook earlier, ArgoCD will refresh and trigger install of the capabilities. If you didn't, open ArgoCD and refresh the bootstrap application in the UI. This happens automatically after 3 minutes. 
 
