@@ -1,0 +1,8 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: cs-onprem-tenant-config
+  namespace: ibm-common-services
+data:
+  custom_host_certificate_secret: platform-navigator-wildcardcert
+  custom_hostname: cp-console.lhscp4i.ceibm.com
