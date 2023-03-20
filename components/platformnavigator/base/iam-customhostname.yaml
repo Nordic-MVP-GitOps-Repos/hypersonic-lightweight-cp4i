@@ -1,0 +1,56 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: iam-custom-hostname
+  namespace: ibm-common-services
+  labels:
+    app: iam-custom-hostname
+spec:
+  template:
+    metadata:
+      labels:
+        app: iam-custom-hostname
+    spec:
+      containers:
+      - name: iam-custom-hostname
+        image: quay.io/opencloudio/iam-custom-hostname:v0.1
+        command: ["python3", "/scripts/saas_script.py"]
+        imagePullPolicy: Always
+        env:
+          - name: OPENSHIFT_URL
+            value: https://kubernetes.default:443
+          - name: IDENTITY_PROVIDER_URL
+            value: https://platform-identity-provider:4300
+          - name: PLATFORM_AUTH_URL
+            value: https://platform-auth-service:9443
+          - name: POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+          - name: WLP_CLIENT_ID
+            valueFrom:
+              secretKeyRef:
+                key: WLP_CLIENT_ID
+                name: platform-oidc-credentials
+          - name: WLP_CLIENT_SECRET
+            valueFrom:
+              secretKeyRef:
+                key: WLP_CLIENT_SECRET
+                name: platform-oidc-credentials
+          - name: OAUTH2_CLIENT_REGISTRATION_SECRET
+            valueFrom:
+              secretKeyRef:
+                key: OAUTH2_CLIENT_REGISTRATION_SECRET
+                name: platform-oidc-credentials
+          - name: DEFAULT_ADMIN_USER
+            valueFrom:
+              secretKeyRef:
+                key: admin_username
+                name: platform-auth-idp-credentials
+          - name: DEFAULT_ADMIN_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                key: admin_password
+                name: platform-auth-idp-credentials
+      restartPolicy: OnFailure
