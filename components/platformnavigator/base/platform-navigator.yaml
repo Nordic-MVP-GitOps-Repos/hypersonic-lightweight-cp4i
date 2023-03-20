@@ -15,6 +15,6 @@ spec:
   #tls:
   #  secretName: "pn-lec-cert-secret"
   #  serverCertificate: tls.crt
-  #  caCertificate: tls.crt
+  #  caCertificate: ca.crt
   #  key: tls.key
-  #uiHostname: "lhscp4i.ceibm.com"
+  #uiHostname: "cpd.lhscp4i.ceibm.com"
