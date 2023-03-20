@@ -101,4 +101,7 @@ In the ace-hello-world-gitops repo that you forked, add a letsencrypt issuer and
 
 ### (Optional) Use LetsEncrypt certificates and a custom hostname for Platform Navigator
 
-https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=certificates-using-custom-hostnames-platform-ui
+1. TBW: DNS setup for Azure ARO and for IBM ROKS. Generating certs with certbot. 
+1. Make sure your CA and certs secret contains ca.crt and not only tls.crt and tls.key
+1. https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=certificates-using-custom-hostnames-platform-ui
+1. https://www.ibm.com/docs/en/cpfs?topic=cc-updating-custom-hostname-tls-secret-by-using-configmap
