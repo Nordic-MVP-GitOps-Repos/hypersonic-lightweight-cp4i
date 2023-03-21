@@ -41,7 +41,11 @@ Create an image pull secret in the 'cp4i' namespace with the name ibm-entitlemen
 Now, uncomment the line referring to 'operands/all-operands.yaml' in [kustomization.yaml](./argocd/kustomization.yaml)
 
 The all-operands.yaml ApplicationSet generates ArgoCD applications for Platform Navigator, 
- MQ (a sample queue manager), Event Streams (an instance without authentication and authorization enabled), OpenShift Logging and OpenShift Monitoring. API Connect is not installed by default, since it doesn't support changing certificates and hostnames after installation. If you want to use custom certificates, install API Connect after you've added your custom certificates as described below.
+ MQ (a sample queue manager), Event Streams (an instance without authentication and authorization enabled), OpenShift Logging and OpenShift Monitoring. 
+ 
+ API Connect is not installed by default, since it doesn't support changing certificates and hostnames after installation. If you want to use custom certificates, install API Connect after you've added your custom certificates as described below. 
+ 
+ If you're ok with self-signed certificates, you can add the API Connect capability back in the [all-operands.yaml](argocd/operands/all-operands.yaml) file
 
 If you have enabled the webhook earlier, ArgoCD will refresh and trigger install of the capabilities. If you didn't, open ArgoCD and refresh the bootstrap application in the UI. This happens automatically after 3 minutes. 
 
