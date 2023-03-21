@@ -23,7 +23,7 @@ spec:
         valueFrom:
           configMapKeyRef:
             key: kafka-metrics-config.yaml
-            name: light-insecure-metrics-config
+            name: eventstreams-metrics-config
         type: jmxPrometheusExporter
       storage:
         type: persistent-claim
@@ -40,7 +40,7 @@ spec:
         valueFrom:
           configMapKeyRef:
             key: zookeeper-metrics-config.yaml
-            name: light-insecure-metrics-config
+            name: eventstreams-metrics-config
         type: jmxPrometheusExporter
       storage:
         type: persistent-claim
