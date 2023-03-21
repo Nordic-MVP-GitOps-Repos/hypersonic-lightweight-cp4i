@@ -40,7 +40,8 @@ Create an image pull secret in the 'cp4i' namespace with the name ibm-entitlemen
 
 Now, uncomment the line referring to 'operands/all-operands.yaml' in [kustomization.yaml](./argocd/kustomization.yaml)
 
-The all-operands.yaml ApplicationSet generates ArgoCD applications for Platform Navigator, API Connect, MQ (a sample queue manager), Event Streams (a non-secure, non-persistent instance), OpenShift Logging and OpenShift Monitoring. 
+The all-operands.yaml ApplicationSet generates ArgoCD applications for Platform Navigator, 
+ MQ (a sample queue manager), Event Streams (an instance without authentication and authorization enabled), OpenShift Logging and OpenShift Monitoring. API Connect is not installed by default, since it doesn't support changing certificates and hostnames after installation. If you want to use custom certificates, install API Connect after you've added your custom certificates as described below.
 
 If you have enabled the webhook earlier, ArgoCD will refresh and trigger install of the capabilities. If you didn't, open ArgoCD and refresh the bootstrap application in the UI. This happens automatically after 3 minutes. 
 
@@ -111,4 +112,3 @@ For detailed instructions, see:
   
 * https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=certificates-using-custom-hostnames-platform-ui
 * https://www.ibm.com/docs/en/cpfs?topic=cc-updating-custom-hostname-tls-secret-by-using-configmap
-* https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=kubernetes-converting-custom-front-endingress-certificates-after-deployment

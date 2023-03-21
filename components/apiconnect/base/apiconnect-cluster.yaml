@@ -14,7 +14,7 @@ spec:
     use: PATCHED_BY_KUSTOMIZE
   endpointTypes:
     - APIs
-    - Events
+    #- Events
   analytics:
     storage:
       enabled: true
