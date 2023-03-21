@@ -111,3 +111,4 @@ For detailed instructions, see:
   
 * https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=certificates-using-custom-hostnames-platform-ui
 * https://www.ibm.com/docs/en/cpfs?topic=cc-updating-custom-hostname-tls-secret-by-using-configmap
+* https://www.ibm.com/docs/en/api-connect/10.0.5.x_lts?topic=kubernetes-converting-custom-front-endingress-certificates-after-deployment
