@@ -107,6 +107,7 @@ In the ace-hello-world-gitops repo that you forked, add a letsencrypt issuer and
 1. Now, copy the secret with your custom certificates to the ibm-common-services namespace
 1. Update the configmap [cs-onprem-tenant-config.yaml](components/platformnavigator/base/cs-onprem-tenant-config.yaml) with your hostname and secret reference
 1. We need to apply the configmap and run a job to configure common services to use the certificate and hostname. In [kustomization.yaml](components/platformnavigator/base/kustomization.yaml) add the files 'cs-onprem-tenant-config.yaml' and 'iam-customhostname.yaml'
+1. Restart the operand-deployment-lifecycle-manager pod in the ibm-common-services namespace
 
 For detailed instructions, see: 
   
