@@ -99,9 +99,15 @@ In the ibm-offices-gitops repo that you forked, update the file 'components/app/
 
 In the ace-hello-world-gitops repo that you forked, add a letsencrypt issuer and a certificate with your CNAME and ingress values in the folder 'components/app/base'. Then, update the file 'components/app/base/kustomization.yaml' and add these two files. Change the reference to 'secretName' in 'ace-helloworld-integrationserver.yaml' to what you named your new certificate
 
-### (Optional) Use LetsEncrypt certificates and a custom hostname for Platform Navigator
+### (Optional) Use your own certificates and a custom hostname for Platform Navigator
 
-1. TBW: DNS setup for Azure ARO and for IBM ROKS. Generating certs with certbot. 
-1. Make sure your CA and certs secret contains ca.crt and not only tls.crt and tls.key
-1. https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=certificates-using-custom-hostnames-platform-ui
-1. https://www.ibm.com/docs/en/cpfs?topic=cc-updating-custom-hostname-tls-secret-by-using-configmap
+1. Create a secret in the namespace where you installed platform navigator (in this repo 'cp4i'). The secret must contain three key/value pairs: tls.key, ca.crt and tls.crt.
+1. Update the file [platform-navigator.yaml](components/platformnavigator/base/platform-navigator.yaml) and uncomment the tls section and refer to the secret you just created and your hostname. Don't change the 'cpd' part of the hostname. When you've saved the file, ArgoCD will apply it and the operator will make the required changes. This takes 5-10 minutes.
+1. Now, copy the secret with your custom certificates to the ibm-common-services namespace
+1. Update the configmap [cs-onprem-tenant-config.yaml](components/platformnavigator/base/cs-onprem-tenant-config.yaml) with your hostname and secret reference
+1. We need to apply the configmap and run a job to configure common services to use the certificate and hostname. In [kustomization.yaml](components/platformnavigator/base/kustomization.yaml) add the files 'cs-onprem-tenant-config.yaml' and 'iam-customhostname.yaml'
+
+For detailed instructions, see: 
+  
+* https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=certificates-using-custom-hostnames-platform-ui
+* https://www.ibm.com/docs/en/cpfs?topic=cc-updating-custom-hostname-tls-secret-by-using-configmap
