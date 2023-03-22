@@ -46,3 +46,8 @@ spec:
       syncPolicy:
         automated:
           selfHeal: true
+      ignoreDifferences:
+      - group: appconnect.ibm.com
+        kind: Configuration
+        jsonPointers:
+          - /spec/data
