@@ -1,0 +1,31 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: IntegrationServer
+metadata:
+  name: sample-is
+spec:
+  adminServerSecure: true
+  createDashboardUsers: true
+  designerFlowsOperationMode: disabled
+  enableMetrics: true
+  license:
+    accept: true
+    license: L-APEH-CJUCNR
+    use: CloudPakForIntegrationNonProduction
+  pod:
+    containers:
+      runtime:
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 500m
+            memory: 512Mi
+  replicas: 1
+  router:
+    timeout: 120s
+  service:
+    endpointType: http
+  version: '12.0'
+  barURL: >-
+    https://github.com/Nordic-MVP-GitOps-Repos/ace-hello-world/raw/main/ace-hello-world.bar
