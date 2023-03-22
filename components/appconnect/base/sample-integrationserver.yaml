@@ -2,6 +2,7 @@ apiVersion: appconnect.ibm.com/v1beta1
 kind: IntegrationServer
 metadata:
   name: sample-is
+  namespace: cp4i
 spec:
   adminServerSecure: true
   createDashboardUsers: true
@@ -29,3 +30,5 @@ spec:
   version: '12.0'
   barURL: >-
     https://github.com/Nordic-MVP-GitOps-Repos/ace-hello-world/raw/main/ace-hello-world.bar
+  configurations:
+    - empty-credentials

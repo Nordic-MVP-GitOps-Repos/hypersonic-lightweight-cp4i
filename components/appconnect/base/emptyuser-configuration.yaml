@@ -1,0 +1,9 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: Configuration
+metadata:
+  name: empty-credentials
+  namespace: cp4i
+spec:
+  type: barauth
+  description: Empty username and password base64 encoded {"authType":"BASIC_AUTH","credentials":{"username":"","password":""}}
+  data: eyJhdXRoVHlwZSI6IkJBU0lDX0FVVEgiLCJjcmVkZW50aWFscyI6eyJ1c2VybmFtZSI6IiIsInBhc3N3b3JkIjoiIn19Cg==
