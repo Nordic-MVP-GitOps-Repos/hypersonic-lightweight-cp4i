@@ -6,7 +6,7 @@ spec:
   secretName: mq-server-certificate-secret
   duration: 2160h0m0s # 90d
   renewBefore: 360h0m0s # 15d
-  commonName: lhscp4i.ceibm.com
+  commonName: aro.ceibm.com
   subject:
     organizations:
       - mq
@@ -20,8 +20,8 @@ spec:
     - server auth
     - client auth
   dnsNames:
-    - 'wellknown-cert-qm.mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud'
-    - 'lhscp4i.ceibm.com'
+    - 'wellknown-cert-qm-ibm-mq-qm-cp4i.apps.jn8qaoym.eastus.aroapp.io'
+    - 'aro.ceibm.com'
   issuerRef:
     name: letsencrypt-cluster-issuer
     kind: ClusterIssuer
