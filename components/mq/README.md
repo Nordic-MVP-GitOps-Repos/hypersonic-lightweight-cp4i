@@ -1,1 +1,1 @@
-For examples of how to connect to queue managers from outside the cluster see: https://github.com/ibm-messaging/cp4i-mq-samples
+For examples of how to connect to queue managers from outside the cluster see: https://github.com/ibm-messaging/cp4i-mq-samples and https://community.ibm.com/community/user/integration/blogs/callum-jackson1/2021/02/15/connecting-to-a-queue-manager-running-in-openshift
