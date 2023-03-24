@@ -5,7 +5,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-RJON-CD3JKX
+    license: PATCHED_BY_KUSTOMIZE
     metric: VirtualProcessorCore
     use: PATCHED_BY_KUSTOMIZE
   securityContext:

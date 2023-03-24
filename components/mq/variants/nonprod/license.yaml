@@ -1,7 +1,8 @@
 apiVersion: mq.ibm.com/v1beta1
 kind: QueueManager
 metadata:
-  name: native-ha-qm
+  name: name-is-ignored
 spec:
   license:
     use: NonProduction
+    license: L-RJON-CD3JKX
