@@ -10,6 +10,9 @@ kind: Certificate
 metadata:
   name: my-selfsigned-ca
 spec:
+  secretTemplate:
+    annotations:
+      cert-utils-operator.redhat-cop.io/generate-cert-info: "true"
   subject:
     organizations: 
       - root
