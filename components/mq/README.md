@@ -1,3 +1,12 @@
+### MQ Operator versions and licenses ###
+
+See: 
+
+* https://www.ibm.com/docs/sv/ibm-mq/9.3?topic=operator-version-support-mq
+* https://www.ibm.com/docs/en/ibm-mq/9.3?topic=mqibmcomv1beta1-licensing-reference
+
+### Connectivity from outside the cluster ###
+
 TLS is required on the Queue Manager side to connect from outside the cluster since TLS-SNI is used to route to the correct Queue Manager in the cluster. Two options exist for what gets sent by the client in the SNI header, either the Channel name or the Hostname. 
 
 If the Channel name is used to route, the Channel name must be unique in the cluster and a [TLS-SNI route](components/mq/base/native-ha-qm/sni-route.yaml) that maps from the channel name to the MQ OpenShift service needs to be setup. 
