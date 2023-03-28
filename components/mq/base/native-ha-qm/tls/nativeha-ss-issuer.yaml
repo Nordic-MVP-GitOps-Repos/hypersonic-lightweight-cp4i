@@ -1,0 +1,7 @@
+# Issuer for creating certificates that will only be used internally between QMs in the nativeha setup
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: nativeha-selfsigned-issuer
+spec:
+  selfSigned: {}

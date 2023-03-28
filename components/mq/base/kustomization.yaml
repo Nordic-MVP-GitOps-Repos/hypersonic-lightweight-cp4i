@@ -10,8 +10,10 @@ resources:
   - native-ha-qm/configmap.yaml
   - native-ha-qm/sni-route.yaml
 
-  - native-ha-qm/tls/selfsigned-issuer.yaml
-  - native-ha-qm/tls/selfsigned-nativeha-cert.yaml
+  - native-ha-qm/tls/ca-ss-issuer.yaml
+  - native-ha-qm/tls/nativeha-ss-issuer.yaml
+  - native-ha-qm/tls/nativeha-certificate.yaml
+  - native-ha-qm/tls/queue-manager-certificate.yaml
 
   # Resources for QM using certificate from LetsEncrypt
 

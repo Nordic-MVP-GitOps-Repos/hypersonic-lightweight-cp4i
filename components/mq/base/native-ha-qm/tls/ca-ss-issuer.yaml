@@ -1,3 +1,5 @@
+# Issuer for creating certs to be used by when communicating with the QM
+# from outside the cluster. 
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
@@ -8,17 +10,17 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: my-selfsigned-ca
+  name: selfsigned-ca
 spec:
   secretTemplate:
     annotations:
       cert-utils-operator.redhat-cop.io/generate-cert-info: "true"
+  secretName: selfsigned-ca-secret
   subject:
     organizations: 
-      - root
+      - "selfsignedca"
   isCA: true
-  commonName: my-selfsigned-ca
-  secretName: root-secret
+  commonName: "ssca"
   privateKey:
     algorithm: ECDSA
     size: 256
@@ -33,4 +35,4 @@ metadata:
   name: mq-selfsigned-issuer
 spec:
   ca:
-    secretName: root-secret
+    secretName: selfsigned-ca-secret

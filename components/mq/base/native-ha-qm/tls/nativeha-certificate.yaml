@@ -1,0 +1,30 @@
+# Certificate for internal native ha communication
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: mq-nativeha-internal-tls
+spec:
+  secretTemplate:
+    annotations:
+      cert-utils-operator.redhat-cop.io/generate-cert-info: "true"
+  secretName: mq-nativeha-internal-tls-secret
+  duration: 2160h0m0s # 90d
+  renewBefore: 360h0m0s # 15d
+  subject:
+    organizations:
+      - 'mqss'
+  privateKey:
+    algorithm: RSA
+    encoding: PKCS1
+    size: 2048
+  usages:
+    - key encipherment
+    - digital signature
+    - server auth
+    - client auth
+  dnsNames:
+    - '*.cp4i.svc'
+    - '*.cp4i.svc.local'
+    - '*.cp4i.svc.local.cluster'
+  issuerRef:
+    name: nativeha-selfsigned-issuer

@@ -1,17 +1,20 @@
+# Certificate for external communication from clients outside the cluster
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: mq-nativeha-internal-tls
+  name: mq-external-tls
 spec:
   secretTemplate:
     annotations:
       cert-utils-operator.redhat-cop.io/generate-cert-info: "true"
-  secretName: mq-nativeha-internal-tls-secret
+      cert-utils-operator.redhat-cop.io/generate-java-keystores: "true"
+  secretName: mq-external-tls-secret
   duration: 2160h0m0s # 90d
   renewBefore: 360h0m0s # 15d
+  commonName: "extcert"
   subject:
     organizations:
-      - mq
+      - 'mqss'
   privateKey:
     algorithm: RSA
     encoding: PKCS1
