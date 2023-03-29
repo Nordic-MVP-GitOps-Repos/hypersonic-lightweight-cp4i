@@ -1,18 +1,23 @@
 ## Introduction
+
 This repo can be used to install IBM Cloud Pak 4 Integration capabilities and sample applications
+
+## Repository Structure
+
+![Repository structure](./media/CP4I-GitOps-Repo-Setup.png)
 
 ## Instructions
 
-You should have an existing OpenShift cluster available. 
+You should have an existing OpenShift cluster available.
 
 ### Fork this repo and adapt it for your environment
 
-First, fork this repo. Now update the following files that refer to your repo url: 
+First, fork this repo. Now update the following files that refer to your repo url:
 
-* [bootstrap.yaml](./argocd/bootstrap.yaml) 
-* [common.yaml](argocd/common.yaml)
-* [all-operators](argocd/operators/all-operators.yaml)
-* [all-operands.yaml](argocd/operands/all-operands.yaml) Here, also update with your environment, IBM Classic infrastructure (ibm-classic), IBM VPC infrastructure (ibm-vpc) and Azure (azure) are valid values
+- [bootstrap.yaml](./argocd/bootstrap.yaml)
+- [common.yaml](argocd/common.yaml)
+- [all-operators](argocd/operators/all-operators.yaml)
+- [all-operands.yaml](argocd/operands/all-operands.yaml) Here, also update with your environment, IBM Classic infrastructure (ibm-classic), IBM VPC infrastructure (ibm-vpc) and Azure (azure) are valid values
 
 ### Install the OpenShift GitOps operator
 
@@ -24,9 +29,9 @@ Add a webhook to https://your-gitops-server.com/api/webhook for the push event. 
 
 ### Add the bootstrap ArgoCD application to install operators
 
-In the OpenShift Console, click the "plus" icon and paste the contents of [bootstrap.yaml](./argocd/bootstrap.yaml) to create the bootstrap ArgoCD application. This application will find the [kustomization.yaml](./argocd/kustomization.yaml) file which points to the [common.yaml](./argocd/common.yaml)  application and an ArgoCD ApplicationSet [all-operators.yaml](./argocd/operators/all-operators.yaml)
+In the OpenShift Console, click the "plus" icon and paste the contents of [bootstrap.yaml](./argocd/bootstrap.yaml) to create the bootstrap ArgoCD application. This application will find the [kustomization.yaml](./argocd/kustomization.yaml) file which points to the [common.yaml](./argocd/common.yaml) application and an ArgoCD ApplicationSet [all-operators.yaml](./argocd/operators/all-operators.yaml)
 
-The "common" application creates a namespace (cp4i by default) and a catalogsource for the IBM operators. 
+The "common" application creates a namespace (cp4i by default) and a catalogsource for the IBM operators.
 
 The all-operators.yaml ApplicationSet generates ArgoCD applications for all operators based on a simple naming convention, pointing into the components subdirectory where Subscriptions for each operator can be found.
 
@@ -40,16 +45,16 @@ Create an image pull secret in the 'cp4i' namespace with the name ibm-entitlemen
 
 Now, uncomment the line referring to 'operands/all-operands.yaml' in [kustomization.yaml](./argocd/kustomization.yaml)
 
-The [all-operands.yaml](argocd/operands/all-operands.yaml) ApplicationSet generates ArgoCD applications for Platform Navigator, 
- MQ ([a sample queue manager](components/mq/base/native-ha-qm/qm.yaml)), Event Streams ([an instance without authentication and authorization enabled](components/eventstreams/base/eventstreams-persistent.yaml)), App Connect Enterprise ([an integration server pointing to a BAR file](components/appconnect/base/sample-integrationserver.yaml)),   OpenShift Logging and OpenShift Monitoring. 
- 
- API Connect is not installed by default, since it doesn't support changing certificates and hostnames after installation. If you want to use custom certificates, install API Connect after you've added your custom certificates as described below. 
- 
- If you're ok with self-signed certificates, you can add the API Connect capability back in the [all-operands.yaml](argocd/operands/all-operands.yaml) file
+The [all-operands.yaml](argocd/operands/all-operands.yaml) ApplicationSet generates ArgoCD applications for Platform Navigator,
+MQ ([a sample queue manager](components/mq/base/native-ha-qm/qm.yaml)), Event Streams ([an instance without authentication and authorization enabled](components/eventstreams/base/eventstreams-persistent.yaml)), App Connect Enterprise ([an integration server pointing to a BAR file](components/appconnect/base/sample-integrationserver.yaml)), OpenShift Logging and OpenShift Monitoring.
 
-If you have enabled the webhook earlier, ArgoCD will refresh and trigger install of the capabilities. If you didn't, open ArgoCD and refresh the bootstrap application in the UI. This happens automatically after 3 minutes. 
+API Connect is not installed by default, since it doesn't support changing certificates and hostnames after installation. If you want to use custom certificates, install API Connect after you've added your custom certificates as described below.
 
-The install takes somewhere between 30-60 minutes depending on the cluster resources. 
+If you're ok with self-signed certificates, you can add the API Connect capability back in the [all-operands.yaml](argocd/operands/all-operands.yaml) file
+
+If you have enabled the webhook earlier, ArgoCD will refresh and trigger install of the capabilities. If you didn't, open ArgoCD and refresh the bootstrap application in the UI. This happens automatically after 3 minutes.
+
+The install takes somewhere between 30-60 minutes depending on the cluster resources.
 
 ### Create index patterns for OpenShift Logging
 
@@ -57,10 +62,10 @@ Click the Logging menu item in the OpenShift Console. In the Kibana interface, c
 
 ### Enable sample applications
 
-Two sample applications are available: 
+Two sample applications are available:
 
-* A Quarkus Java app implementing a REST endpoint which can be exposed in API Connect
-* An App Connect Enterprise application with two message flows
+- A Quarkus Java app implementing a REST endpoint which can be exposed in API Connect
+- An App Connect Enterprise application with two message flows
 
 The sample applications are used to illustrate how automating build and deploy can be done and as such are very simplistic. Each sample app has two repos, one that contains the actual code and one that contains the GitOps config for it. If you just want to try out the applications, fork only the GitOps repos.
 
@@ -77,10 +82,10 @@ For the ACE application, fork the repo [ace-hello-world-gitops](https://github.c
 Instead of self-signed certificates we can use LetsEncrypt certificates generated using cert-manager. Common names can be a maximum of 64 characters, which is shorter than what many cloud providers openshift offerings use. To overcome that, we need to add a CNAME to our DNS. First, find your ingress subdomain:
 
 `oc get ingresses.config/cluster -o jsonpath={.spec.domain}`
-Depending on you cloud provider, this will give you something like 'mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud' for IBM ROKS or 
+Depending on you cloud provider, this will give you something like 'mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud' for IBM ROKS or
 'apps.qnnof0ro.eastus.aroapp.io' for Azure ARO
 
-With your DNS provider, register a new CNAME that you'll use for this installation. This will be of the form: 
+With your DNS provider, register a new CNAME that you'll use for this installation. This will be of the form:
 
 your-cp4i.example.com --> mycluster-fra02-c3c-16x32-bcaeaf77ec409da3581f519c2c3bf303-0000.eu-de.containers.appdomain.cloud
 
@@ -98,7 +103,7 @@ Using the ingress subdomain from the previous step, update the dns name and comm
 
 ### (Optional) Use LetsEncrypt Certificates with the Quarkus Java app
 
-In the ibm-offices-gitops repo that you forked, update the file 'components/app/base/tls/letsencrypt-cert.yaml' with your CNAME and ingress values. Then, update the file 'components/app/base/kustomization.yaml' and uncomment the two lines referring to letsencrypt and comment the two lines referring to self-signed. Restart the deployment 'ibmoffice'. 
+In the ibm-offices-gitops repo that you forked, update the file 'components/app/base/tls/letsencrypt-cert.yaml' with your CNAME and ingress values. Then, update the file 'components/app/base/kustomization.yaml' and uncomment the two lines referring to letsencrypt and comment the two lines referring to self-signed. Restart the deployment 'ibmoffice'.
 
 ### (Optional) Use LetsEncrypt Certificates with the App Connect app
 
@@ -113,7 +118,7 @@ In the ace-hello-world-gitops repo that you forked, add a letsencrypt issuer and
 1. We need to apply the configmap and run a job to configure common services to use the certificate and hostname. In [kustomization.yaml](components/platformnavigator/base/kustomization.yaml) add the files 'cs-onprem-tenant-config.yaml' and 'iam-customhostname.yaml'
 1. Restart the operand-deployment-lifecycle-manager pod in the ibm-common-services namespace
 
-For detailed instructions, see: 
-  
-* https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=certificates-using-custom-hostnames-platform-ui
-* https://www.ibm.com/docs/en/cpfs?topic=cc-updating-custom-hostname-tls-secret-by-using-configmap
+For detailed instructions, see:
+
+- https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=certificates-using-custom-hostnames-platform-ui
+- https://www.ibm.com/docs/en/cpfs?topic=cc-updating-custom-hostname-tls-secret-by-using-configmap
