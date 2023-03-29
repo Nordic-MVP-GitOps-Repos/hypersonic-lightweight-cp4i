@@ -23,8 +23,8 @@ spec:
     name: NATIVEHAQM
     availability:
       type: NativeHA
-      #tls:
-      #  secretName: mq-nativeha-internal-tls-secret
+      tls:
+        secretName: mq-nativeha-internal-tls-secret
     storage:
       queueManager:
         class: PATCHED_BY_KUSTOMIZE
