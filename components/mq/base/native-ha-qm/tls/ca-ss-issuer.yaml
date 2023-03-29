@@ -15,6 +15,7 @@ spec:
   secretTemplate:
     annotations:
       cert-utils-operator.redhat-cop.io/generate-cert-info: "true"
+      cert-utils-operator.redhat-cop.io/generate-java-keystores: "true"
   secretName: selfsigned-ca-secret
   subject:
     organizations: 
