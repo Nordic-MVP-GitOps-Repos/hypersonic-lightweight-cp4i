@@ -27,4 +27,4 @@ spec:
     - '*.cp4i.svc.local'
     - '*.cp4i.svc.local.cluster'
   issuerRef:
-    name: nativeha-selfsigned-issuer
+    name: mq-selfsigned-issuer

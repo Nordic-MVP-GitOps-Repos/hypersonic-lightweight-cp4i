@@ -3,7 +3,6 @@ kind: Kustomization
 
 resources:
  
-
   # Resources for QM using a self signed cerver certificate.
 
   - native-ha-qm/qm.yaml
@@ -11,7 +10,6 @@ resources:
   - native-ha-qm/sni-route.yaml
 
   - native-ha-qm/tls/ca-ss-issuer.yaml
-  - native-ha-qm/tls/nativeha-ss-issuer.yaml
   - native-ha-qm/tls/nativeha-certificate.yaml
   - native-ha-qm/tls/queue-manager-certificate.yaml
 
