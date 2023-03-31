@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: mq-metrics-podmonitor
+  namespace: cp4i
+spec:
+  podMetricsEndpoints:
+    - interval: 10s
+      scheme: http
+      port: web
+  selector:
+    matchLabels:
+      app: mq-metric-exporter

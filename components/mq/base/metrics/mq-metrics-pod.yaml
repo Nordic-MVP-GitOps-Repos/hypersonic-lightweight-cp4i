@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mq-metric-exporter
+  labels:
+    app: mq-metric-exporter
+spec:
+  containers:
+    - name: mq-metric-exporter
+      image: image-registry.openshift-image-registry.svc:5000/cp4i/mq-metrics:latest
+      envFrom:
+      - configMapRef:
+          name: metrics-configuration
+      - secretRef:
+          name: metrics-credentials
+      ports:
+        - name: web
+          containerPort: 9157
+  restartPolicy: OnFailure

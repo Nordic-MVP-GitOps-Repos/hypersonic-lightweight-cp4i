@@ -3,6 +3,12 @@ kind: Kustomization
 
 resources:
  
+  - metrics/buildconfig.yaml
+  - metrics/metrics-configuration.yaml
+  - metrics/empty-metrics-credentials.yaml
+  - metrics/mq-metrics-pod.yaml
+  - metrics/podmonitor.yaml
+ 
   # Resources for QM using a self signed cerver certificate.
 
   - native-ha-qm/qm.yaml

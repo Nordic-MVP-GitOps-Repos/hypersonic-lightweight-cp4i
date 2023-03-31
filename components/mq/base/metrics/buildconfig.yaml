@@ -1,0 +1,26 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  name: mq-metrics
+---
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: mq-metrics-build
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'mq-metrics:latest'
+  strategy:
+    type: Docker
+    dockerStrategy:
+      imageOptimizationPolicy: SkipLayers
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/ibm-messaging/mq-metric-samples/'
+      ref: master
+  triggers:
+    - type: ConfigChange
+  runPolicy: Serial
