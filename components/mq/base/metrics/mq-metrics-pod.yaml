@@ -12,7 +12,7 @@ spec:
       - configMapRef:
           name: metrics-configuration
       - secretRef:
-          name: metrics-credentials
+          name: empty-metrics-credentials
       ports:
         - name: web
           containerPort: 9157
