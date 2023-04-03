@@ -1,11 +1,11 @@
 apiVersion: appconnect.ibm.com/v1beta1
 kind: Dashboard
 metadata:
-  name: db-01-quickstart
+  name: dashboard
   namespace: cp4i
 spec:
   license:
-    accept: false
+    accept: true
     license: L-APEH-CJUCNR
     use: CloudPakForIntegrationNonProduction
   pod:
