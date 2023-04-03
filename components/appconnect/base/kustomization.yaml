@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - sample-integrationserver.yaml
   - emptyuser-configuration.yaml
+  - dashboard.yaml
