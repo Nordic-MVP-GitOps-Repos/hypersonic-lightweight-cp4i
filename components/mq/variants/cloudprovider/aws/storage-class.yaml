@@ -1,0 +1,13 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: native-ha-qm
+spec:
+  queueManager:
+    storage:
+      queueManager:
+        class: gp3
+      persistedData:
+        class: gp3
+      recoveryLogs:
+        class: gp3

@@ -4,4 +4,4 @@ metadata:
   name: platform-navigator
 spec:
   storage:
-    class: ibmc-vpc-file-10iops-tier
+    class: efs-sc

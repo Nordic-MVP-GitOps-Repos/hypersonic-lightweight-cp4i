@@ -1,0 +1,13 @@
+apiVersion: eventstreams.ibm.com/v1beta2
+kind: EventStreams
+metadata:
+  name: eventstreams
+  namespace: cp4i
+spec:
+  strimziOverrides:
+    kafka:
+      storage:
+        class: gp3
+    zookeeper:
+      storage:
+        class: gp3
