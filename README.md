@@ -12,7 +12,7 @@ You should have an existing OpenShift cluster available.
 
 Make sure that the default storage class is block storage. 
 
-Check that you don't have a cert-manager from RedHat or JetStack installed. If you do, follow these instructions: https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=eim-problem-when-you-install-two-different-cert-managers
+Check that you don't have a cert-manager from RedHat or Jetstack installed. If you do, follow these instructions: https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=eim-problem-when-you-install-two-different-cert-managers
 
 ### Fork this repo and adapt it for your environment
 
