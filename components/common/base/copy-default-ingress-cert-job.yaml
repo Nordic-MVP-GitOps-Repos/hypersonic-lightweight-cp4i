@@ -1,0 +1,77 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: copy-default-ingress-cert
+spec:
+  selector: {}
+  template:
+    metadata:
+      name: openssl
+    spec:
+      initContainers: 
+        - name: get-secret
+          image: registry.redhat.io/openshift4/ose-cli
+          command: ["/bin/sh"]
+          args:
+            - -c
+            - >-
+              export SECRET=`oc get IngressController -n openshift-ingress-operator -o jsonpath='{.items[0].spec.defaultCertificate.name}'` &&
+              oc get secret $SECRET --namespace=openshift-ingress -o jsonpath='{.data.tls\.key}' | base64 --decode > /work/tls.key &&
+              oc get secret $SECRET --namespace=openshift-ingress -o jsonpath='{.data.tls\.crt}' | base64 --decode > /work/tls.crt &&
+              oc get secret $SECRET --namespace=openshift-ingress -o jsonpath='{.data.ca\.crt}' | base64 --decode > /work/ca.crt
+          volumeMounts:
+            - mountPath: /work
+              name: workarea  
+        - name: get-ca-url
+          image: registry.access.redhat.com/ubi8/openssl:8.7
+          command: ["/bin/sh"]
+          args:
+            - -c
+            - >-
+              if [ ! -s /work/ca.crt ]; then echo "Empty ca.crt, try to get URL to download it" &&
+                openssl x509 -in /work/tls.crt -text -noout | grep "CA Issuers - URI:" | sed 's/\s*CA Issuers - URI://' > /work/ca_url.txt &&
+                cat /work/ca_url.txt; fi
+          volumeMounts:
+            - mountPath: /work
+              name: workarea
+        - name: get-ca
+          image: registry.redhat.io/openshift4/ose-cli
+          command: ["/bin/sh"]
+          args:
+            - -c
+            - >-
+              if [ -f /work/ca_url.txt ]; then echo "Found URL, download cert" &&
+                curl `cat /work/ca_url.txt` --output /work/ca.crt; fi
+          volumeMounts:
+            - mountPath: /work
+              name: workarea
+        - name: verify-ca-crt
+          image: registry.access.redhat.com/ubi8/openssl:8.7
+          command: ["/bin/sh"]
+          args:
+            - -c
+            - >-
+              if [ -s /work/ca.crt ] && [ -f /work/ca_url.txt ]; then echo "Verifying downloaded ca.crt" &&
+                openssl x509 -inform PEM -in /work/ca.crt || # If not pem, assume der
+                openssl x509 -inform der -outform pem -in /work/ca.crt -out /work/ca.crt &&
+                echo "Converted CA from DER to PEM"; fi
+          volumeMounts:
+            - mountPath: /work
+              name: workarea
+      containers:
+        - name: create-secret
+          image: registry.redhat.io/openshift4/ose-cli
+          command: ["/bin/sh"]
+          args:
+            - -c
+            - >-
+              oc create secret generic default-cert-copy --from-file=/work/ca.crt --from-file=/work/tls.crt --from-file=/work/tls.key
+          volumeMounts:
+            - mountPath: /work
+              name: workarea
+      restartPolicy: Never
+      serviceAccountName: copy-default-ingress-cert-sa
+      volumes:
+        - name: workarea
+          emptyDir:
+            sizeLimit: 1Mi
