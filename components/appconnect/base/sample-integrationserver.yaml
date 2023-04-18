@@ -26,7 +26,10 @@ spec:
   router:
     timeout: 120s
   service:
-    endpointType: http
+    endpointType: https
+  forceFlowHTTPS:
+    enabled: true
+    secretName: default-cert-copy
   version: '12.0'
   barURL: >-
     https://github.com/Nordic-MVP-GitOps-Repos/ace-hello-world/raw/main/ace-hello-world.bar
