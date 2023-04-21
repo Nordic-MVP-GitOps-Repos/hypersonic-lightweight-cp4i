@@ -13,6 +13,8 @@ spec:
     iam: false
     monitoring: false
   strimziOverrides:
+    entityOperator:
+      topicOperator: {}
     kafka:
       config:
         inter.broker.protocol.version: '3.3'
