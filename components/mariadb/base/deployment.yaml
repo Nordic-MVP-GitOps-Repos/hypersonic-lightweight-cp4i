@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariadb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mariadb
+    spec: 
+      containers:
+      - name: mariadb
+        image: registry.redhat.io/rhel8/mariadb-105@sha256:412adae6a8247f25c56447c3ec7d48b0d064dd71361fdd8b290dc34eee8655ce
+        ports:
+        - containerPort: 3306
+        readinessProbe:
+          timeoutSeconds: 1
+          initialDelaySeconds: 5
+          exec:
+            command:
+            - "/bin/sh"
+            - "-i"
+            - "-c"
+            - MYSQL_PWD="$MYSQL_PASSWORD" mysqladmin -u $MYSQL_USER ping
+        livenessProbe:
+          timeoutSeconds: 1
+          initialDelaySeconds: 30
+          exec:
+            command:
+            - "/bin/sh"
+            - "-i"
+            - "-c"
+            - MYSQL_PWD="$MYSQL_PASSWORD" mysqladmin -u $MYSQL_USER ping
+        env:
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mariadb
+              key: database-user
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mariadb
+              key: database-password
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mariadb
+              key: database-root-password
+        - name: MYSQL_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: mariadb
+              key: database-name
+        resources:
+          limits:
+            memory: 1G
+        volumeMounts:
+        - name: mariadb-data
+          mountPath: /var/lib/mysql/data
+        - name: ssl-cnf
+          mountPath: /etc/my.cnf.d/ssl.cnf
+          subPath: ssl.cnf
+        - name: certs
+          mountPath: /certs
+          readOnly: true
+        imagePullPolicy: IfNotPresent
+      volumes:
+      - name: mariadb-data
+        persistentVolumeClaim:
+          claimName: mariadb
+      - name: ssl-cnf
+        configMap:
+          name: ssl-config
+      - name: certs
+        secret:
+          secretName: mariadb-cert

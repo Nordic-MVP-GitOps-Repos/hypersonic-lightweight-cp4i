@@ -1,0 +1,11 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mariadb
+spec:
+  storageClassName: Default
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1G

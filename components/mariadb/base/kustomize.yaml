@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: cp4i
+resources:
+- service.yaml
+- pvc.yaml
+- deployment.yaml
+- ss-issuer.yaml
+- cert.yaml
+- cm-ssl.yaml

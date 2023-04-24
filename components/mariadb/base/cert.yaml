@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: mariadb
+spec:
+  secretName: mariadb-cert
+  dnsNames:
+  - mariadb.mariadb.svc.cluster.local
+  - mariadb.mariadb.svc
+  issuerRef:
+    name: selfsigned-issuer
+    kind: ClusterIssuer
+    group: cert-manager.io
