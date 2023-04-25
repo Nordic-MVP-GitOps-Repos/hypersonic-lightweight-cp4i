@@ -65,7 +65,7 @@ spec:
           args:
             - -c
             - >-
-              oc create secret generic default-cert-copy --type=kubernetes.io/tls --from-file=/work/ca.crt --from-file=/work/tls.crt --from-file=/work/tls.key
+              oc create secret generic default-cert-copy --type=kubernetes.io/tls --from-file=/work/ca.crt --from-file=/work/tls.crt --from-file=/work/tls.key &&
               oc annotate secret default-cert-copy cert-utils-operator.redhat-cop.io/generate-cert-info='true'
           volumeMounts:
             - mountPath: /work
