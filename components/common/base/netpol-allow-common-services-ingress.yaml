@@ -13,3 +13,7 @@ spec:
           namespaceSelector:
             matchLabels:
               kubernetes.io/metadata.name: ibm-common-services
+        - podSelector: {}
+          namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: cp4i
