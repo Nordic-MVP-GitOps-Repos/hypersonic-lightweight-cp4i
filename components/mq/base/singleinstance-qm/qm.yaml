@@ -1,0 +1,57 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: singleinstance-qm
+spec:
+  license:
+    accept: true
+    license: PATCHED_BY_KUSTOMIZE
+    use: PATCHED_BY_KUSTOMIZE
+  template:
+    pod:
+      containers:
+        - env:
+            - name: MQSNOAUT
+              value: "yes"
+          name: qmgr
+  queueManager:
+    mqsc:
+      - configMap:
+          name: singleinstance-qm-configmap
+          items:
+            - tls.mqsc
+    ini: 
+      - configMap:    
+          name: singleinstance-qm-configmap
+          items:
+            - mq.ini
+    availability:
+      type: SingleInstance
+    name: SINGLEINSTANCEQM
+    resources:
+      limits:
+        cpu: 500m
+      requests:
+        cpu: 500m
+    storage:
+      defaultClass: PATCHED_BY_KUSTOMIZE
+      queueManager:
+        type: persistent
+  version: 9.3.0.1-r1
+  pki:
+    keys:
+      - name: default
+        secret:
+          secretName: mq-external-tls-secret
+          items:
+            - tls.key
+            - tls.crt
+    trust:
+      - name: trust
+        secret:
+          secretName: mq-external-tls-secret
+          items:
+            - tls.crt
+            - ca.crt
+  web:
+    enabled: true
