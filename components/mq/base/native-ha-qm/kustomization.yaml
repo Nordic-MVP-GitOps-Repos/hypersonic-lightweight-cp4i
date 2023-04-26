@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources: 
+  # Resources for QM using a self signed cerver certificate.
+
+  - qm.yaml
+  - configmap.yaml
+  - sni-route.yaml
+
+  - tls/ca-ss-issuer.yaml
+  - tls/nativeha-certificate.yaml
+  - tls/queue-manager-certificate.yaml

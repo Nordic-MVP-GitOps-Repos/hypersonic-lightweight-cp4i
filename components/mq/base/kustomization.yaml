@@ -1,29 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-resources:
- 
-  - metrics/buildconfig.yaml
-  - metrics/metrics-configuration.yaml
-  - metrics/empty-metrics-credentials.yaml
-  - metrics/mq-metrics-pod.yaml
-  - metrics/podmonitor.yaml
+resources: 
+  - metrics
  
   # Resources for QM using a self signed cerver certificate.
-
-  - native-ha-qm/qm.yaml
-  - native-ha-qm/configmap.yaml
-  - native-ha-qm/sni-route.yaml
-
-  - native-ha-qm/tls/ca-ss-issuer.yaml
-  - native-ha-qm/tls/nativeha-certificate.yaml
-  - native-ha-qm/tls/queue-manager-certificate.yaml
+  - native-ha-qm
 
   # Resources for QM using certificate from LetsEncrypt
-
-  #- native-ha-qm-wellknowncerts/qm.yaml
-  #- native-ha-qm-wellknowncerts/configmap.yaml
-  #- native-ha-qm-wellknowncerts/sni-route.yaml
-
-  #- native-ha-qm-wellknowncerts/tls/mq-server-certificate.yaml
-  #- native-ha-qm-wellknowncerts/tls/letsencrypt-chain.yaml
+  #- native-ha-qm-wellknowncerts
