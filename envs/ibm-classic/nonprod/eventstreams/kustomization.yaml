@@ -3,7 +3,7 @@ kind: Kustomization
 
 components:
 
-- ../../../../components/eventstreams/variants/cloudprovider/ibn-classic
+- ../../../../components/eventstreams/variants/cloudprovider/ibm-classic
 
 resources:
 - ../../../../components/eventstreams/base

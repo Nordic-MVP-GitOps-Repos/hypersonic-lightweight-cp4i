@@ -12,6 +12,7 @@ rules:
       - watch
       - list
       - create
+      - patch
   - apiGroups:
       - operator.openshift.io
     resources:

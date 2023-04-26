@@ -20,6 +20,7 @@ rules:
       - monitoringcontroller.cloud.ibm.com
       - autoscaling
       - logging.openshift.io
+      - networking.k8s.io
       - monitoring.coreos.com
       - apps
       - batch
