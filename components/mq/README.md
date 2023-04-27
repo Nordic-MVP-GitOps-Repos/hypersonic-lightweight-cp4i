@@ -22,3 +22,4 @@ For more detailed information, see:
 * https://community.ibm.com/community/user/integration/blogs/callum-jackson1/2021/02/15/connecting-to-a-queue-manager-running-in-openshift
 * https://github.com/ibm-messaging/cp4i-mq-samples
 * https://www.ibm.com/docs/en/ibm-mq/9.3?topic=file-ssl-stanza-client-configuration
+* https://github.com/ibm-messaging/mq-container-mft/blob/master/docs/connectmqexplorer.md
