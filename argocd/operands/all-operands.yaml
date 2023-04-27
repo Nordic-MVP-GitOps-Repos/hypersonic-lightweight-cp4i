@@ -22,10 +22,10 @@ spec:
           namespace: cp4i
           sync-wave: "300"
           target-revision: HEAD
-        #- name: platformnavigator
-        #  namespace: cp4i
-        #  sync-wave: "200"
-        #  target-revision: HEAD
+        - name: platformnavigator
+          namespace: cp4i
+          sync-wave: "200"
+          target-revision: HEAD
         - name: openshift-logging
           namespace: openshift-logging
           sync-wave: "200"
