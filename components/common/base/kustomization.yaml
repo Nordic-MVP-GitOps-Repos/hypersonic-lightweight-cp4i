@@ -5,7 +5,7 @@ resources:
   - catalogsource.yaml
   - namespace.yaml
   - operatorgroup.yaml
-  - netpol-allow-cp4i-ingress.yaml
-  - netpol-allow-common-services-ingress.yaml
+  #- netpol-allow-cp4i-ingress.yaml
+  #- netpol-allow-common-services-ingress.yaml
   - copy-cert
   
