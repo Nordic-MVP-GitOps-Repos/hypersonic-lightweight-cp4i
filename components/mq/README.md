@@ -23,3 +23,4 @@ For more detailed information, see:
 * https://github.com/ibm-messaging/cp4i-mq-samples
 * https://www.ibm.com/docs/en/ibm-mq/9.3?topic=file-ssl-stanza-client-configuration
 * https://github.com/ibm-messaging/mq-container-mft/blob/master/docs/connectmqexplorer.md
+* https://www.ibm.com/docs/en/ibm-mq/7.5?topic=security-authorization-use-websphere-mq-explorer
