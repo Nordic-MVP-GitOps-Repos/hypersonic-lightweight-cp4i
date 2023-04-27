@@ -1,0 +1,20 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: native-ha-qm-auth-configmap
+data:
+  mq.ini: |
+    Service:
+      Name=AuthorizationService
+      EntryPoints=14
+      SecurityPolicy=UserExternal
+  tls.mqsc: |
+    DEFINE QLOCAL('QUEUE1') DEFPSIST(YES) REPLACE 
+   
+    DEFINE CHANNEL(HAQMCHL) CHLTYPE(SVRCONN) TRPTYPE(TCP) SSLCAUTH(REQUIRED) SSLCIPH('ANY_TLS12_OR_HIGHER') REPLACE
+
+    set chlauth(HAQMCHL) type(sslpeermap) sslpeer('CN=mqclient1') usersrc(map) mcauser('mqclient1') action(add) 
+    set authrec principal('mqclient1') objtype(qmgr) authadd(all)
+    set authrec profile('**') principal('mqclient1') objtype(queue) authadd(all)
+
+    refresh security
