@@ -18,6 +18,6 @@ spec:
     mq.channel.name: SICHL
     mq.queue: ORDERLOG
     key.converter: org.apache.kafka.connect.storage.StringConverter
-    mq.message.body.jms=true
-    value.converter=org.apache.kafka.connect.storage.StringConverter
+    mq.message.body.jms: true
+    value.converter: org.apache.kafka.connect.storage.StringConverter
     mq.record.builder: com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder
