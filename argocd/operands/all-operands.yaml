@@ -34,6 +34,10 @@ spec:
           namespace: openshift-monitoring
           sync-wave: "200"
           target-revision: HEAD
+        - name: reloader
+          namespace: cp4i
+          sync-wave: "200"
+          target-revision: HEAD
         #- name: clusterresourceoverride
         #  namespace: cp4i
         #  sync-wave: "200"
