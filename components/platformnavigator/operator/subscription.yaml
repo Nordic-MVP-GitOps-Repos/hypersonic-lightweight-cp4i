@@ -7,3 +7,11 @@ spec:
   name: ibm-integration-platform-navigator
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
+  config:
+    resources:
+      limits:
+        cpu: 200m
+        memory: 1.5Gi
+      requests:
+        cpu: 200m
+        memory: 1Gi

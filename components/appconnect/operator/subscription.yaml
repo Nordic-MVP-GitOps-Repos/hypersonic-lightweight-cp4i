@@ -7,3 +7,12 @@ spec:
   name: ibm-appconnect
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
+  config:
+    resources:
+      limits:
+        ephemeral-storage: 512Mi
+        memory: 1.5Gi
+      requests:
+        cpu: 100m
+        ephemeral-storage: 50Mi
+        memory: 128Mi

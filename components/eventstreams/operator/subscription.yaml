@@ -7,3 +7,7 @@ spec:
   name: ibm-eventstreams
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
+  config:
+    resources:
+      limits:
+        memory: 1Gi
