@@ -1,0 +1,23 @@
+apiVersion: eventstreams.ibm.com/v1beta2
+kind: KafkaConnector
+metadata:
+  name: mq-source
+  labels:
+    # The eventstreams.ibm.com/cluster label identifies the KafkaConnect instance
+    # in which to create this connector. That KafkaConnect instance
+    # must have the eventstreams.ibm.com/use-connector-resources annotation
+    # set to true.
+    eventstreams.ibm.com/cluster: kafka-connect
+spec:
+  class: com.ibm.eventstreams.connect.mqsource.MQSourceConnector
+  tasksMax: 1
+  config:
+    topic: sample-topic
+    mq.queue.manager: SINGLEINSTANCEQM
+    mq.connection.name.list: singleinstance-qm-ibm-mq.cp4i.svc(1414)
+    mq.channel.name: SICHL
+    mq.queue: ORDERLOG
+    key.converter: org.apache.kafka.connect.storage.StringConverter
+    mq.message.body.jms=true
+    value.converter=org.apache.kafka.connect.storage.StringConverter
+    mq.record.builder: com.ibm.eventstreams.connect.mqsource.builders.DefaultRecordBuilder

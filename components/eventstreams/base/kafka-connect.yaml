@@ -1,0 +1,48 @@
+apiVersion: eventstreams.ibm.com/v1beta2
+kind: KafkaConnect
+metadata:
+  name: kafka-connect
+  annotations:
+    eventstreams.ibm.com/use-connector-resources: "true"
+spec:
+  image: image-registry.openshift-image-registry.svc:5000/cp4i/mq-kafka-source-connector:latest
+  bootstrapServers: 'eventstreams-kafka-bootstrap.cp4i.svc:9092'
+  config:
+    group.id: connect-cluster
+    config.storage.replication.factor: 1
+    config.storage.topic: connect-cluster-configs  
+    offset.storage.replication.factor: 1
+    offset.storage.topic: connect-cluster-offsets
+    status.storage.replication.factor: 1
+    status.storage.topic: connect-cluster-status
+  replicas: 1
+  resources:
+    limits:
+      cpu: 2000m
+      memory: 2Gi
+    requests:
+      cpu: 1000m
+      memory: 2Gi
+  template:
+    connectContainer:
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        privileged: false
+        readOnlyRootFilesystem: true
+        runAsNonRoot: true
+    pod:
+      metadata:
+        annotations:
+          cloudpakId: c8b82d189e7545f0892db9ef2731b90d
+          productVersion: 11.1.6
+          productID: 2a79e49111f44ec3acd89608e56138f5
+          cloudpakName: IBM Cloud Pak for Integration
+          productChargedContainers: kafka-connect-connect
+          productCloudpakRatio: '2:1'
+          productName: IBM Event Streams for Non Production
+          eventstreams.production.type: CloudPakForIntegrationNonProduction
+          productMetric: VIRTUAL_PROCESSOR_CORE
+  version: 3.4.0

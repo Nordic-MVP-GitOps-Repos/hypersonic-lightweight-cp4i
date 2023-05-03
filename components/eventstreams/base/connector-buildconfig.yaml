@@ -1,0 +1,29 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  name: mq-kafka-source-connector
+---
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: mq-kafka-source-connector-build
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'mq-kafka-source-connector:latest'
+  strategy:
+    type: Docker
+    dockerStrategy:
+      imageOptimizationPolicy: SkipLayers
+      pullSecret:
+        name: ibm-entitlement-key
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/kjellmlarsson/hypersonic-lightweight-cp4i-delete'
+      ref: main
+    contextDir: components/eventstreams/base
+  triggers:
+    - type: ConfigChange
+  runPolicy: Serial

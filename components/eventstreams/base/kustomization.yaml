@@ -4,3 +4,6 @@ kind: Kustomization
 resources:
   - eventstreams-persistent.yaml
   - sample-topic.yaml
+  - kafka-connect.yaml
+  - mq-source-connector.yaml
+  - connector-buildconfig.yaml
