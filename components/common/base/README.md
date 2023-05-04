@@ -1,0 +1,1 @@
+The IBM operator catalog is used as catalog source for operators. You can also add specific catalog sources for each operator, see https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=images-adding-catalog-sources-cluster
