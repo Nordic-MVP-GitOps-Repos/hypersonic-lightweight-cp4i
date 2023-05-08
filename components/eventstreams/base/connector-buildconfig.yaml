@@ -21,7 +21,7 @@ spec:
   source:
     type: Git
     git:
-      uri: 'https://github.com/kjellmlarsson/hypersonic-lightweight-cp4i-delete'
+      uri: 'https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i'
       ref: main
     contextDir: components/eventstreams/base
   triggers:
