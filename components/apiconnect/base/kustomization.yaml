@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - apiconnect-cluster.yaml
+  - netpol-apic-to-postgres.yaml
