@@ -10,6 +10,8 @@ spec:
     - ports:
         - protocol: TCP
           port: 8443
+        - protocol: TCP
+          port: 5432
       from:
         - podSelector:
             matchLabels:
