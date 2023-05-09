@@ -9,7 +9,7 @@ spec:
   ingress:
     - ports:
         - protocol: TCP
-          port: 443
+          port: 8443
       from:
         - podSelector:
             matchLabels:
