@@ -6,6 +6,8 @@ provisioner: file.csi.azure.com
 parameters:
   protocol: nfs
   skuName: Premium_ZRS
+mountOptions:
+  - nconnect=4
 reclaimPolicy: Delete
 allowVolumeExpansion: true
 volumeBindingMode: Immediate
