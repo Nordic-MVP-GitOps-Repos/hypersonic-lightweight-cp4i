@@ -5,7 +5,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app.kubernetes.io/name: postgres-operator
+      app.kubernetes.io/instance: apic-cluster-mgmt
   ingress:
     - ports:
         - protocol: TCP
