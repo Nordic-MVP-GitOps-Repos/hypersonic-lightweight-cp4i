@@ -6,7 +6,7 @@ data:
   zen: |-
     storage_data:
       storageClass: azurefile-csi-nfs
-      zenCoreMetaDbStorageClass: managed-premium
+      zenCoreMetaDbStorageClass: managed-csi
     scale_data:
       Usermgmt:
         name: usermgmt
