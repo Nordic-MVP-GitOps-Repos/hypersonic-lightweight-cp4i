@@ -7,7 +7,7 @@ spec:
   strimziOverrides:
     kafka:
       storage:
-        class: managed-premium
+        class: managed-csi
     zookeeper:
       storage:
-        class: managed-premium
+        class: managed-csi

@@ -1,10 +1,10 @@
 package azure.nonprod.mq
 
-# Validate that the storage class is managed-premium
+# Validate that the storage class is managed-csi
 deny[msg] {
     input.kind = "QueueManager"
-    not input.spec.queueManager.storage.queueManager.class = "managed-premium"
-    msg = "Storageclass should be managed-premium"
+    not input.spec.queueManager.storage.queueManager.class = "managed-csi"
+    msg = "Storageclass should be managed-csi"
 }
 
 # Validate that the license is correct 
