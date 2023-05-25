@@ -1,0 +1,6 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - license-server-reporter.yaml
+  - post-sync-license-service-sa.yaml
