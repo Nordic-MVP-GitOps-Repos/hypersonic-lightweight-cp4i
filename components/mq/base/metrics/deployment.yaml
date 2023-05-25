@@ -25,4 +25,3 @@ spec:
           ports:
             - containerPort: 9157
               name: web
-      restartPolicy: OnFailure
