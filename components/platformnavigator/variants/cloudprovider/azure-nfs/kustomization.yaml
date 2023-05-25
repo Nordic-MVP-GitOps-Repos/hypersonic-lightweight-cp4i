@@ -2,9 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1alpha1
 kind: Component
 
 resources:
-
 - azure-file-nfs-storageclass.yaml
 - zen-configmap.yaml
 
 patchesStrategicMerge:
 - pn-noreconcile.yaml
+- license-service-storage-class.yaml

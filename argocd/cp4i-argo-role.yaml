@@ -22,6 +22,7 @@ rules:
       - logging.openshift.io
       - networking.k8s.io
       - monitoring.coreos.com
+      - operator.ibm.com
       - apps
       - batch
       - ""
