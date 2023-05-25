@@ -41,7 +41,7 @@ spec:
             - mountPath: /work
               name: workarea
       restartPolicy: Never
-      #serviceAccountName: post-sync-license-service-job
+      serviceAccountName: post-sync-license-service-job
       volumes:
         - name: workarea
           emptyDir:
