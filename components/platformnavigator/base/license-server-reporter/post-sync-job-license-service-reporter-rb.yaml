@@ -1,0 +1,12 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: post-sync-job-license-service-reporter-rb
+  namespace: ibm-common-services
+subjects:
+  - kind: ServiceAccount
+    name: post-sync-job-license-service-reporter-sa
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: post-sync-job-license-service-reporter-role
