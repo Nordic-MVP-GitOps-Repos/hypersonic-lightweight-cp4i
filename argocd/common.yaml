@@ -15,7 +15,7 @@ spec:
   source:
     path: ./components/common/base
     targetRevision: 'HEAD'
-    repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
+    repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i-aro-delete.git
   syncPolicy:
     automated:
       prune: true
