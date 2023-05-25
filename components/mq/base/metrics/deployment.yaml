@@ -7,15 +7,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mq-metrics
+      app: mq-metric-exporter
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: mq-metrics
+        app: mq-metric-exporter
     spec:
       containers:
-        - name: mq-metrics-exporter
+        - name: mq-metric-exporter
           image: 'image-registry.openshift-image-registry.svc:5000/cp4i/mq-metrics:latest'
           envFrom:
           - configMapRef:
