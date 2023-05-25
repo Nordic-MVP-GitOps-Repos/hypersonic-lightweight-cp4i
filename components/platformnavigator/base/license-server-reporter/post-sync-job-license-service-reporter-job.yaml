@@ -1,0 +1,49 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: post-sync-license-service-reporter-update-operand-config
+  namespace: ibm-common-services
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+spec:
+  template:
+    spec:
+      initContainers: 
+        - name: get-operand-config
+          image: registry.redhat.io/openshift4/ose-cli
+          command: ["/bin/sh"]
+          args:
+            - -c
+            - >-
+              oc get OperandConfig common-service -n ibm-common-services -o yaml > /work/operandconfig.yaml
+          volumeMounts:
+            - mountPath: /work
+              name: workarea  
+        - name: patch-operand-config
+          image: mikefarah/yq
+          command: ["/bin/sh"]
+          args:
+            - -c
+            - >-
+              yq -i '( .spec.services[] | select(.name == "ibm-licensing-operator") | .spec ) += {"IBMLicenseServiceReporter": {}} | .' /work/operandconfig.yaml
+          volumeMounts:
+            - mountPath: /work
+              name: workarea
+      containers:
+        - name: apply-operand-config
+          image: registry.redhat.io/openshift4/ose-cli
+          command: ["/bin/sh"]
+          args:
+            - -c
+            - >-
+              oc apply -f /work/operandconfig.yaml
+          volumeMounts:
+            - mountPath: /work
+              name: workarea
+      restartPolicy: Never
+      serviceAccountName: post-sync-job-license-service-reporter-sa
+      volumes:
+        - name: workarea
+          emptyDir:
+            sizeLimit: 1Mi
+  backoffLimit: 10

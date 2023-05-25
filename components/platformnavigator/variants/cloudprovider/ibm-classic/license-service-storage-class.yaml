@@ -1,0 +1,7 @@
+apiVersion: operator.ibm.com/v1alpha1
+kind: IBMLicenseServiceReporter
+metadata:
+  name: instance
+  namespace: ibm-common-services
+spec:
+  storageClass: ibmc-block-gold
