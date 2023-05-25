@@ -3,4 +3,7 @@ kind: Kustomization
 
 resources:
   - license-server-reporter.yaml
-  - post-sync-license-service-sa.yaml
+  - post-sync-job-license-service-reporter-sa.yaml
+  - post-sync-job-license-service-reporter-role.yaml
+  - post-sync-job-license-service-reporter-rb.yaml
+  - post-sync-job-license-service-reporter-job.yaml
