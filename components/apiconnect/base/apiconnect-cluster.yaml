@@ -22,3 +22,11 @@ spec:
   profile: n1xc7.m48
   version: 10.0.5.2-ifix1-124
   storageClassName: PATCHED_BY_KUSTOMIZE
+  gateway:
+    podAutoScaling:
+      hpa:
+        maxReplicas: 3
+        minReplicas: 1
+        targetCPUUtilizationPercentage: 90
+        targetMemoryUtilizationPercentage: 80
+      method: HPA
