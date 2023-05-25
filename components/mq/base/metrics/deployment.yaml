@@ -1,0 +1,27 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mq-metrics
+  namespace: cp4i
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mq-metrics
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mq-metrics
+    spec:
+      containers:
+        - name: mq-metrics-exporter
+          image: 'image-registry.openshift-image-registry.svc:5000/cp4i/mq-metrics:latest'
+          envFrom:
+          - configMapRef:
+              name: metrics-configuration
+          - secretRef:
+              name: empty-metrics-credentials
+          ports:
+            - containerPort: 9157
+              name: web

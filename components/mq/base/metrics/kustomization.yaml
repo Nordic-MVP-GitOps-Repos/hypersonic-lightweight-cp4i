@@ -6,5 +6,5 @@ resources:
   - buildconfig.yaml
   - metrics-configuration.yaml
   - empty-metrics-credentials.yaml
-  - mq-metrics-pod.yaml
+  - deployment.yaml
   - podmonitor.yaml
