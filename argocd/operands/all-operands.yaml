@@ -52,9 +52,9 @@ spec:
     spec:
       project: 'cp4i-operands'
       source:
-        repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
+        repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i-aro-delete.git
         targetRevision: '{{target-revision}}'
-        path: 'envs/ibm-classic/nonprod/{{name}}/'
+        path: 'envs/azzure/nonprod/{{name}}/'
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: '{{namespace}}'
