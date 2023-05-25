@@ -9,7 +9,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-GVEN-GFUPVE
+    license: L-VQYA-YNM22H
     metric: VIRTUAL_PROCESSOR_CORE
     use: PATCHED_BY_KUSTOMIZE
   endpointTypes:
@@ -20,7 +20,7 @@ spec:
       enabled: true
       type: shared
   profile: n1xc7.m48
-  version: 10.0.5.2-ifix1-124
+  version: 10.0.5.3
   storageClassName: PATCHED_BY_KUSTOMIZE
   gateway:
     podAutoScaling:
