@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   - platform-navigator.yaml
-  - license-server-reporter.yaml
+  - license-server-reporter
   # - iam-customhostname.yaml
   # - cs-onprem-tenant-config.yaml
   # Platform navigator brings in common services which brings in cert manager, so ClusterIssuer will be available.
