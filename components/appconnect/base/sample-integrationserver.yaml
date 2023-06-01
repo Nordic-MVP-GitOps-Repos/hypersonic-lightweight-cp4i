@@ -30,8 +30,10 @@ spec:
   forceFlowHTTPS:
     enabled: true
     secretName: default-cert-copy
-  version: '12.0'
+  version: "12.0"
   barURL: >-
-    https://github.com/Nordic-MVP-GitOps-Repos/ace-hello-world/raw/main/ace-hello-world.bar
+    https://github.com/Nordic-MVP-GitOps-Repos/ace-hello-world/raw/main/ace-hello-world.bar,https://github.com/Nordic-MVP-GitOps-Repos/ace-mq-request-respone/blob/main/HttpMQApp.bar
   configurations:
     - empty-credentials
+    - ace-mq-policy
+    - remote-mq
