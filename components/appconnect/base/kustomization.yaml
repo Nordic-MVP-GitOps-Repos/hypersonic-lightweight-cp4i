@@ -5,3 +5,5 @@ resources:
   - sample-integrationserver.yaml
   - emptyuser-configuration.yaml
   - dashboard.yaml
+  - ace-mq-policy.yaml
+  - remote-nativeha-qm.yaml
