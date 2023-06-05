@@ -3,7 +3,7 @@ kind: Subscription
 metadata:
   name: ibm-apiconnect
 spec:
-  channel: v3.3
+  channel: v3.2
   name: ibm-apiconnect
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
