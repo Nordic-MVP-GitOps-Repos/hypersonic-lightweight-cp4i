@@ -1,0 +1,23 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: DesignerAuthoring
+metadata:
+  name: designer-authoring
+spec:
+  couchdb:
+    logLevel: info
+    replicas: 1
+    storage:
+      size: 10Gi
+      type: ephemeral
+  designerFlowsOperationMode: local
+  designerMappingAssist:
+    enabled: true
+    incrementalLearning:
+      schedule: Every 15 days
+  license:
+    accept: true
+    license: L-APEH-CJUCNR
+    use: CloudPakForIntegrationNonProduction
+  replicas: 1
+  useCommonServices: true
+  version: '12.0'
