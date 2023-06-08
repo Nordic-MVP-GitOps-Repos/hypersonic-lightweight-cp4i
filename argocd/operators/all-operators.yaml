@@ -22,6 +22,8 @@ spec:
           namespace: openshift-operators
         - name: cert-utils
           namespace: cert-utils-operator
+        #- name: instana-agent
+        #  namespace: openshift-operators
         #- name: clusterresourceoverride
         #  namespace: cp4i
   template:
