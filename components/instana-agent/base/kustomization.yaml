@@ -5,3 +5,4 @@ resources:
   - instana-agent.yaml
   - namespace.yaml
   - privileged-scc-rb.yaml
+  - jaeger.yaml
