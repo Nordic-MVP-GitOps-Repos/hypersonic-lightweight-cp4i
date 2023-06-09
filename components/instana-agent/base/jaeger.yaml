@@ -4,4 +4,4 @@ metadata:
   name: jaeger
   namespace: openshift-operators
 spec:
-  strategy: allInOne
+  strategy: allinone
