@@ -23,6 +23,8 @@ rules:
       - networking.k8s.io
       - monitoring.coreos.com
       - operator.ibm.com
+      - instana.io
+      - jaegertracing.io
       - apps
       - batch
       - ""
