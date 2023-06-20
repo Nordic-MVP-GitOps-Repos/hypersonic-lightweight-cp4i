@@ -45,7 +45,7 @@ spec:
           name: native-ha-qm-auth-configmap
           items:
             - mq.ini
-  version: 9.3.0.1-r1
+  version: 9.3.3.0-r1
   pki:
     keys:
       - name: default
