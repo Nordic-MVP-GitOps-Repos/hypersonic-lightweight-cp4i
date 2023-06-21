@@ -16,7 +16,7 @@ spec:
       schedule: Every 15 days
   license:
     accept: true
-    license: L-APEH-CJUCNR
+    license: L-MJTK-WUU8HE
     use: CloudPakForIntegrationNonProduction
   replicas: 1
   useCommonServices: true
