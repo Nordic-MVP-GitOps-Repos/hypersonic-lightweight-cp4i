@@ -7,3 +7,7 @@ spec:
   name: instana-agent-operator
   source: certified-operators
   sourceNamespace: openshift-marketplace
+  config:
+    resources:
+      limits:
+        memory: 512Mi
