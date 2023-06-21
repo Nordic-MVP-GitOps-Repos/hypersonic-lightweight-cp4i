@@ -3,6 +3,10 @@ kind: QueueManager
 metadata:
   name: singleinstance-qm
 spec:
+  telemetry:
+    tracing:
+      instana:
+        enabled: true
   license:
     accept: true
     license: PATCHED_BY_KUSTOMIZE
