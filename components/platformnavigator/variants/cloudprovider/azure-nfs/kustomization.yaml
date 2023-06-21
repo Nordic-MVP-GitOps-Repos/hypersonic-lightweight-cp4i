@@ -7,4 +7,4 @@ resources:
 
 patchesStrategicMerge:
 - pn-noreconcile.yaml
-- license-service-storage-class.yaml
+#- license-service-storage-class.yaml
