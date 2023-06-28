@@ -4,7 +4,7 @@ metadata:
   name: native-ha-qm
   annotations:
     configmap.reloader.stakater.com/reload: "native-ha-qm-configmap"
-spec
+spec:
   telemetry:
     tracing:
       instana:
