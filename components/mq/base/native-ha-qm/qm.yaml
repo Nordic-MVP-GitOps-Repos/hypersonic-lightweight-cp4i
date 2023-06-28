@@ -4,7 +4,7 @@ metadata:
   name: native-ha-qm
   annotations:
     configmap.reloader.stakater.com/reload: "native-ha-qm-configmap"
-spec
+spec:
   telemetry:
     tracing:
       instana:
@@ -22,6 +22,9 @@ spec
         - env:
             - name: MQSNOAUT
               value: "yes"
+            # For instana tracing,
+            #- name: IBMMQ_RFH2_HEADERS_TO_EXPOSE
+            #  value: 'usr.<custome element1>, usr.<custom element 2>'
           name: qmgr
   queueManager:
     route:
