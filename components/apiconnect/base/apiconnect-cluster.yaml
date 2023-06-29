@@ -20,6 +20,20 @@ spec:
   version: 10.0.6.0
   storageClassName: PATCHED_BY_KUSTOMIZE
   gateway:
+  #  jaegerTracing:
+  #    samplingType: const
+  #    propagationFormat: w3c
+  #    samplingRate: '1'
+  #    agentImage: 'icr.io/instana/instana-dp-agent-image:latest'
+  #    tls:
+  #      disabled: true
+  #      skipHostVerify: false
+  #    env:
+  #      - name: INSTANA_AGENT_HOST
+  #        valueFrom:
+  #          fieldRef:
+  #            apiVersion: v1
+  #            fieldPath: status.hostIP
     podAutoScaling:
       hpa:
         maxReplicas: 3
