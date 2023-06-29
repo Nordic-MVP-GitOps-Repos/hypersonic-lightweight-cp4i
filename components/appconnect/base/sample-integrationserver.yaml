@@ -37,4 +37,4 @@ spec:
     - empty-credentials
     - ace-mq-policy
     - remote-mq
-    #- instana-configuration
+    #- instana-monitoring
