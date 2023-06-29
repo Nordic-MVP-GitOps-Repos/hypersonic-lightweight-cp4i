@@ -5,10 +5,10 @@ metadata:
   annotations:
     configmap.reloader.stakater.com/reload: "native-ha-qm-configmap"
 spec:
-  telemetry:
-    tracing:
-      instana:
-        enabled: true
+  # telemetry:
+  #  tracing:
+  #    instana:
+  #      enabled: true
   license:
     accept: true
     license: PATCHED_BY_KUSTOMIZE
