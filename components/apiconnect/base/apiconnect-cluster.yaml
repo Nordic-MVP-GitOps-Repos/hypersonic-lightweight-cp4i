@@ -12,6 +12,11 @@ spec:
     license: L-KZXM-S7SNCU
     metric: VIRTUAL_PROCESSOR_CORE
     use: PATCHED_BY_KUSTOMIZE
+  management:
+    testAndMonitor:
+      enabled: true
+      autoTestEnabled: true
+      aiEnabled: false
   analytics:
     storage:
       enabled: true
