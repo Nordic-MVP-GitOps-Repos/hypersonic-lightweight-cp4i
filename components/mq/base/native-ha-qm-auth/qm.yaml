@@ -2,6 +2,9 @@ apiVersion: mq.ibm.com/v1beta1
 kind: QueueManager
 metadata:
   name: native-ha-qm-auth
+  annotations:
+    configmap.reloader.stakater.com/reload: "native-ha-qm-auth-configmap"
+    secret.reloader.stakater.com/reload: "mq-nativeha-internal-tls-secret,mq-external-tls-secret"
 spec:
   license:
     accept: true
