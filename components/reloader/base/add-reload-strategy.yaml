@@ -2,5 +2,4 @@
   path: /spec/template/spec/containers/0/args
   value: 
       - '--reload-strategy=annotations'
-      - 'isOpenshift=true'
-      - 'reloadOnCreate=true'
+      - '--reload-on-create=true'
