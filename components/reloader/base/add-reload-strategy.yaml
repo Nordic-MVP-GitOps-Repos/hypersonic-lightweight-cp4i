@@ -3,3 +3,4 @@
   value: 
       - '--reload-strategy=annotations'
       - 'isOpenshift=true'
+      - 'reloadOnCreate=true'
