@@ -1,0 +1,10 @@
+apiVersion: integration.ibm.com/v1beta1
+kind: AssetRepository
+metadata:
+  name: assetrepository
+spec:
+  storage:
+    assetDataVolume:
+      class: ibmc-block-gold
+    couchVolume:
+      class: ibmc-block-gold

@@ -28,6 +28,8 @@ spec:
         #  namespace: openshift-operators
         #- name: clusterresourceoverride
         #  namespace: cp4i
+        #- name: assetrepository
+        #  namespace: openshift-operators
   template:
     metadata:
       name: '{{name}}-operator'

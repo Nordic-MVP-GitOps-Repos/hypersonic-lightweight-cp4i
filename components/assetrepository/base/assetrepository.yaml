@@ -1,0 +1,16 @@
+apiVersion: integration.ibm.com/v1beta1
+kind: AssetRepository
+metadata:
+  name: assetrepository
+spec:
+  license:
+    accept: true
+    license: L-RJON-CD3JKX
+  replicas: 1
+  singleReplicaOnly: true
+  storage:
+    assetDataVolume:
+      class: PATCHED_BY_KUSTOMIZE
+    couchVolume:
+      class: PATCHED_BY_KUSTOMIZE
+  version: 2022.2.1-10
