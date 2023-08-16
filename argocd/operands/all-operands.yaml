@@ -30,19 +30,18 @@ spec:
         - name: reloader
           namespace: cp4i
           sync-wave: "200"
-          target-revision: HEAD
+        - name: flink
+          namespace: cp4i
+          sync-wave: "200"
         #- name: instana-agent
         #  namespace: instana-agent
         #  sync-wave: "200"
-        #  target-revision: HEAD
         #- name: clusterresourceoverride
         #  namespace: cp4i
         #  sync-wave: "200"
-        #  target-revision: HEAD
         # - name: assetrepository
         #  namespace: cp4i
         #  sync-wave: "200"
-        #  target-revision: HEAD
   template:
     metadata:
       name: '{{name}}'
@@ -53,11 +52,7 @@ spec:
     spec:
       project: 'cp4i-operands'
       source:
-<<<<<<< HEAD
         path: 'envs/odf/nonprod/{{name}}/'
-=======
-        path: 'envs/ibm-classic/nonprod/{{name}}/'
->>>>>>> 178c689 (Adding ODF storage env)
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: '{{namespace}}'

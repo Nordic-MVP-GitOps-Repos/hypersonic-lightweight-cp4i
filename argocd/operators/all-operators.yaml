@@ -24,6 +24,8 @@ spec:
           namespace: openshift-operators
         - name: cert-utils
           namespace: cert-utils-operator
+        - name: flink
+          namespace: openshift-operators
         #- name: instana-agent
         #  namespace: openshift-operators
         #- name: clusterresourceoverride
