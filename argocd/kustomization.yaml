@@ -12,7 +12,40 @@ resources:
 
   - operators/all-operators.yaml
   
-  #- operands/all-operands.yaml
+  - operands/all-operands.yaml
  
   #- apps/ibm-offices.yaml
   #- apps/ace-hello-world.yaml
+
+patches:
+- target:
+    group: argoproj.io
+    kind: Application
+    labelSelector: group=applications
+  patch: |-
+    - op: add
+      path: /spec/source/repoURL
+      value: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
+    - op: add
+      path: /spec/source/targetRevision
+      value: odf
+- target:
+    group: argoproj.io
+    kind: ApplicationSet
+<<<<<<< HEAD
+  patch: |-
+    - op: add
+      path: /spec/template/spec/source/repoURL
+      value: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
+    - op: add
+      path: /spec/template/spec/source/targetRevision
+      value: odf
+=======
+    patch: |-
+      - op: add
+        path: /spec/template/spec/source/repoURL
+        value: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
+      - op: add
+        path: /spec/template/spec/source/targetRevision
+        value: odf
+>>>>>>> 178c689 (Adding ODF storage env)

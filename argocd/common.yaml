@@ -14,8 +14,6 @@ spec:
   project: default
   source:
     path: ./components/common/base
-    targetRevision: 'HEAD'
-    repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
   syncPolicy:
     automated:
       prune: true
