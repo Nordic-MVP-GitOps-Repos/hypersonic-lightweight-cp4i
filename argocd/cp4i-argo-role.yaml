@@ -26,6 +26,7 @@ rules:
       - instana.io
       - jaegertracing.io
       - flink.apache.org
+      - events.ibm.com
       - apps
       - batch
       - ""
