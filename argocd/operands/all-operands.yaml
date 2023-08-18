@@ -6,9 +6,9 @@ spec:
   generators:
   - list:
       elements:
-        #- name: apiconnect
-        #  namespace: cp4i
-        #  sync-wave: "300"
+        - name: apiconnect
+          namespace: cp4i
+          sync-wave: "300"
         # - name: mq
         #   namespace: cp4i
         #   sync-wave: "300"
@@ -42,9 +42,9 @@ spec:
         #- name: instana-agent
         #  namespace: instana-agent
         #  sync-wave: "200"
-        #- name: clusterresourceoverride
-        #  namespace: cp4i
-        #  sync-wave: "200"
+        - name: clusterresourceoverride
+          namespace: cp4i
+          sync-wave: "200"
         # - name: assetrepository
         #  namespace: cp4i
         #  sync-wave: "200"
