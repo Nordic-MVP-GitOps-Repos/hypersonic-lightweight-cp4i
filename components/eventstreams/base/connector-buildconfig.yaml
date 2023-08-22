@@ -16,8 +16,8 @@ spec:
     type: Docker
     dockerStrategy:
       imageOptimizationPolicy: SkipLayers
-      # pullSecret:
-      #   name: ibm-entitlement-key
+      pullSecret:
+        name: ibm-entitlement-key
   source:
     type: Git
     git:
