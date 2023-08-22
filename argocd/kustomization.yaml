@@ -25,17 +25,17 @@ patches:
   patch: |-
     - op: add
       path: /spec/source/repoURL
-      value: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
+      value: https://github.com/dingoldine/hypersonic-lightweight-cp4i-aro.git
     - op: add
       path: /spec/source/targetRevision
-      value: main
+      value: 'esaro'
 - target:
     group: argoproj.io
     kind: ApplicationSet
   patch: |-
     - op: add
       path: /spec/template/spec/source/repoURL
-      value: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
+      value: https://github.com/dingoldine/hypersonic-lightweight-cp4i-aro.git
     - op: add
       path: /spec/template/spec/source/targetRevision
-      value: main
+      value: 'esaro'
