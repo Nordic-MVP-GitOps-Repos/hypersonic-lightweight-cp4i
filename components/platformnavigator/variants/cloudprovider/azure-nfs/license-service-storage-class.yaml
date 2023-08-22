@@ -4,4 +4,4 @@ metadata:
   name: instance
   namespace: ibm-common-services
 spec:
-  storageClass: managed-premium
+  storageClass: managed-csi
