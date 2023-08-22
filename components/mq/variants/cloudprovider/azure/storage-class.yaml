@@ -6,8 +6,8 @@ spec:
   queueManager:
     storage:
       queueManager:
-        class: managed-premium
+        class: managed-csi
       persistedData:
-        class: managed-premium
+        class: managed-csi
       recoveryLogs:
-        class: managed-premium
+        class: managed-csi

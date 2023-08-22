@@ -6,7 +6,7 @@ data:
   zen: |-
     storage_data:
       storageClass: platform-navigator-storage
-      zenCoreMetaDbStorageClass: managed-premium
+      zenCoreMetaDbStorageClass: managed-csi
     scale_data:
       Usermgmt:
         name: usermgmt

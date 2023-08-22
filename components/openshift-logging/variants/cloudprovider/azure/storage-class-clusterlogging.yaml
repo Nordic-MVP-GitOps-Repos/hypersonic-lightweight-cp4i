@@ -7,5 +7,5 @@ spec:
   logStore:
     elasticsearch:
       storage:
-        storageClassName: managed-premium
+        storageClassName: managed-csi
    
