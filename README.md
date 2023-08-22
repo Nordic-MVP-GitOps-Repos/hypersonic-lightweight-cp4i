@@ -18,10 +18,13 @@ Check that you don't have a cert-manager from RedHat or Jetstack installed. If y
 
 First, fork this repo. Now update the following files that refer to your repo url:
 
+- [kustomization.yaml](./argocd/kustomization.yaml)
 - [bootstrap.yaml](./argocd/bootstrap.yaml)
-- [common.yaml](argocd/common.yaml)
+
+Now chose which operators, operands and type of environment:
+
 - [all-operators](argocd/operators/all-operators.yaml) By default, CP4I operators are installed into the openshift-operators namespace. If you want to change this, you can update the setting per operator. Note that the App Connect sample application relies on a cluster-scoped operator, so if you change this you'll have to install the operator in the namespace used by the sample application also.
-- [all-operands.yaml](argocd/operands/all-operands.yaml) Here, also update with your environment, IBM Classic infrastructure (ibm-classic), IBM VPC infrastructure (ibm-vpc), Azure (azure or azure-nfs) and AWS (aws) are valid values
+- [all-operands.yaml](argocd/operands/all-operands.yaml) Here, also update with your environment, using ODF storage (odf), IBM Classic infrastructure (ibm-classic), IBM VPC infrastructure (ibm-vpc), Azure (azure or azure-nfs) and AWS (aws) are valid values
 
 ### Install the OpenShift GitOps operator
 
