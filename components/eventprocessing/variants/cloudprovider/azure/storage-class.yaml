@@ -1,0 +1,9 @@
+apiVersion: events.ibm.com/v1beta1
+kind: EventProcessing
+metadata:
+  name: ibm-event-processing
+spec:
+  authoring:
+    storage:
+      storageClassName: managed-premium
+   

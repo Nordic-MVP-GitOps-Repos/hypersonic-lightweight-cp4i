@@ -1,0 +1,7 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: ibm-flink-pvc
+spec:
+  storageClassName: efs-sc
+   

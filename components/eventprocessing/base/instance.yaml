@@ -1,0 +1,18 @@
+apiVersion: events.ibm.com/v1beta1
+kind: EventProcessing
+metadata:
+  name: ibm-event-processing
+spec:
+  license:
+    accept: true
+    license: L-HRZF-DWHH7A
+    use: EventAutomationNonProduction
+  flink:
+    endpoint: ibm-flink-rest.cp4i.svc:8081
+  authoring:
+    storage:
+      type: persistent-claim
+      storageClassName: PATCHED_BY_KUSTOMIZE
+    authConfig:
+      authType: LOCAL
+
