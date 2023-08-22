@@ -1,0 +1,10 @@
+apiVersion: events.ibm.com/v1beta1
+kind: EventProcessing
+metadata:
+  name: ibm-event-processing
+spec:
+  logStore:
+    elasticsearch:
+      storage:
+        storageClassName: ocs-storagecluster-ceph-rbd
+   

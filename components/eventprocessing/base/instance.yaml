@@ -12,7 +12,7 @@ spec:
   authoring:
     storage:
       type: persistent-claim
-      storageClassName: ocs-storagecluster-ceph-rbd
+      storageClassName: PATCHED_BY_KUSTOMIZE
     authConfig:
       authType: LOCAL
 

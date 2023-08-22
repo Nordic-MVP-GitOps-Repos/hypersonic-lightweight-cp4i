@@ -1,0 +1,6 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: ibm-flink-pvc
+spec:
+  storageClassName: azurefile-csi-nfs
