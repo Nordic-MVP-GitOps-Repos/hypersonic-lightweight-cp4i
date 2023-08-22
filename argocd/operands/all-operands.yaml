@@ -56,11 +56,11 @@ spec:
       annotations:
         argocd.argoproj.io/sync-wave: '{{sync-wave}}'
     spec:
-      project: 'cp4i-operands'
+      project: cp4i-operands
       source:
-        path: 'envs/odf/nonprod/{{name}}/'
+        path: 'envs/azure-nfs/nonprod/{{name}}/'
       destination:
-        server: 'https://kubernetes.default.svc'
+        server: https://kubernetes.default.svc
         namespace: '{{namespace}}'
       syncPolicy:
         automated:

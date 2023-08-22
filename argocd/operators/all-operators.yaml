@@ -42,11 +42,11 @@ spec:
       annotations:
         argocd.argoproj.io/sync-wave: "100"
     spec:
-      project: 'cp4i-operators'
+      project: cp4i-operators
       source:
         path: 'components/{{name}}/operator'
       destination:
-        server: 'https://kubernetes.default.svc'
+        server: https://kubernetes.default.svc
         namespace: '{{namespace}}'
       syncPolicy:
         automated:

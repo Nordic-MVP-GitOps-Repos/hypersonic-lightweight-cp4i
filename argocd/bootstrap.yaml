@@ -10,8 +10,8 @@ spec:
   project: default
   source:
     path: ./argocd
-    targetRevision: 'HEAD'
-    repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
+    targetRevision: 'esaro'
+    repoURL: https://github.com/Dingoldine/hypersonic-lightweight-cp4i-aro.git
   syncPolicy:
     automated:
       prune: true
