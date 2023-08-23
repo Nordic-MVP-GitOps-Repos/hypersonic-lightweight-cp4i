@@ -5,5 +5,4 @@ metadata:
 spec:
   authoring:
     storage:
-      storageClassName: managed-premium
-   
+      storageClassName: managed-csi
