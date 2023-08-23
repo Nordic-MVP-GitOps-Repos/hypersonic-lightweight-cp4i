@@ -1,3 +1,2 @@
-- op: replace
-  path: /spec/template/spec/containers/0/securityContext
-  value: {}
+- op: remove
+  path: /spec/template/spec/securityContext/runAsUser
