@@ -17,8 +17,3 @@ patchesJson6902:
     kind: Deployment
     name: reloader-reloader
   path: add-reload-strategy.yaml
-- target:
-    version: v1
-    kind: Deployment
-    name: reloader-reloader
-  path: fix-security-context.yaml
