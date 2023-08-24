@@ -45,4 +45,5 @@ spec:
           productName: IBM Event Streams for Non Production
           eventstreams.production.type: CloudPakForIntegrationNonProduction
           productMetric: VIRTUAL_PROCESSOR_CORE
+      imagePullSecrets: {}
   version: 3.4.0
