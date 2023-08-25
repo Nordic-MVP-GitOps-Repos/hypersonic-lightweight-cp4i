@@ -22,6 +22,9 @@ spec:
                 memory: 512Mi
             name: egw
   tls:
+    trustedCertificates:
+    - secretName: default-cert-copy
+      certificate: ca.crt
     secretName: default-cert-copy
     key: tls.key
     serverCertificate: tls.crt
