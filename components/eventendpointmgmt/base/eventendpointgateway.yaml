@@ -21,8 +21,8 @@ spec:
                 cpu: '0.5'
                 memory: 512Mi
             name: egw
-  # tls:
-  #   caSecretName: ''
+  tls:
+    caSecretName: ''
   managerEndpoint: eventendpointmgr-ibm-eem-manager.cp4i.svc:7001
   gatewayGroupName: gwgroup1
   gatewayID: gw1
