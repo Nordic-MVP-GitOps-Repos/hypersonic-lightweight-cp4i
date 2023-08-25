@@ -21,8 +21,8 @@ spec:
   source:
     type: Git
     git:
-      uri: https://github.com/Dingoldine/hypersonic-lightweight-cp4i-aro
-      ref: esaro
+      uri: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i
+      ref: HEAD
     contextDir: components/eventstreams/base
   triggers:
     - type: ConfigChange
