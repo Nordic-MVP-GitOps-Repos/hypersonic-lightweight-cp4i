@@ -28,7 +28,7 @@ spec:
     # secretName: eventendpointmgr-ibm-eem-manager
     # key: tls.key
     # serverCertificate: tls.crt
-    caSecretName: ibm-eem-manager-ca
+    caSecretName: eventendpointmgr-ibm-eem-manager-ca
     caCertificate: ca.crt
   managerEndpoint: https://eventendpointmgr-ibm-eem-manager.cp4i.svc:7001
   gatewayGroupName: gwgroup1
