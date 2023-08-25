@@ -22,7 +22,7 @@ spec:
                 memory: 512Mi
             name: egw
   tls:
-    caSecretName: ''
+    caSecretName: default-cert-copy
   managerEndpoint: eventendpointmgr-ibm-eem-manager.cp4i.svc:7001
   gatewayGroupName: gwgroup1
   gatewayID: gw1
