@@ -23,7 +23,7 @@ spec:
             name: egw
   tls:
     trustedCertificates:
-    - secretName: default-cert-copy
+    - secretName: eventendpointmgr-ibm-eem-manager
       certificate: ca.crt
     secretName: default-cert-copy
     key: tls.key
