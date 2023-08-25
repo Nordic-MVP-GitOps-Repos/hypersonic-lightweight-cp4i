@@ -1,0 +1,35 @@
+apiVersion: events.ibm.com/v1beta1
+kind: EventGateway
+metadata:
+  name: quick-start-gw
+  namespace: cp4i
+spec:
+  license:
+    accept: true
+    license: L-YBXJ-ADJNSM
+    metric: VIRTUAL_PROCESSOR_CORE
+    use: CloudPakForIntegrationNonProduction
+  template:
+    pod:
+      spec:
+        containers:
+          - resources:
+              limits:
+                cpu: '1'
+                memory: 1Gi
+              requests:
+                cpu: '0.5'
+                memory: 512Mi
+            name: egw
+  tls:
+    # trustedCertificates:
+    # - secretName: eventendpointmgr-ibm-eem-manager
+    #   certificate: ca.crt
+    # secretName: eventendpointmgr-ibm-eem-manager
+    # key: tls.key
+    # serverCertificate: tls.crt
+    caSecretName: eventendpointmgr-ibm-eem-manager-ca
+    caCertificate: ca.crt
+  managerEndpoint: https://eventendpointmgr-ibm-eem-manager.cp4i.svc:7001
+  gatewayGroupName: gwgroup1
+  gatewayID: gw1

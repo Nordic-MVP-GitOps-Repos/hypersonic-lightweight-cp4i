@@ -6,7 +6,7 @@ metadata:
     eventstreams.ibm.com/use-connector-resources: "true"
 spec:
   image: image-registry.openshift-image-registry.svc:5000/cp4i/mq-kafka-source-connector:latest
-  bootstrapServers: 'eventstreams-kafka-bootstrap.cp4i.svc:9092'
+  bootstrapServers: eventstreams-kafka-bootstrap.cp4i.svc:9092
   config:
     group.id: connect-cluster
     config.storage.replication.factor: 1
@@ -37,7 +37,7 @@ spec:
       metadata:
         annotations:
           cloudpakId: c8b82d189e7545f0892db9ef2731b90d
-          productVersion: 11.2.0
+          productVersion: 11.2.3
           productID: 2a79e49111f44ec3acd89608e56138f5
           cloudpakName: IBM Cloud Pak for Integration
           productChargedContainers: kafka-connect-connect
@@ -45,4 +45,5 @@ spec:
           productName: IBM Event Streams for Non Production
           eventstreams.production.type: CloudPakForIntegrationNonProduction
           productMetric: VIRTUAL_PROCESSOR_CORE
+      imagePullSecrets: []
   version: 3.4.0

@@ -1,2 +1,2 @@
 - op: remove
-  path: "/spec/template/spec/securityContext/runAsUser"
+  path: /spec/template/spec/securityContext/runAsUser
