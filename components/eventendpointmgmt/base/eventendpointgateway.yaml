@@ -22,9 +22,9 @@ spec:
                 memory: 512Mi
             name: egw
   tls:
-    trustedCertificates:
-    - secretName: eventendpointmgr-ibm-eem-manager
-      certificate: ca.crt
+    # trustedCertificates:
+    # - secretName: eventendpointmgr-ibm-eem-manager
+    #   certificate: ca.crt
     # secretName: eventendpointmgr-ibm-eem-manager
     # key: tls.key
     # serverCertificate: tls.crt
