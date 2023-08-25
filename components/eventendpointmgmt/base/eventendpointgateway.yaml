@@ -25,6 +25,6 @@ spec:
     secretName: default-cert-copy
     key: tls.key
     serverCertificate: tls.crt
-  managerEndpoint: eventendpointmgr-ibm-eem-manager.cp4i.svc:7001
+  managerEndpoint: https://eventendpointmgr-ibm-eem-manager.cp4i.svc:7001
   gatewayGroupName: gwgroup1
   gatewayID: gw1
