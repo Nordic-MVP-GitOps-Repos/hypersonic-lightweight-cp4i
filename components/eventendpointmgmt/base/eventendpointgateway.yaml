@@ -23,6 +23,10 @@ spec:
             name: egw
   tls:
     caSecretName: default-cert-copy
+    secretName: default-cert-copy
+    key: tls.key
+    serverCertificate: tls.crt
+    caCertificate: ca.crt
   managerEndpoint: eventendpointmgr-ibm-eem-manager.cp4i.svc:7001
   gatewayGroupName: gwgroup1
   gatewayID: gw1
