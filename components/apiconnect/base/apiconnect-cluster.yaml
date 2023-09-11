@@ -21,6 +21,18 @@ spec:
     storage:
       enabled: true
       type: shared
+    #external:
+    #  offload: 
+    #    enabled: true
+    #    output: |
+    #    http {
+    #      url => "https://<ENGINE_URL>/engine?structure=ibm-apiconnect"
+    #      http_method => "post"
+    #      codec => "json"
+    #      content_type => "application/json"
+    #      headers => ["x-nn-source-index", "<INDEX>", "x-nn-source-key", "<KEY>"]
+    #      id => "noname-offload"
+    #    }    
   profile: n1xc7.m48
   version: 10.0.6.0
   storageClassName: PATCHED_BY_KUSTOMIZE
