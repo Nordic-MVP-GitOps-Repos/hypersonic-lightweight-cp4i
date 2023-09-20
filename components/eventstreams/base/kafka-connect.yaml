@@ -5,7 +5,6 @@ metadata:
   annotations:
     eventstreams.ibm.com/use-connector-resources: "true"
 spec:
-  #image: image-registry.openshift-image-registry.svc:5000/cp4i/mq-kafka-source-connector:latest
   bootstrapServers: eventstreams-kafka-bootstrap.cp4i.svc:9092
   config:
     group.id: connect-cluster
