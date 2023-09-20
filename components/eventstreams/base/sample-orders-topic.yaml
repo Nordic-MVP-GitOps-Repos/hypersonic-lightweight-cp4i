@@ -1,7 +1,7 @@
 apiVersion: eventstreams.ibm.com/v1beta2
 kind: KafkaTopic
 metadata:
-  name: sample-topic
+  name: sample-orders-topic
   namespace: cp4i
   labels:
     eventstreams.ibm.com/cluster: eventstreams
