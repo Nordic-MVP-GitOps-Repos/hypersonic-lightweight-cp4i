@@ -7,4 +7,3 @@ resources:
   - sample-sink-topic.yaml
   - kafka-connect.yaml
   - mq-source-connector.yaml
-  - connector-buildconfig.yaml
