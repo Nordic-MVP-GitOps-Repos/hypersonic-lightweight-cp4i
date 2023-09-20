@@ -12,7 +12,7 @@ spec:
   class: com.ibm.eventstreams.connect.mqsource.MQSourceConnector
   tasksMax: 1
   config:
-    topic: sample-topic
+    topic: sample-orders-topic
     mq.queue.manager: SINGLEINSTANCEQM
     mq.connection.name.list: singleinstance-qm-ibm-mq.cp4i.svc(1414)
     mq.channel.name: SICHL
