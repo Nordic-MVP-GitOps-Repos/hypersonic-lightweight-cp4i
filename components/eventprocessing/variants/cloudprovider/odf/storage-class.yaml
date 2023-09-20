@@ -3,8 +3,6 @@ kind: EventProcessing
 metadata:
   name: ibm-event-processing
 spec:
-  logStore:
-    elasticsearch:
-      storage:
-        storageClassName: ocs-storagecluster-ceph-rbd
-   
+  authoring:
+    storage:
+      storageClassName: ocs-storagecluster-ceph-rbd
