@@ -5,7 +5,7 @@ metadata:
   annotations:
     eventstreams.ibm.com/use-connector-resources: "true"
 spec:
-  image: image-registry.openshift-image-registry.svc:5000/cp4i/mq-kafka-source-connector:latest
+  #image: image-registry.openshift-image-registry.svc:5000/cp4i/mq-kafka-source-connector:latest
   bootstrapServers: eventstreams-kafka-bootstrap.cp4i.svc:9092
   config:
     group.id: connect-cluster
@@ -46,4 +46,16 @@ spec:
           eventstreams.production.type: CloudPakForIntegrationNonProduction
           productMetric: VIRTUAL_PROCESSOR_CORE
       imagePullSecrets: []
-  version: 3.4.0
+   build:
+    output:
+      type: docker
+      image: image-registry.openshift-image-registry.svc:5000/cp4i/mq-source-and-datagen-connectors:0.0.1
+    plugins:
+      - name: datagen
+        artifacts:
+          - type: jar
+            url: https://github.com/IBM/kafka-connect-loosehangerjeans-source/releases/download/0.0.1/kafka-connect-loosehangerjeans-source-0.0.1-jar-with-dependencies.jar
+      - name: mq-source
+        artifacts:
+          - type: jar
+            url: https://github.com/ibm-messaging/kafka-connect-mq-source/releases/download/v1.3.3/kafka-connect-mq-source-1.3.3-jar-with-dependencies.jar
