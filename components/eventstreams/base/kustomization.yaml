@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   - eventstreams-persistent.yaml
-  - sample-orders-topic.yaml
-  - sample-sink-topic.yaml
   - kafka-connect.yaml
   - mq-source-connector.yaml
+  - sample-orders-topic.yaml
+  - sample-sink-topic.yaml
