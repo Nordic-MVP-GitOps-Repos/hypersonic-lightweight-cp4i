@@ -45,7 +45,7 @@ spec:
           eventstreams.production.type: CloudPakForIntegrationNonProduction
           productMetric: VIRTUAL_PROCESSOR_CORE
       imagePullSecrets: []
-   build:
+  build:
     output:
       type: docker
       image: image-registry.openshift-image-registry.svc:5000/cp4i/mq-source-and-datagen-connectors:0.0.1
