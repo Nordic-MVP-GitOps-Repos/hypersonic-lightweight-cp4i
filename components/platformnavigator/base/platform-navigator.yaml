@@ -5,14 +5,14 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-RJON-CJR2RX
+    license: L-YBXJ-ADJNSM
   mqDashboard: true
   replicas: 1
   storage:
     class: PATCHED_BY_KUSTOMIZE
   version: 2023.2.1
-  requestIbmServices:
-    licensing: true
+  #requestIbmServices:
+  #  licensing: true
   # See: https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=certificates-using-custom-hostnames-platform-ui
   #tls:
   #  secretName: "your-custom-certs-secret"
