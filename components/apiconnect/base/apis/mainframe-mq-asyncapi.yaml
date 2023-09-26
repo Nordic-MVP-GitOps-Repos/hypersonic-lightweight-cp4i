@@ -1,0 +1,12 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: API
+metadata:
+  name: mainframe-mq-asyncapi
+  namespace: cp4i
+spec:
+  definition:
+    configMap: mainframe-mq-asyncapi-definition
+  share:
+    apim:
+      credentialsSecret: apim-credentials
+      providerOrg: providerorg

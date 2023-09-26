@@ -1,0 +1,13 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: API
+metadata:
+  name: cat-facts-api
+  namespace: cp4i
+spec:
+  definition:
+    configMap: cat-facts-api-definition
+  share:
+    apim:
+      credentialsSecret: apim-credentials
+      providerOrg: providerorg
+

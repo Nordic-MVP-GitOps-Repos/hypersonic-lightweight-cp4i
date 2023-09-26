@@ -1,0 +1,235 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: cat-facts-api-definition
+  namespace: cp4i
+data:
+  data: |-
+    components:
+      schemas:
+        Breed:
+          description: Breed
+          properties:
+            breed:
+              description: Breed
+              format: string
+              title: Breed
+              type: string
+            coat:
+              description: Coat
+              format: string
+              title: Coat
+              type: string
+            country:
+              description: Country
+              format: string
+              title: Country
+              type: string
+            origin:
+              description: Origin
+              format: string
+              title: Origin
+              type: string
+            pattern:
+              description: Pattern
+              format: string
+              title: Pattern
+              type: string
+          title: Breed model
+          type: object
+        CatFact:
+          description: CatFact
+          properties:
+            fact:
+              description: Fact
+              format: string
+              title: Fact
+              type: string
+            length:
+              description: Length
+              format: int32
+              title: Length
+              type: integer
+          title: CatFact model
+          type: object
+    info:
+      title: Cat Facts API
+      version: '1.0'
+      x-ibm-name: cat-facts-api
+      x-ibm-summary: |-
+       Cat Facts API - An API for Cats
+    openapi: 3.0.0
+    paths:
+      /breeds:
+        get:
+          description: Returns a a list of breeds
+          operationId: getBreeds
+          parameters:
+            - description: limit the amount of results returned
+              in: query
+              name: limit
+              required: false
+              schema:
+                format: int64
+                type: integer
+          responses:
+            '200':
+              content:
+                application/json:
+                  schema:
+                    items:
+                      $ref: '#/components/schemas/Breed'
+                    type: array
+              description: successful operation
+          summary: Get a list of breeds
+          tags:
+            - Breeds
+      /fact:
+        get:
+          description: Returns a random fact
+          operationId: getRandomFact
+          parameters:
+            - description: maximum length of returned fact
+              in: query
+              name: max_length
+              required: false
+              schema:
+                format: int64
+                type: integer
+          responses:
+            '200':
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/CatFact'
+              description: successful operation
+            '404':
+              description: Fact not found
+          summary: Get Random Fact
+          tags:
+            - Facts
+      /facts:
+        get:
+          description: Returns a a list of facts
+          operationId: getFacts
+          parameters:
+            - description: maximum length of returned fact
+              in: query
+              name: max_length
+              required: false
+              schema:
+                format: int64
+                type: integer
+            - description: limit the amount of results returned
+              in: query
+              name: limit
+              required: false
+              schema:
+                format: int64
+                type: integer
+          responses:
+            '200':
+              content:
+                application/json:
+                  schema:
+                    items:
+                      $ref: '#/components/schemas/CatFact'
+                    type: array
+              description: successful operation
+          summary: Get a list of facts
+          tags:
+            - Facts
+    x-ibm-configuration:
+      type: rest
+      phase: realized
+      enforced: true
+      testable: true
+      gateway: datapower-api-gateway
+      cors:
+        enabled: true
+      assembly:
+        execute:
+          - operation-switch:
+              version: 2.0.0
+              title: operation-switch
+              case:
+                - operations:
+                    - getFacts
+                  execute:
+                    - invoke:
+                        title: invoke
+                        version: 2.0.0
+                        verb: keep
+                        target-url: $(target-url)/facts
+                        follow-redirects: false
+                        timeout: 60
+                        parameter-control:
+                          type: allowlist
+                          values: []
+                        header-control:
+                          type: blocklist
+                          values: []
+                        inject-proxy-headers: true
+                        persistent-connection: true
+                        backend-type: json
+                - operations:
+                    - getBreeds
+                  execute:
+                    - invoke:
+                        version: 2.2.0
+                        title: invoke
+                        backend-type: detect
+                        header-control:
+                          type: blocklist
+                          values: []
+                        parameter-control:
+                          type: allowlist
+                          values: []
+                        http-version: HTTP/1.1
+                        timeout: 60
+                        verb: keep
+                        chunked-uploads: true
+                        persistent-connection: true
+                        cache-response: protocol
+                        cache-ttl: 900
+                        stop-on-error: []
+                        graphql-send-type: detect
+                        websocket-upgrade: false
+                        target-url: $(target-url)/breeds
+                - operations:
+                    - getRandomFact
+                  execute:
+                    - invoke:
+                        version: 2.2.0
+                        title: invoke
+                        backend-type: detect
+                        header-control:
+                          type: blocklist
+                          values: []
+                        parameter-control:
+                          type: allowlist
+                          values: []
+                        http-version: HTTP/1.1
+                        timeout: 60
+                        verb: keep
+                        chunked-uploads: true
+                        persistent-connection: true
+                        cache-response: protocol
+                        cache-ttl: 900
+                        stop-on-error: []
+                        graphql-send-type: detect
+                        websocket-upgrade: false
+                        target-url: $(target-url)/fact
+              otherwise: []
+        finally: []
+      properties:
+        target-url:
+          value: http://catfact.ninja/
+          description: The URL of the target service
+          encoded: false
+      activity-log:
+        enabled: true
+        success-content: activity
+        error-content: payload
+    servers:
+      - url: /

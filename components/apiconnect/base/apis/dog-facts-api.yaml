@@ -1,0 +1,12 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: API
+metadata:
+  name: dog-facts-api
+  namespace: cp4i
+spec:
+  definition:
+    configMap: dog-facts-api-definition
+  share:
+    apim:
+      credentialsSecret: apim-credentials
+      providerOrg: providerorg
