@@ -10,3 +10,6 @@ resources:
   
   - mainframe-mq-asyncapi-definition.yaml
   - mainframe-mq-asyncapi.yaml
+
+  - countries-gql-api-definition.yaml
+  - countries-gql-api.yaml
