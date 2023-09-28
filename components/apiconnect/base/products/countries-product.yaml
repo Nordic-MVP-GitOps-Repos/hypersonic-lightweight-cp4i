@@ -1,0 +1,30 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: Product
+metadata:
+  name: countries-product
+spec:
+  state: Published
+  definition:
+    product: 1.0.0
+    info:
+      title: Countries GraphQL API
+      name: countries-product
+      description: >-
+        This is a public GraphQL API for information about countries, continents, and languages.
+      version: '1.0'
+    plans:
+      default-plan:
+        rate-limits:
+          default:
+            value: 100/1hour
+        title: Default Plan
+        description: Default Plan
+        approval: false
+  apis:
+    apis:
+      - name: countries-gql-api
+  share:
+    apim:
+      credentialsSecret: apim-credentials
+      providerOrg: providerorg
+      catalog: sandbox

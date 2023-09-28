@@ -1,0 +1,32 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: Product
+metadata:
+  name: mainframe-mq-product
+spec:
+  state: Published
+  definition:
+    product: 1.0.0
+    info:
+      title: Mainframe MQ AsyncAPI 
+      name: mainframe-mq-async-product
+      description: >-
+        AsyncAPI exposing a mainframe MQ queue via a streaming queue
+      version: '1.0'
+    gateways:
+       - event-gateway
+    plans:
+      default-plan:
+        rate-limits:
+          default:
+            value: 100/1hour
+        title: Default Plan
+        description: Default Plan
+        approval: false
+  apis:
+    apis:
+      - name: mainframe-mq-asyncapi
+  share:
+    apim:
+      credentialsSecret: apim-credentials
+      providerOrg: providerorg
+      catalog: sandbox

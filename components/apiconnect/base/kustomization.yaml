@@ -6,3 +6,4 @@ resources:
 
   # Uncomment to deploy declarative APIs. Prereq is to define a secret for the APIC providerorg
   #- apis/
+  #- products/
