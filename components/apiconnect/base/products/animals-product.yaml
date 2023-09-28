@@ -1,0 +1,31 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: Product
+metadata:
+  name: animals-facts-product
+spec:
+  state: Published
+  definition:
+    product: 1.0.0
+    info:
+      title: Animal Facts APIs
+      name: animal-facts-product
+      description: >-
+        A collection of animal fact APIs
+      version: '1.0'
+    plans:
+      default-plan:
+        rate-limits:
+          default:
+            value: 100/1hour
+        title: Default Plan
+        description: Default Plan
+        approval: false
+  apis:
+    apis:
+      - name: cat-facts-api
+      - name: dog-facts-api
+  share:
+    apim:
+      credentialsSecret: apim-credentials
+      providerOrg: providerorg
+      catalog: sandbox
