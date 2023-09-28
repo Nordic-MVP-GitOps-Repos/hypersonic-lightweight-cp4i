@@ -6,3 +6,4 @@ resources:
   - dog-facts-product.yaml
   - countries-product.yaml
   - mainframe-mq-product.yaml
+  - animals-product.yaml
