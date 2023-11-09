@@ -1,0 +1,27 @@
+swagger: '2.0'
+host: vpic.nhtsa.dot.gov
+basePath: /
+info:
+  version: 1.0.0
+  title: Get All Manufacturers
+  x-ibm-name: nhtsa-product-information-catalog-vehicle-listing
+x-ibm-configuration:
+  type: rest
+  phase: realized
+  enforced: false
+  testable: false
+tags:
+  - name: REST
+  - name: Not Enforced
+paths:
+  /api/vehicles/getallmanufacturers?format=json:
+    get:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+schemes:
+  - https

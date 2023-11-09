@@ -1,0 +1,68 @@
+asyncapi: 2.0.0
+info:
+  title: Create Order Queue
+  version: 1.0.0
+  description: This MQ queue accepts requests to create orders.
+x-ibm-configuration:
+  phase: realized
+  enforced: false
+  testable: false
+  type: asyncapi
+tags: 
+  - name: MQ
+  - name: Queue
+  - name: Not Enforced
+servers:
+  development:
+    url: ibmmq://qmgr-dev:1414/qm1/DEV.APP.SVRCONN
+    protocol: ibmmq
+    description: Development
+    security:
+      - X-IBM-Client-Id: []
+    bindings:
+      ibmmq: 
+        groupId: PRODCLSTR1
+        cipherSpec: ANY_TLS12_OR_HIGHER
+        bindingVersion: 0.1.0
+  production:
+    url: ibmmq://qmgr-prod:1414/qm1/DEV.APP.SVRCONN
+    protocol: ibmmq
+    description: Production
+    security:
+      - X-IBM-Client-Id: []
+    bindings:
+      ibmmq: 
+        groupId: PRODCLSTR1
+        cipherSpec: ANY_TLS12_OR_HIGHER
+        bindingVersion: 0.1.0
+channels:
+  ORDER/CREATE:
+    bindings:
+      ibmmq:
+        destinationType: queue
+        queue:
+          objectName: ORDERS_CREATE
+        bindingVersion: 0.1.0
+    publish:
+      message:
+        $ref: '#/components/messages/OrderCreate'
+        bindings:
+          ibmmq:
+            type: jms
+            description: JMS bytes message
+            bindingVersion: 0.1.0
+components:
+  messages:
+    OrderCreate:
+      payload:
+        type: object
+        properties:
+          orderId:
+            type: string
+            description: id of the order to create
+          customerId:
+            type: string
+            description: Id of the customer to create the order for
+  securitySchemes:
+    X-IBM-Client-Id:
+      type: userPassword

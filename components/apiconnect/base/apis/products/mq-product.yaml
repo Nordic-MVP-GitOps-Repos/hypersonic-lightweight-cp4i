@@ -1,0 +1,48 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: Product
+metadata:
+  name: mq-product
+spec:
+  state: Published
+  definition:
+    product: 1.0.0
+    info:
+      title: 5. MQ Create Order Queue and Notification Topic
+      name: mq-product
+      description: >-
+        This product contains AsyncAPI definitions for an MQ queue that accepts requests to create orders and a corresponding 
+        topic on which order creation events are published. 
+      version: '1.0'
+      categories:
+        - Domain/Accounts
+        - Protocol/MQ
+  apis:
+    apis:
+      - name: mq-queue-api
+      - name: mq-topic-api
+  share:
+    apim:
+      providerOrg: providerorg
+      catalog: sandbox
+---
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: API
+metadata:
+  name: mq-topic-api
+spec:
+  definition:
+    configMap: mq-topic-api-cm
+  share:
+    apim:
+      providerOrg: providerorg
+---
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: API
+metadata:
+  name: mq-queue-api
+spec:
+  definition:
+    configMap: mq-queue-api-cm
+  share:
+    apim:
+      providerOrg: providerorg

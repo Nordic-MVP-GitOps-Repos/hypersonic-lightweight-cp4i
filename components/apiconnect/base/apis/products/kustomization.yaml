@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+
+  - animals-product.yaml
+  - countries-product.yaml
+  - vehicle-info-product.yaml
+  - building-events-product.yaml
+  - mq-product.yaml
+  - rabbitmq-product.yaml
+
+patches:
+  - target:
+      kind: API
+    path: apic-creds.yaml
+  - target:
+      kind: Product
+    path: apic-creds.yaml

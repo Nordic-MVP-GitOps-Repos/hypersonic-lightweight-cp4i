@@ -1,0 +1,61 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: Product
+metadata:
+  name: vehicle-info-product
+spec:
+  state: Published
+  definition:
+    product: 1.0.0
+    info:
+      title: 3. NHTSA Product Information Catalog Vehicle Listing
+      name: vechicle-info-product
+      description: >-      
+        The National Highway Traffic Safety Administration (NHTSA) Product Information Catalog Vehicle Listing (vPIC) Application Programming Interface (API) provides different ways to gather 
+        information on Vehicles and their specifications. 
+
+      
+        The vPIC Dataset is populated using the information submitted by the Motor 
+        Vehicle manufacturers through the 565 submittals. All the information on how a VIN is assigned by the manufacturer is captured in 
+        this catalog and used to decode a VIN and extract vehicle information.
+        
+
+        Users/Applications attempting to use vPIC APIs will be controlled by an automated traffic rate control mechanism to 
+        ensure optimal performance of the NHTSA websites and minimize adverse impact to our users.
+        
+        
+        <b>The APIs in this product are unenforced and will not go through the API Connect DataPower Gateway</b>
+      version: '1.0'
+      categories:
+        - Domain/Accounts
+        - Protocol/REST
+  apis:
+    apis:
+      - name: vehicle-info-api-all-manufacturers
+      - name: vehicle-info-api-all-makes
+  share:
+    apim:
+      providerOrg: providerorg
+      catalog: sandbox
+---
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: API
+metadata:
+  name: vehicle-info-api-all-manufacturers
+spec:
+  definition:
+    configMap: vehicle-info-all-manufacturers-api-cm
+  share:
+    apim:
+      providerOrg: providerorg
+---
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: API
+metadata:
+  name: vehicle-info-api-all-makes
+spec:
+  definition:
+    configMap: vehicle-info-all-makes-api-cm
+  share:
+    apim:
+      providerOrg: providerorg
+

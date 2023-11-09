@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apic-apis
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: cp4i
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: ./components/apiconnect/base/apis/
+    targetRevision: HEAD
+    repoURL: https://github.com/kjellmlarsson/hypersonic-lightweight-cp4i-apimarketplace.git
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

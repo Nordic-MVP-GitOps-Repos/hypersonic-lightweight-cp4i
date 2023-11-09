@@ -1,15 +1,44 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-resources:
-  - cat-facts-api.yaml
-  - cat-facts-api-definition.yaml
-  
-  - dog-facts-api.yaml
-  - dog-facts-api-definition.yaml
-  
-  - mainframe-mq-asyncapi-definition.yaml
-  - mainframe-mq-asyncapi.yaml
+# Generate ConfigMaps wrapping the OpenAPI and AsyncAPI
+# files. API CR expects a configmap with 
+# the API definition, this lets us keep the API definitions in source format.
+configMapGenerator:
+  - name: cat-facts-api-cm
+    files:
+      - cat-facts-openapi.yaml
+  - name: dog-facts-api-cm
+    files:
+      - dog-facts-openapi.yaml
+  - name: countries-gql-api-cm
+    files:
+      - countries-gql-openapi.yaml
+  - name: door-badgein-api-cm
+    files:
+      - door-badgein-asyncapi.yaml
+  - name: sensor-readings-api-cm
+    files:
+      - sensor-readings-asyncapi.yaml
+  - name: mq-queue-api-cm
+    files:
+      - mq-queue-asyncapi.yaml
+  - name: mq-topic-api-cm
+    files:
+      - mq-topic-asyncapi.yaml
+  - name: vehicle-info-all-makes-api-cm
+    files:
+      - vehicle-info-all-makes-openapi.yaml
+  - name: vehicle-info-all-manufacturers-api-cm
+    files:
+      - vehicle-info-all-manufacturers-openapi.yaml
+  - name: rabbitmq-queue-api-cm
+    files:
+      - rabbitmq-asyncapi.yaml
 
-  - countries-gql-api-definition.yaml
-  - countries-gql-api.yaml
+generatorOptions:
+  disableNameSuffixHash: true
+
+resources:
+
+  - products

@@ -1,0 +1,476 @@
+swagger: '2.0'
+info:
+  title: Countries
+  x-ibm-name: countries
+  x-ibm-summary: |-
+    This is a public GraphQL API for information about countries, continents, and languages.
+  version: 1.0.0
+schemes:
+  - https
+  - wss
+basePath: /countries
+x-ibm-configuration:
+  graphql-schema: '#/definitions/countries.trevorblades.com'
+  type: graphql
+  cors:
+    enabled: true
+  assembly:
+    execute:
+      - switch:
+          version: 2.0.0
+          title: switch
+          description: ''
+          case:
+            - condition: >-
+                (($operationPath() = '/graphql') and ($httpVerb() = 'GET') and
+                (request.websocket = true))
+              execute:
+                - switch:
+                    version: 2.0.0
+                    title: switch
+                    case:
+                      - condition: ($exists($urlParameter('query')))
+                        execute:
+                          - parse:
+                              version: 2.0.0
+                              title: parse
+                              parse-settings-reference:
+                                parse-settings:
+                                  document_type: graphql
+                                  max_nesting_depth: 10
+                              description: Parse the GraphQL query
+                          - validate:
+                              version: 2.7.0
+                              title: validate & analyze
+                              input: message
+                              validate-against: graphql
+                              description: >-
+                                Validate the GraphQL query and analyze the
+                                expected cost
+                      - otherwise: []
+                - websocket-upgrade:
+                    version: 2.0.0
+                    title: websocket-upgrade
+                    header-control:
+                      type: blocklist
+                      values: []
+                    parameter-control:
+                      type: allowlist
+                      values: []
+                    timeout: 60
+                    description: >-
+                      establish the websocket connection to the backend GraphQL
+                      server
+                    target-url: https://countries.trevorblades.com/graphql
+                    request-assembly:
+                      execute:
+                        - parse:
+                            version: 2.0.0
+                            title: parse
+                            parse-settings-reference:
+                              parse-settings:
+                                document_type: detect
+                                max_nesting_depth: 10
+                            description: Parse the GraphQL query
+                        - switch:
+                            version: 2.0.0
+                            title: switch
+                            description: ''
+                            case:
+                              - condition: >-
+                                  ($storageType() = "json" and
+                                  $exists(message.body.payload) and
+                                  message.body.payload != null and
+                                  $string(message.body.payload) != '{}')
+                                execute:
+                                  - set-variable:
+                                      version: 2.0.0
+                                      title: backup payload
+                                      actions:
+                                        - set: websocket-backup
+                                          value: $(message.body)
+                                          type: any
+                                        - set: message.body
+                                          value: $(message.body.payload)
+                                          type: any
+                                      description: Backup of websocket request
+                                  - parse:
+                                      version: 2.0.0
+                                      title: parse
+                                      parse-settings-reference:
+                                        parse-settings:
+                                          document_type: graphql
+                                          max_nesting_depth: 10
+                                      description: Parse the GraphQL query
+                                  - validate:
+                                      version: 2.7.0
+                                      title: validate & analyze
+                                      input: message
+                                      validate-against: graphql
+                                      description: >-
+                                        Validate the GraphQL query and analyze
+                                        the expected cost
+                                  - set-variable:
+                                      version: 2.0.0
+                                      title: restore backup
+                                      actions:
+                                        - set: message.body
+                                          value: $(websocket-backup)
+                                          type: any
+                                      description: Restore backup of websocket request
+                              - condition: $storageType() != "json"
+                                execute:
+                                  - validate:
+                                      version: 2.7.0
+                                      title: validate & analyze
+                                      input: message
+                                      validate-against: graphql
+                                      description: >-
+                                        Validate the GraphQL query and analyze
+                                        the expected cost
+                              - condition: >-
+                                  ((message.body.type = 'connection_init') or
+                                  (message.body.type = 'stop') or
+                                  (message.body.type = 'connection_terminate'))
+                                execute: []
+                              - otherwise:
+                                  - throw:
+                                      version: 2.0.0
+                                      title: throw
+                                      name: BadRequestError
+                                      description: >-
+                                        Reject all inputs not handled by other
+                                        branches of the switch
+                                      message: Bad Request
+                        - switch:
+                            version: 2.0.0
+                            title: switch
+                            case:
+                              - condition: >-
+                                  (message.attributes.graphql.query.operationType
+                                  = 'subscription')
+                                execute: []
+                              - condition: >-
+                                  ($exists(message.attributes.graphql.query.operationType))
+                                execute: []
+                              - otherwise: []
+                    response-assembly:
+                      execute:
+                        - parse:
+                            version: 2.0.0
+                            title: parse
+                            parse-settings-reference:
+                              default: apic-default-parsesettings
+                            description: Parse the response from the GraphQL backend server
+                        - switch:
+                            version: 2.0.0
+                            title: switch
+                            description: ''
+                            case:
+                              - condition: >-
+                                  ($exists(message.body.payload) and
+                                  message.body.payload != null and
+                                  $string(message.body.payload) != '{}')
+                                execute:
+                                  - set-variable:
+                                      version: 2.0.0
+                                      title: backup payload
+                                      actions:
+                                        - set: websocket-backup
+                                          value: $(message.body)
+                                          type: any
+                                        - set: message.body
+                                          value: $(message.body.payload)
+                                          type: any
+                                      description: Backup of websocket request
+                                  - parse:
+                                      version: 2.0.0
+                                      title: parse
+                                      parse-settings-reference:
+                                        default: apic-default-parsesettings
+                                      description: >-
+                                        Parse the response from the GraphQL
+                                        backend server
+                                  - validate:
+                                      version: 2.7.0
+                                      title: validate & analyze
+                                      input: message
+                                      validate-against: graphql
+                                      description: >-
+                                        Validate the returned JSON and analyze
+                                        the real cost
+                                  - set-variable:
+                                      version: 2.0.0
+                                      title: restore backup
+                                      actions:
+                                        - set: message.body
+                                          value: $(websocket-backup)
+                                          type: any
+                                      description: Restore backup of websocket request
+                              - condition: ($exists(message.body.data))
+                                execute:
+                                  - validate:
+                                      version: 2.7.0
+                                      title: validate & analyze
+                                      input: message
+                                      validate-against: graphql
+                                      description: >-
+                                        Validate the returned JSON and analyze
+                                        the real cost
+                              - otherwise: []
+                        - switch:
+                            version: 2.0.0
+                            title: switch
+                            case:
+                              - condition: >-
+                                  ($exists(message.attributes.graphql.query.operationType)
+                                  and
+                                  message.attributes.graphql.query.operationType
+                                  != 'subscription')
+                                execute: []
+                              - otherwise: []
+            - otherwise:
+                - parse:
+                    version: 2.0.0
+                    title: parse
+                    parse-settings-reference:
+                      parse-settings:
+                        document_type: graphql
+                        max_nesting_depth: 10
+                    description: Parse the GraphQL query
+                - switch:
+                    version: 2.0.0
+                    title: switch
+                    case:
+                      - condition: >-
+                          ($operationPath() = '/graphql' and
+                          message.attributes.graphql.query.operationType !=
+                          'subscription')
+                        execute:
+                          - graphql-execute:
+                              title: GraphQL execute
+                              version: 2.0.0
+                              targets:
+                                - target: root
+                                  execute:
+                                    - validate:
+                                        input: message
+                                        version: 2.7.0
+                                        validate-against: graphql
+                                        description: >-
+                                          Validate the GraphQL query and analyze
+                                          the expected cost
+                                        title: validate & analyze
+                                    - invoke:
+                                        cache-ttl: 900
+                                        graphql-send-type: detect
+                                        parameter-control:
+                                          type: allowlist
+                                          values: []
+                                        http-version: HTTP/1.1
+                                        header-control:
+                                          type: allowlist
+                                          values:
+                                            - User-Agent
+                                            - X-Client-IP
+                                            - X-Global-Transaction-ID
+                                            - Content-Type
+                                        chunked-uploads: true
+                                        verb: keep
+                                        stop-on-error:
+                                          - ConnectionError
+                                          - SOAPError
+                                          - OperationError
+                                        websocket-upgrade: false
+                                        description: Invoke the backend GraphQL server
+                                        compression: false
+                                        title: graphql-invoke
+                                        target-url: >-
+                                          https://countries.trevorblades.com/graphql
+                                        backend-type: graphql
+                                        version: 2.3.0
+                                        cache-response: protocol
+                                        timeout: 60
+                                    - parse:
+                                        title: parse
+                                        version: 2.0.0
+                                        description: >-
+                                          Parse the response from the GraphQL
+                                          backend server
+                                        parse-settings-reference:
+                                          default: apic-default-parsesettings
+                                    - validate:
+                                        input: message
+                                        version: 2.7.0
+                                        validate-against: graphql
+                                        description: >-
+                                          Validate the returned JSON and analyze
+                                          the real cost
+                                        title: validate & analyze
+                                  catch:
+                                    - execute: []
+                                      errors:
+                                        - ConnectionError
+                                - target: __introspection
+                                  execute:
+                                    - validate:
+                                        input: message
+                                        version: 2.7.0
+                                        validate-against: graphql
+                                        description: >-
+                                          Validate the GraphQL query and analyze
+                                          the expected cost
+                                        title: validate & analyze
+                                    - graphql-introspect:
+                                        input: message
+                                        version: 2.0.0
+                                        description: >-
+                                          Introspect the GraphQL schema using the
+                                          query
+                                        title: graphql-introspect
+                      - condition: ($operationPath() = '/graphql/cost')
+                        execute:
+                          - validate:
+                              version: 2.7.0
+                              title: validate & analyze
+                              input: message
+                              validate-against: graphql
+                              description: >-
+                                Validate the GraphQL query and analyze the
+                                expected cost
+                          - set-variable:
+                              version: 2.0.0
+                              title: set-variable
+                              actions:
+                                - set: message.body
+                                  value: $(message.attributes.graphql)
+                                  type: any
+                              description: >-
+                                Copy the cost estimate for the GraphQL query to
+                                the output
+                      - otherwise:
+                          - throw:
+                              version: 2.0.0
+                              title: throw
+                              name: BadRequestError
+                              description: >-
+                                Reject all inputs not handled by other branches
+                                of the switch
+                              message: Bad Request
+                    description: >-
+                      Choose between executing on backend server or other
+                      options to be completed on the Gateway
+  html-page: store:///graphiql.html
+  gateway: datapower-api-gateway
+  phase: realized
+  enforced: true
+  testable: true
+definitions:
+  countries.trevorblades.com:
+    type: 'null'
+    x-ibm-schema:
+      type: graphql
+      url: https://countries.trevorblades.com/graphql
+      file: >-
+        dHlwZSBDb250aW5lbnQgewogIGNvZGU6IElEIQogIGNvdW50cmllczogW0NvdW50cnkhXSEKICBuYW1lOiBTdHJpbmchCn0KCmlucHV0IENvbnRpbmVudEZpbHRlcklucHV0IHsKICBjb2RlOiBTdHJpbmdRdWVyeU9wZXJhdG9ySW5wdXQKfQoKdHlwZSBDb3VudHJ5IHsKICBhd3NSZWdpb246IFN0cmluZyEKICBjYXBpdGFsOiBTdHJpbmcKICBjb2RlOiBJRCEKICBjb250aW5lbnQ6IENvbnRpbmVudCEKICBjdXJyZW5jaWVzOiBbU3RyaW5nIV0hCiAgY3VycmVuY3k6IFN0cmluZwogIGVtb2ppOiBTdHJpbmchCiAgZW1vamlVOiBTdHJpbmchCiAgbGFuZ3VhZ2VzOiBbTGFuZ3VhZ2UhXSEKICBuYW1lKGxhbmc6IFN0cmluZyk6IFN0cmluZyEKICBuYXRpdmU6IFN0cmluZyEKICBwaG9uZTogU3RyaW5nIQogIHBob25lczogW1N0cmluZyFdIQogIHN0YXRlczogW1N0YXRlIV0hCiAgc3ViZGl2aXNpb25zOiBbU3ViZGl2aXNpb24hXSEKfQoKaW5wdXQgQ291bnRyeUZpbHRlcklucHV0IHsKICBjb2RlOiBTdHJpbmdRdWVyeU9wZXJhdG9ySW5wdXQKICBjb250aW5lbnQ6IFN0cmluZ1F1ZXJ5T3BlcmF0b3JJbnB1dAogIGN1cnJlbmN5OiBTdHJpbmdRdWVyeU9wZXJhdG9ySW5wdXQKICBuYW1lOiBTdHJpbmdRdWVyeU9wZXJhdG9ySW5wdXQKfQoKdHlwZSBMYW5ndWFnZSB7CiAgY29kZTogSUQhCiAgbmFtZTogU3RyaW5nIQogIG5hdGl2ZTogU3RyaW5nIQogIHJ0bDogQm9vbGVhbiEKfQoKaW5wdXQgTGFuZ3VhZ2VGaWx0ZXJJbnB1dCB7CiAgY29kZTogU3RyaW5nUXVlcnlPcGVyYXRvcklucHV0Cn0KCnR5cGUgUXVlcnkgewogIGNvbnRpbmVudChjb2RlOiBJRCEpOiBDb250aW5lbnQKICBjb250aW5lbnRzKGZpbHRlcjogQ29udGluZW50RmlsdGVySW5wdXQgPSB7fSk6IFtDb250aW5lbnQhXSEKICBjb3VudHJpZXMoZmlsdGVyOiBDb3VudHJ5RmlsdGVySW5wdXQgPSB7fSk6IFtDb3VudHJ5IV0hCiAgY291bnRyeShjb2RlOiBJRCEpOiBDb3VudHJ5CiAgbGFuZ3VhZ2UoY29kZTogSUQhKTogTGFuZ3VhZ2UKICBsYW5ndWFnZXMoZmlsdGVyOiBMYW5ndWFnZUZpbHRlcklucHV0ID0ge30pOiBbTGFuZ3VhZ2UhXSEKfQoKdHlwZSBTdGF0ZSB7CiAgY29kZTogU3RyaW5nCiAgY291bnRyeTogQ291bnRyeSEKICBuYW1lOiBTdHJpbmchCn0KCmlucHV0IFN0cmluZ1F1ZXJ5T3BlcmF0b3JJbnB1dCB7CiAgZXE6IFN0cmluZwogIGluOiBbU3RyaW5nIV0KICBuZTogU3RyaW5nCiAgbmluOiBbU3RyaW5nIV0KICByZWdleDogU3RyaW5nCn0KCnR5cGUgU3ViZGl2aXNpb24gewogIGNvZGU6IElEIQogIGVtb2ppOiBTdHJpbmcKICBuYW1lOiBTdHJpbmchCn0K
+paths:
+  /graphql:
+    post:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes:
+        - application/json
+        - application/graphql
+      produces:
+        - application/json
+      parameters:
+        - name: variables
+          in: query
+          required: false
+          type: string
+        - name: operationName
+          in: query
+          required: false
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: string
+    get:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces:
+        - application/json
+        - text/html
+      parameters:
+        - name: variables
+          in: query
+          required: false
+          type: string
+        - name: operationName
+          in: query
+          required: false
+          type: string
+        - name: query
+          in: query
+          required: false
+          type: string
+    parameters: []
+  /graphql/cost:
+    post:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes:
+        - application/json
+        - application/graphql
+      produces:
+        - application/json
+      parameters:
+        - name: variables
+          in: query
+          required: false
+          type: string
+        - name: operationName
+          in: query
+          required: false
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: string
+    get:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces:
+        - application/json
+        - text/html
+      parameters:
+        - name: variables
+          in: query
+          required: false
+          type: string
+        - name: operationName
+          in: query
+          required: false
+          type: string
+        - name: query
+          in: query
+          required: true
+          type: string
+    parameters: []

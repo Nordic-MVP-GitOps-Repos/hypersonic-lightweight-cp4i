@@ -3,7 +3,3 @@ kind: Kustomization
 
 resources:
   - apiconnect-cluster.yaml
-
-  # Uncomment to deploy declarative APIs. Prereq is to define a secret for the APIC providerorg
-  #- apis/
-  #- products/

@@ -1,0 +1,8 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: API
+metadata:
+  name: name-is-ignored
+spec:
+  share:
+    apim:
+      credentialsSecret: apim-credentials

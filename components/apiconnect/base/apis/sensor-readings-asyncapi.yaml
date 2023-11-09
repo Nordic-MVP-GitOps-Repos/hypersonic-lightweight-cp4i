@@ -1,0 +1,58 @@
+asyncapi: 2.1.0
+info:
+  description: |-
+    Readings from the logistics teams IoT network, capturing internal temperature and humidity data for areas where product is stored.
+    
+    Note that sensor events can take up to 5 minutes to reach the Kafka topic, so the sensortime value in the message payload should be treated as the canonical timestamp for the event.
+    
+  title: SENSOR.READINGS
+  version: 1.0.0
+  x-ibm-summary: |-
+    Readings from the logistics teams IoT network, capturing internal temperature and humidity data for areas where product is stored.
+    
+    Note that sensor events can take up to 5 minutes to reach the Kafka topic, so the sensortime value in the message payload should be treated as the canonical timestamp for the event.
+    
+  x-ibm-name: SENSOR.READINGS
+  contact:
+    email: jenn@loosehangers.com
+tags:
+  - name: operations
+  - name: logistics
+channels:
+  SENSOR.READINGS:
+    bindings:
+      kafka:
+        partitions: 3
+        replicas: 1
+    subscribe:
+      message:
+        payload: {"namespace":"com.loosehangerjeans","type":"record","name":"SensorReading","fields":[{"name":"sensorid","type":"string","doc":"uniqueidentifierforthesensorthatcapturedthereading.Sensoridshelptoidentifythelocationofthesensorbybeingmadeupofabuildingname,floornumber,andsensornumber,allseparatedbyhyphens(-)"},{"name":"sensortime","type":"string","doc":"datetimethereadingwascaptured,in&#x27;EEEMMMddHH:mm:sszzzyyyy&#x27;format"},{"name":"temperature","type":"double","doc":"temperaturereadingindegreescelsius"},{"name":"humidity","type":"long","doc":"humidityreadinginpercentage"}]}
+        schemaFormat: application/vnd.apache.avro;version=1.9.0
+servers:
+  cluster:
+    url: $(bootstrapServerAddress)
+    protocol: kafka-secure
+    security:
+      - X-IBM-Client-Id: []
+components:
+  securitySchemes:
+    X-IBM-Client-Id:
+      type: plain
+x-ibm-configuration:
+  enforced: true
+  phase: realized
+  assembly:
+    execute:
+      - invoke-kafka:
+          title: invoke-kafka
+          version: 1.0.0
+          bootstrap.servers: $(bootstrapServerAddress)
+          clusterconfigid: eventstreams
+  properties:
+    bootstrapServerAddress:
+      value: handled.by.eem
+  type: asyncapi
+  testable: false
+  x-ibm-eem: eventstreams
+  cors:
+    enabled: false

@@ -1,0 +1,54 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: Product
+metadata:
+  name: building-events-product
+spec:
+  state: Published
+  definition:
+    product: 1.0.0
+    info:
+      title: 4. Building Events
+      name: building-events-product
+      description: >-
+        Kafka Topics for events in the building - includes usage of badges and sensor readings from rooms. 
+      version: '1.0'
+      categories:
+          - Domain/Accounts
+          - Protocol/Kafka
+    gateways:
+       - event-gateway
+    plans:
+      default-plan:
+        title: Default Plan
+        description: Default Plan
+        approval: false
+  apis:
+    apis:
+      - name: door-badgein-api
+      - name: sensor-readings-api
+  share:
+    apim:
+      providerOrg: providerorg
+      catalog: sandbox
+---
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: API
+metadata:
+  name: door-badgein-api
+spec:
+  definition:
+    configMap: door-badgein-api-cm
+  share:
+    apim:
+      providerOrg: providerorg
+---
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: API
+metadata:
+  name: sensor-readings-api
+spec:
+  definition:
+    configMap: sensor-readings-api-cm
+  share:
+    apim:
+      providerOrg: providerorg

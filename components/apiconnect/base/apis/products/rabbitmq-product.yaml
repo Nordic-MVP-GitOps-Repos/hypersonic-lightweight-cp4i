@@ -1,0 +1,35 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: Product
+metadata:
+  name: rabbitmq-product
+spec:
+  state: Published
+  definition:
+    product: 1.0.0
+    info:
+      title: 6. RabbitMQ
+      name: rabbit-mq-product
+      description: >-
+        An example of RabbitMQ asyncapi bindings. 
+      version: '1.0'
+      categories:
+        - Domain/Accounts
+        - Protocol/AMQP
+  apis:
+    apis:
+      - name: rabbitmq-queue-api
+  share:
+    apim:
+      providerOrg: providerorg
+      catalog: sandbox
+---
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: API
+metadata:
+  name: rabbitmq-queue-api
+spec:
+  definition:
+    configMap: rabbitmq-queue-api-cm
+  share:
+    apim:
+      providerOrg: providerorg
