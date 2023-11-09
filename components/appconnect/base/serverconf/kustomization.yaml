@@ -1,0 +1,28 @@
+# ACE Configuration CR of type 'serverconf' expects a base64 encoded serverconf.yaml file
+# Generate a secret based on the plaintext serverconf.yaml file
+# so we can use the base64 encoded data in the Configuration CR. 
+secretGenerator:
+- files:
+  - serverconf.yaml
+  name: serverconf-yaml-base64-encoded
+
+resources:
+- serverconf-configuration.yaml
+
+# Replace the spec.contents field in the Configuration CR with the base64 encoded serverconf.yaml content.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+replacements:
+- source:
+    fieldPath: data.[serverconf.yaml]
+    kind: Secret
+    name: serverconf-yaml-base64-encoded
+    version: v1
+  targets:
+  - fieldPaths:
+    - spec.contents
+    select:
+      group: appconnect.ibm.com
+      kind: Configuration
+      name: serverconf-configuration
+      version: v1beta1

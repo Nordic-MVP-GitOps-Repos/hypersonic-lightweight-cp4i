@@ -2,9 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - sample-integrationserver.yaml
-  - emptyuser-configuration.yaml
-  - ace-mq-policy.yaml
-  - remote-nativeha-qm.yaml
   - dashboard.yaml
   - designer.yaml
+
+  - integrationruntime.yaml
+  - emptyuser-configuration.yaml
+  - serverconf

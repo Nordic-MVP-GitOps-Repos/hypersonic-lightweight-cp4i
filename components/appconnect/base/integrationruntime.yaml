@@ -1,0 +1,52 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: IntegrationRuntime
+metadata:
+  name: sample-integrationruntime
+spec:
+  license:
+    accept: true
+    license: L-SEWB-GH63KR
+    use: AppConnectEnterpriseNonProductionFREE
+  restApiHTTPS:
+    enabled: true
+  flowType:
+    toolkitFlow: true
+  forceFlowsHTTPS:
+    enabled: true
+    secretName: default-cert-copy
+  dashboardUsers:
+    bypassGenerate: false
+  version: '12.0'
+  template:
+    spec:
+      volumes:
+        - name: config-volume
+          configMap:
+            name: sample-configmap
+      containers:
+        - name: runtime
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/config
+          #env:
+            #- name: MY_CUSTOM_ENV_VAR
+            #  value: 'true'
+            #- name: ANOTHER_ENV_VAR
+            #  value: '100'
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 500m
+              memory: 512Mi
+  logFormat: basic
+  replicas: 1
+  barURL:
+    - https://github.com/Nordic-MVP-GitOps-Repos/ace-hello-world/raw/main/ace-hello-world.bar
+  configurations:
+    - empty-credentials
+    - serverconf-configuration
+    - sample-integrationruntime-ir-adminssl
+  defaultNetworkPolicy:
+    enabled: true

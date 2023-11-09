@@ -1,8 +1,0 @@
-apiVersion: appconnect.ibm.com/v1beta1
-kind: Configuration
-metadata:
-  name: remote-mq
-spec:
-  type: serverconf
-  description: Configuration for remote queue manager
-  data: cmVtb3RlRGVmYXVsdFF1ZXVlTWFuYWdlcjogJ3tBQ0VNUUVuZHBvaW50fTpSZW1vdGVNUScK

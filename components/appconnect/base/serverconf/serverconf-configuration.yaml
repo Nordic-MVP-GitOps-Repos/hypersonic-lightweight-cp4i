@@ -1,0 +1,8 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: Configuration
+metadata:
+  name: serverconf-configuration
+spec:
+  contents: REPLACED_BY_KUSTOMIZE
+  type: serverconf
+  version: '12.0'

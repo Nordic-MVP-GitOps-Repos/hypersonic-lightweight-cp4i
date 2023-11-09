@@ -1,0 +1,14 @@
+# Sample server conf yaml
+
+# MQ keystore
+BrokerRegistry:
+  mqClientKeyStore: /sample/path/to/keystore
+
+# Use a remote default queue manager specified in a policy in a policyproject 
+#remoteDefaultQueueManager: '{ACEMQEndpoint}:RemoteMQ
+
+# Instana config for ACE
+#ResourceManagers:
+#  OpenTelemetryManager:
+#    openTelemetryEnabled: true # Enable or disable OpenTelemetry tracing. Available on Linux/x86-64.
+#    exporterOtlpGrpcEndpoint: "instana-agent.instana-agent.svc:4317" # The GRPC endpoint to which the OpenTelemetry span data is sent.

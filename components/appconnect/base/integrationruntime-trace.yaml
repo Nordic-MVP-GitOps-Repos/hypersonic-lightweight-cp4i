@@ -1,0 +1,7 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: Trace
+metadata:
+  name: trace-sample-integrationruntime
+spec:
+  integrationRuntimeName: sample-integrationruntime
+  type: user
