@@ -70,3 +70,12 @@ spec:
         kind: Configuration
         jsonPointers:
           - /spec/data
+          
+      # App Connect operator adds xxx-adminssl Configuration which is not in our 
+      # manifest. Ignore this so Argo treats the app as synced. We can't add this to the
+      # manifest since a validation webhook checks that the config is available, which it won't be on
+      # first creation of the IntegrationRuntime or if it gets deleted.
+      - group: appconnect.ibm.com
+        kind: IntegrationRuntime
+        jqPathExpressions:
+          - .spec.configurations[] | select(. | endswith("ir-adminssl"))
