@@ -14,7 +14,6 @@ spec:
   project: default
   source:
     path: ./components/common/base
-    targetRevision: cp4i2023.4.1
   syncPolicy:
     automated:
       prune: true
