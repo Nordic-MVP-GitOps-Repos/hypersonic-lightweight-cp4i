@@ -8,8 +8,6 @@ spec:
       elements:
         - name: openshift-cert-manager
           namespace: cert-manager-operator
-        - name: common-services
-          namespace: openshift-operators
         - name: platformnavigator
           namespace: openshift-operators
         #- name: apiconnect

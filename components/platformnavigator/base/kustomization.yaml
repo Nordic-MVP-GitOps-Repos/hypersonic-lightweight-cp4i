@@ -3,6 +3,8 @@ kind: Kustomization
 
 resources:
   - platform-navigator.yaml
+  - common-service.yaml 
+
   #- license-server-reporter
   # - iam-customhostname.yaml
   # - cs-onprem-tenant-config.yaml
