@@ -12,26 +12,26 @@ spec:
           namespace: openshift-operators
         - name: platformnavigator
           namespace: openshift-operators
-        - name: apiconnect
-          namespace: openshift-operators
-        - name: appconnect
-          namespace: openshift-operators
-        - name: mq
-          namespace: openshift-operators
-        - name: eventstreams
-          namespace: openshift-operators
-        - name: eventendpointmgmt
-          namespace: openshift-operators
-        - name: eventprocessing
-          namespace: openshift-operators
-        - name: flink
-          namespace: openshift-operators
-        - name: openshift-logging
-          namespace: openshift-logging
-        - name: openshift-pipelines
-          namespace: openshift-operators
-        - name: cert-utils
-          namespace: cert-utils-operator       
+        #- name: apiconnect
+        #  namespace: openshift-operators
+        #- name: appconnect
+        #  namespace: openshift-operators
+        #- name: mq
+        #  namespace: openshift-operators
+        #- name: eventstreams
+        #  namespace: openshift-operators
+        #- name: eventendpointmgmt
+        #  namespace: openshift-operators
+        #- name: eventprocessing
+        #  namespace: openshift-operators
+        #- name: flink
+        #  namespace: openshift-operators
+        #- name: openshift-logging
+        #  namespace: openshift-logging
+        #- name: openshift-pipelines
+        #  namespace: openshift-operators
+        #- name: cert-utils
+        #  namespace: cert-utils-operator       
         #- name: instana-agent
         #  namespace: openshift-operators
         #- name: clusterresourceoverride
