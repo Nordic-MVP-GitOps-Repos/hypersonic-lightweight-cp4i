@@ -2,7 +2,6 @@ apiVersion: integration.ibm.com/v1beta1
 kind: PlatformNavigator
 metadata:
   name: platform-navigator
-  namespace: integration
   labels:
     backup.integration.ibm.com/component: platformnavigator        
 spec:
