@@ -48,6 +48,7 @@ spec:
     spec:
       project: cp4i-operators
       source:
+        targetRevision: cp4i2023.4.1
         path: 'components/{{name}}/operator'
       destination:
         server: https://kubernetes.default.svc
