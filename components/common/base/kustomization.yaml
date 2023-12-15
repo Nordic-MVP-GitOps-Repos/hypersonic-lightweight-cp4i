@@ -5,5 +5,5 @@ resources:
   - catalogsource.yaml
   - namespace.yaml
   - operatorgroup.yaml
-  - copy-cert
+  #- copy-cert
   

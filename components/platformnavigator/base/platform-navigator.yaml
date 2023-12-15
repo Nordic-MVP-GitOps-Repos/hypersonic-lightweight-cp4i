@@ -5,12 +5,12 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-YBXJ-ADJNSM
+    license: L-VTPK-22YZPK
   mqDashboard: true
   replicas: 1
   storage:
     class: PATCHED_BY_KUSTOMIZE
-  version: 2023.2.1
+  version: 2023.4.1
   #requestIbmServices:
   #  licensing: true
   # See: https://www.ibm.com/docs/en/cloud-paks/cp-integration/2022.4?topic=certificates-using-custom-hostnames-platform-ui

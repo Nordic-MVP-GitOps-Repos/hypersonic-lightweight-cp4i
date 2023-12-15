@@ -3,7 +3,7 @@ kind: Subscription
 metadata:
   name: ibm-integration-platform-navigator
 spec:
-  channel: "v7.1"
+  channel: "v7.2"
   name: ibm-integration-platform-navigator
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
