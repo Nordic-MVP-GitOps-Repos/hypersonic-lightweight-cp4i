@@ -1,0 +1,11 @@
+apiVersion: operator.ibm.com/v3
+kind: CommonService
+metadata:
+  name: common-service
+  namespace: openshift-operators
+spec:
+  size: small
+  operatorNamespace: openshift-operators
+  servicesNamespace: cp4i
+  license:
+    accept: true

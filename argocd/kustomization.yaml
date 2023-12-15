@@ -11,6 +11,7 @@ resources:
   - common.yaml
 
   - operators/all-operators.yaml
+  - ../components/common-services/base
   
   #- operands/all-operands.yaml
  
