@@ -3,7 +3,7 @@ kind: Subscription
 metadata:
   name: ibm-common-service-operator
 spec:
-  channel: v4.0
+  channel: v4.3
   installPlanApproval: Automatic
   name: ibm-common-service-operator
   source: ibm-operator-catalog
