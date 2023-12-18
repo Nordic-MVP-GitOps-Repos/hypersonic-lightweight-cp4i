@@ -26,8 +26,8 @@ spec:
         #  namespace: cp4i
         - name: openshift-logging
           namespace: openshift-logging
-        #- name: openshift-pipelines
-        #  namespace: openshift-operators
+        - name: openshift-pipelines
+          namespace: openshift-operators
         - name: cert-utils
           namespace: cert-utils-operator       
         #- name: instana-agent
