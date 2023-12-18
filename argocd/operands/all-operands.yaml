@@ -12,9 +12,9 @@ spec:
         - name: apiconnect
           namespace: cp4i
           sync-wave: "300"
-        #- name: mq
-        #  namespace: cp4i
-        #  sync-wave: "300"
+        - name: mq
+          namespace: cp4i
+          sync-wave: "300"
         #- name: appconnect
         #  namespace: cp4i
         #  sync-wave: "300"
