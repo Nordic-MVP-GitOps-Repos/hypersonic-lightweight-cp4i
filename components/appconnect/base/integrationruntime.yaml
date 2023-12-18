@@ -5,7 +5,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-SEWB-GH63KR
+    license: L-UAZF-8ZYQDD
     use: AppConnectEnterpriseNonProductionFREE
   restApiHTTPS:
     enabled: true
