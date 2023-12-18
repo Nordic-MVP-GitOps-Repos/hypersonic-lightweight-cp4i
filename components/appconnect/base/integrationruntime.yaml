@@ -47,6 +47,5 @@ spec:
   configurations:
     - empty-credentials
     - serverconf-configuration
-    - sample-integrationruntime-ir-adminssl
   defaultNetworkPolicy:
     enabled: true
