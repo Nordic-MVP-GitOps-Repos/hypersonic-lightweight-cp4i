@@ -8,3 +8,4 @@ resources:
   - integrationruntime.yaml
   - emptyuser-configuration.yaml
   - serverconf
+  - sample-configmap.yaml

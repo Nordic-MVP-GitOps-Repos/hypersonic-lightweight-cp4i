@@ -13,7 +13,7 @@ spec:
     toolkitFlow: true
   forceFlowsHTTPS:
     enabled: true
-    secretName: default-cert-copy
+    #secretName: default-cert-copy
   dashboardUsers:
     bypassGenerate: false
   version: '12.0'
