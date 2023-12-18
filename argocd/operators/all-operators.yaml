@@ -6,8 +6,8 @@ spec:
   generators:
   - list:
       elements:
-        #- name: openshift-cert-manager
-        #  namespace: cert-manager-operator
+        - name: openshift-cert-manager
+          namespace: cert-manager-operator
         - name: platformnavigator
           namespace: cp4i
         - name: apiconnect
