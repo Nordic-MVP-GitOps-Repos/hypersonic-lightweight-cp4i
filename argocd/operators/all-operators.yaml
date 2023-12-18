@@ -21,13 +21,13 @@ spec:
         - name: eventendpointmgmt
           namespace: cp4i
         - name: eventprocessing
-          namespace: openshift-operators
-        - name: flink
-          namespace: openshift-operators
-        - name: openshift-logging
-          namespace: openshift-logging
-        - name: openshift-pipelines
-          namespace: openshift-operators
+          namespace: cp4i
+        #- name: flink
+        #  namespace: cp4i
+        #- name: openshift-logging
+        #  namespace: openshift-logging
+        #- name: openshift-pipelines
+        #  namespace: openshift-operators
         - name: cert-utils
           namespace: cert-utils-operator       
         #- name: instana-agent
