@@ -19,5 +19,4 @@ spec:
     license: L-UAZF-8ZYQDD
     use: CloudPakForIntegrationNonProduction
   replicas: 1
-  useCommonServices: true
   version: '12.0'

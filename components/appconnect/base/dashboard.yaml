@@ -28,7 +28,6 @@ spec:
     size: 5Gi
     type: ephemeral
   replicas: 1
-  useCommonServices: true
   version: '12.0'
   displayMode: IntegrationServers
   logFormat: basic
