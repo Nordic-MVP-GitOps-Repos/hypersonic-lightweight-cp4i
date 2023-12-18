@@ -2,10 +2,9 @@ apiVersion: eventstreams.ibm.com/v1beta2
 kind: EventStreams
 metadata:
   name: eventstreams
-  namespace: cp4i
 spec:
   security:
-    internalTls: TLSv1.2
+    internalTls: TLSv1.3
   license:
     accept: true
     use: CloudPakForIntegrationNonProduction
