@@ -4,7 +4,7 @@ metadata:
   name: common-service
 spec:
   size: small
-  operatorNamespace: openshift-operators
+  operatorNamespace: cp4i
   servicesNamespace: cp4i
   license:
     accept: true
