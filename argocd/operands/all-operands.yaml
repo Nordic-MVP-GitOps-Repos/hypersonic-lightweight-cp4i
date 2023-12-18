@@ -20,7 +20,7 @@ spec:
           sync-wave: "300"
         - name: eventstreams
           namespace: cp4i
-         sync-wave: "300"
+          sync-wave: "300"
         - name: eventendpointmgmt
           namespace: cp4i
           sync-wave: "200"
