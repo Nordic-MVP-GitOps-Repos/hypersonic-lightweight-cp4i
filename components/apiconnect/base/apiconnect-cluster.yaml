@@ -18,7 +18,6 @@ spec:
     testAndMonitor:
       enabled: true
       autoTestEnabled: true
-      aiEnabled: false
   analytics:
     storage:
       enabled: true
