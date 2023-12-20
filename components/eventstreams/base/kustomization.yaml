@@ -10,3 +10,12 @@ resources:
   #- mq-source-connector.yaml
   #- sample-orders-topic.yaml
   #- sample-sink-topic.yaml
+
+  namespace: cp4i
+
+  patchesJson6902:
+  - target:
+      version: eventstreams.ibm.com/v1beta2
+      kind: EventStreams
+      name: reloader-reloader
+    path: accept-license.yaml

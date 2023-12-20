@@ -1,0 +1,3 @@
+- op: replace
+  path: /spec/license/accept
+  value: true
