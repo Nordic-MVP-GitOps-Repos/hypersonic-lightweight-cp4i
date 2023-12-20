@@ -3,7 +3,7 @@ kind: Kustomization
 
 components:
 
-- ../../../../components/eventstreams/variants/cloudprovider/odf
+#- ../../../../components/eventstreams/variants/cloudprovider/odf
 
 resources:
 - ../../../../components/eventstreams/base
