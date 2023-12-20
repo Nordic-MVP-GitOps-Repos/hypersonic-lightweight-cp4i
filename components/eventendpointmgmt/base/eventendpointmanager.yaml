@@ -9,9 +9,9 @@ spec:
     metric: VIRTUAL_PROCESSOR_CORE
     use: CloudPakForIntegrationNonProduction
   manager:
-    #tls: 
-    #  ui:
-    #    secretName: default-cert-copy
+    tls: 
+      ui:
+        secretName: platform-navigator-ibm-inte-3c22-ui-int-tls
     authConfig:
       authType: LOCAL
     storage:
