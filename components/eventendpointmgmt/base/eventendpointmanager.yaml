@@ -9,9 +9,9 @@ spec:
     metric: VIRTUAL_PROCESSOR_CORE
     use: CloudPakForIntegrationNonProduction
   manager:
-    tls: 
-      ui:
-        secretName: letsencrypt-certs
+    #tls: 
+    #  ui:
+    #    secretName: letsencrypt-certs
     authConfig:
       authType: LOCAL
     storage:
