@@ -12,9 +12,9 @@ resources:
 
 namespace: cp4i
 
-patchesJson6902:
+patches:
 - target:
-    version: eventstreams.ibm.com/v1beta2
+    version: v1beta2
     kind: EventStreams
     name: dev-scram
   path: accept-license.yaml
