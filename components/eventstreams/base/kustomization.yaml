@@ -5,10 +5,10 @@ resources:
   - https://raw.githubusercontent.com/IBM/ibm-event-automation/event-streams-11.3.0/event-streams/cr-examples/eventstreams/openshift/development-scram.yaml
 
   #- eventstreams-persistent.yaml
-  #- kafka-connect.yaml
-  #- mq-source-connector.yaml
-  #- sample-orders-topic.yaml
-  #- sample-sink-topic.yaml
+  - kafka-connect.yaml
+  - mq-source-connector.yaml
+  - sample-orders-topic.yaml
+  - sample-sink-topic.yaml
 
 namespace: cp4i
 
