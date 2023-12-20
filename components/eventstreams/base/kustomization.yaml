@@ -14,7 +14,7 @@ namespace: cp4i
 
 patchesJson6902:
 - target:
-    version: v1beta2
+    version: eventstreams.ibm.com/v1beta2
     kind: EventStreams
-    name: reloader-reloader
+    name: dev-scram
   path: accept-license.yaml
