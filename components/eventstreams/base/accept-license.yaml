@@ -1,6 +1,6 @@
 - op: replace
   path: /spec/license/accept
-  value: "true"
+  value: true
 - op: replace
   path: /spec/license/license
   value: L-VTPK-22YZPK
