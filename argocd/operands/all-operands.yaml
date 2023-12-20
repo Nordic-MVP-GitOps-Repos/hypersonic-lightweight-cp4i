@@ -24,12 +24,12 @@ spec:
         - name: eventendpointmgmt
           namespace: cp4i
           sync-wave: "200"
-        #- name: flink
-        #  namespace: cp4i
-        #  sync-wave: "200"
-        #- name: eventprocessing
-        #  namespace: cp4i
-        #  sync-wave: "200"
+        - name: flink
+          namespace: cp4i
+          sync-wave: "200"
+        - name: eventprocessing
+          namespace: cp4i
+          sync-wave: "200"
         - name: openshift-logging
           namespace: openshift-logging
           sync-wave: "200"
