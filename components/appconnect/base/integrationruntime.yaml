@@ -2,6 +2,8 @@ apiVersion: appconnect.ibm.com/v1beta1
 kind: IntegrationRuntime
 metadata:
   name: sample-integrationruntime
+  annotations:
+    appconnect.ibm.com/webhook-barcheck: NONE
 spec:
   license:
     accept: true
