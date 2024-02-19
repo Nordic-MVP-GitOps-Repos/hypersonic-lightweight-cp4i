@@ -24,8 +24,8 @@ spec:
         #  namespace: cp4i
         #- name: flink
         #  namespace: cp4i
-        #- name: openshift-logging
-        #  namespace: openshift-logging
+        - name: openshift-logging
+          namespace: openshift-logging
         #- name: openshift-pipelines
         #  namespace: openshift-operators
         - name: cert-utils
