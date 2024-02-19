@@ -10,8 +10,8 @@ spec:
           namespace: cert-manager-operator
         - name: platformnavigator
           namespace: cp4i
-        - name: apiconnect
-          namespace: cp4i
+        #- name: apiconnect
+        #  namespace: cp4i
         - name: appconnect
           namespace: cp4i
         - name: mq
