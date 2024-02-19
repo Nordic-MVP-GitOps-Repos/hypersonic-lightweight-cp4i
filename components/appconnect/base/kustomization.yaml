@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
   - dashboard.yaml
-  - designer.yaml
+  #- designer.yaml
 
   - integrationruntime.yaml
   - emptyuser-configuration.yaml
