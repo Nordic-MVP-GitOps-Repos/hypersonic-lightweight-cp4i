@@ -8,14 +8,14 @@ spec:
       elements:
         - name: openshift-cert-manager
           namespace: cert-manager-operator
-        - name: platformnavigator
-          namespace: cp4i
+        #- name: platformnavigator
+        #  namespace: cp4i
         #- name: apiconnect
         #  namespace: cp4i
-        - name: appconnect
-          namespace: cp4i
-        - name: mq
-          namespace: cp4i
+        #- name: appconnect
+        #  namespace: cp4i
+        #- name: mq
+        #  namespace: cp4i
         #- name: eventstreams
         #  namespace: cp4i
         #- name: eventendpointmgmt
@@ -24,12 +24,12 @@ spec:
         #  namespace: cp4i
         #- name: flink
         #  namespace: cp4i
-        - name: openshift-logging
-          namespace: openshift-logging
+        #- name: openshift-logging
+        #  namespace: openshift-logging
         #- name: openshift-pipelines
         #  namespace: openshift-operators
-        - name: cert-utils
-          namespace: cert-utils-operator       
+        #- name: cert-utils
+        #  namespace: cert-utils-operator       
         #- name: instana-agent
         #  namespace: openshift-operators
         #- name: clusterresourceoverride
