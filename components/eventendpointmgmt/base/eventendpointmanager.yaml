@@ -5,13 +5,13 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-YBXJ-ADJNSM
+    license: L-VTPK-22YZPK
     metric: VIRTUAL_PROCESSOR_CORE
     use: CloudPakForIntegrationNonProduction
   manager:
-    tls: 
-      ui:
-        secretName: default-cert-copy
+    #tls: 
+    #  ui:
+    #    secretName: letsencrypt-certs
     authConfig:
       authType: LOCAL
     storage:

@@ -2,6 +2,8 @@ apiVersion: apiconnect.ibm.com/v1beta1
 kind: APIConnectCluster
 metadata:
   name: apic-cluster
+  annotations: 
+    apiconnect-operator/backups-not-configured: "true"
   labels:
     app.kubernetes.io/instance: apiconnect
     app.kubernetes.io/managed-by: ibm-apiconnect
@@ -9,14 +11,13 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-KZXM-S7SNCU
+    license: L-MMBZ-295QZQ
     metric: VIRTUAL_PROCESSOR_CORE
     use: PATCHED_BY_KUSTOMIZE
   management:
     testAndMonitor:
       enabled: true
       autoTestEnabled: true
-      aiEnabled: false
   analytics:
     storage:
       enabled: true
@@ -34,7 +35,7 @@ spec:
     #      id => "noname-offload"
     #    }    
   profile: n1xc7.m48
-  version: 10.0.6.0
+  version: 10.0.7.0
   storageClassName: PATCHED_BY_KUSTOMIZE
   gateway:
   #  jaegerTracing:

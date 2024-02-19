@@ -6,37 +6,37 @@ spec:
   generators:
   - list:
       elements:
-        # - name: apiconnect
-        #   namespace: cp4i
-        #   sync-wave: "300"
-        - name: mq
-          namespace: cp4i
-          sync-wave: "300"
-        - name: appconnect
-          namespace: cp4i
-          sync-wave: "300"
-        - name: eventstreams
-          namespace: cp4i
-          sync-wave: "300"
         - name: platformnavigator
           namespace: cp4i
           sync-wave: "200"
-        - name: openshift-logging
-          namespace: openshift-logging
-          sync-wave: "200"
-        - name: openshift-monitoring
-          namespace: openshift-monitoring
-          sync-wave: "200"
+        - name: apiconnect
+          namespace: cp4i
+          sync-wave: "300"
+        #- name: mq
+        #  namespace: cp4i
+        #  sync-wave: "300"
+        - name: appconnect
+          namespace: cp4i
+          sync-wave: "300"
+        #- name: eventstreams
+        #  namespace: cp4i
+        #  sync-wave: "300"
+        #- name: eventendpointmgmt
+        #  namespace: cp4i
+        #  sync-wave: "200"
+        #- name: flink
+        #  namespace: cp4i
+        #  sync-wave: "200"
+        #- name: eventprocessing
+        #  namespace: cp4i
+        #  sync-wave: "200"
+        #- name: openshift-logging
+        #  namespace: openshift-logging
+        #  sync-wave: "200"
+        #- name: openshift-monitoring
+        #  namespace: openshift-monitoring
+        #  sync-wave: "200"
         - name: reloader
-          namespace: cp4i
-          sync-wave: "200"
-        - name: flink
-          namespace: cp4i
-          sync-wave: "200"
-        - name: eventprocessing
-          namespace: cp4i
-          sync-wave: "200"
-        - name: eventendpointmgmt
           namespace: cp4i
           sync-wave: "200"
         #- name: instana-agent
@@ -45,7 +45,7 @@ spec:
         # - name: clusterresourceoverride
         #   namespace: cp4i
         #   sync-wave: "200"
-        # - name: assetrepository
+        #- name: assetrepository
         #  namespace: cp4i
         #  sync-wave: "200"
   template:

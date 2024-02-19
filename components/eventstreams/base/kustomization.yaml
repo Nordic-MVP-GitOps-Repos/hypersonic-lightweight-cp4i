@@ -2,8 +2,19 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - eventstreams-persistent.yaml
+  - https://raw.githubusercontent.com/IBM/ibm-event-automation/event-streams-11.3.0/event-streams/cr-examples/eventstreams/openshift/light-insecure.yaml
+
+  #- eventstreams-persistent.yaml
   - kafka-connect.yaml
   - mq-source-connector.yaml
   - sample-orders-topic.yaml
   - sample-sink-topic.yaml
+
+namespace: cp4i
+
+patches:
+- target:
+    version: v1beta2
+    kind: EventStreams
+    name: light-insecure
+  path: accept-license.yaml

@@ -1,0 +1,10 @@
+apiVersion: operator.ibm.com/v3
+kind: CommonService
+metadata:
+  name: common-service
+spec:
+  size: small
+  operatorNamespace: cp4i
+  servicesNamespace: cp4i
+  license:
+    accept: true

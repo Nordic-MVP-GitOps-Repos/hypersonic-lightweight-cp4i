@@ -6,34 +6,36 @@ spec:
   generators:
   - list:
       elements:
-        - name: apiconnect
-          namespace: openshift-operators
-        - name: appconnect
-          namespace: openshift-operators
-        - name: eventstreams
-          namespace: openshift-operators
-        - name: mq
-          namespace: openshift-operators
-        - name: platformnavigator
-          namespace: openshift-operators
+        - name: openshift-cert-manager
+          namespace: cert-manager-operator
+        #- name: platformnavigator
+        #  namespace: cp4i
+        #- name: apiconnect
+        #  namespace: cp4i
+        #- name: appconnect
+        #  namespace: cp4i
+        #- name: mq
+        #  namespace: cp4i
+        #- name: eventstreams
+        #  namespace: cp4i
+        #- name: eventendpointmgmt
+        #  namespace: cp4i
+        #- name: eventprocessing
+        #  namespace: cp4i
+        #- name: flink
+        #  namespace: cp4i
         - name: openshift-logging
           namespace: openshift-logging
         - name: openshift-pipelines
           namespace: openshift-operators
-        - name: eventendpointmgmt
-          namespace: openshift-operators
         - name: cert-utils
-          namespace: cert-utils-operator
-        - name: flink
-          namespace: openshift-operators
-        - name: eventprocessing
-          namespace: openshift-operators
+          namespace: cert-utils-operator       
         #- name: instana-agent
         #  namespace: openshift-operators
         #- name: clusterresourceoverride
         #  namespace: cp4i
         #- name: assetrepository
-        #  namespace: openshift-operators
+        #  namespace: cp4i
   template:
     metadata:
       name: '{{name}}-operator'

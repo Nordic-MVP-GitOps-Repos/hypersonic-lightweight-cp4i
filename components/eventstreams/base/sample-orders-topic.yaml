@@ -4,7 +4,7 @@ metadata:
   name: sample-orders-topic
   namespace: cp4i
   labels:
-    eventstreams.ibm.com/cluster: eventstreams
+    eventstreams.ibm.com/cluster: dev-scram
 spec:
   replicas: 1
   partitions: 1

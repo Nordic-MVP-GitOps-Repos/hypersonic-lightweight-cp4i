@@ -5,7 +5,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-SEWB-GH63KR
+    license: L-UAZF-8ZYQDD
     use: AppConnectEnterpriseNonProductionFREE
   restApiHTTPS:
     enabled: true
@@ -13,7 +13,7 @@ spec:
     toolkitFlow: true
   forceFlowsHTTPS:
     enabled: true
-    secretName: default-cert-copy
+    #secretName: default-cert-copy
   dashboardUsers:
     bypassGenerate: false
   version: '12.0'
@@ -47,6 +47,5 @@ spec:
   configurations:
     - empty-credentials
     - serverconf-configuration
-    - sample-integrationruntime-ir-adminssl
   defaultNetworkPolicy:
     enabled: true

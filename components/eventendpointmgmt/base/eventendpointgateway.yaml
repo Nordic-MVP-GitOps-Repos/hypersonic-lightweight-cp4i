@@ -6,7 +6,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-YBXJ-ADJNSM
+    license: L-VTPK-22YZPK
     metric: VIRTUAL_PROCESSOR_CORE
     use: CloudPakForIntegrationNonProduction
   template:
