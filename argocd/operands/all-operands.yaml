@@ -30,9 +30,9 @@ spec:
         #- name: eventprocessing
         #  namespace: cp4i
         #  sync-wave: "200"
-        - name: openshift-logging
-          namespace: openshift-logging
-          sync-wave: "200"
+        #- name: openshift-logging
+        #  namespace: openshift-logging
+        #  sync-wave: "200"
         - name: openshift-monitoring
           namespace: openshift-monitoring
           sync-wave: "200"
