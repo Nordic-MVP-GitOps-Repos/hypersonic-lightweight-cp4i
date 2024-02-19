@@ -8,14 +8,14 @@ spec:
       elements:
         - name: openshift-cert-manager
           namespace: cert-manager-operator
-        #- name: platformnavigator
-        #  namespace: cp4i
-        #- name: apiconnect
-        #  namespace: cp4i
-        #- name: appconnect
-        #  namespace: cp4i
-        #- name: mq
-        #  namespace: cp4i
+        - name: platformnavigator
+          namespace: cp4i
+        - name: apiconnect
+          namespace: cp4i
+        - name: appconnect
+          namespace: cp4i
+        - name: mq
+          namespace: cp4i
         #- name: eventstreams
         #  namespace: cp4i
         #- name: eventendpointmgmt
