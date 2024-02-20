@@ -58,7 +58,7 @@ spec:
     spec:
       project: cp4i-operands
       source:
-        path: 'envs/odf/nonprod/{{name}}/'
+        path: 'envs/ibm-classic/nonprod/{{name}}/'
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{namespace}}'
