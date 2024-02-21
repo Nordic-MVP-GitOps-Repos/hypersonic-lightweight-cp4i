@@ -9,7 +9,7 @@ resources:
   #- building-events-product.yaml
   - mq-product.yaml
   - rabbitmq-product.yaml
-  - datetime-product.yaml
+  #- datetime-product.yaml
 
 patches:
   - target:
