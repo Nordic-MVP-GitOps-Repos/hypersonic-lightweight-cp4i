@@ -1,0 +1,46 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: Product
+metadata:
+  name: datetime-product
+spec:
+  state: Published
+  definition:
+    product: 1.0.0
+    info:
+      title: 7. Datetime APIs
+      name: datetime-product
+      description: >-
+        Illustration of an API that uses an existing App Connect integrationruntime
+      version: '1.0'
+      categories:
+        - Domain/Payments
+        - Protocol/REST
+    plans:
+      default-plan:
+        rate-limits:
+          default:
+            value: 700/1hour
+        title: Default Plan
+        description: Default Plan
+        approval: false
+  apis:
+    apis:
+      - name: datetime-api
+  share:
+    apim:
+      providerOrg: providerorg
+      catalog: sandbox
+---
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: API
+metadata:
+  name: datetime-api
+spec:
+  definition:
+    integrationRuntime:
+      name: sample-integrationruntime
+      restApi:
+        name: datetimeservice
+  share:
+    apim:
+      providerOrg: providerorg

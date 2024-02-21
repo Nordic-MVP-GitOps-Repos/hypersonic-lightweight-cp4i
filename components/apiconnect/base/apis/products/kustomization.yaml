@@ -3,12 +3,13 @@ kind: Kustomization
 
 resources:
 
-  - animals-product.yaml
-  - countries-product.yaml
-  - vehicle-info-product.yaml
-  - building-events-product.yaml
-  - mq-product.yaml
-  - rabbitmq-product.yaml
+  # - animals-product.yaml
+  # - countries-product.yaml
+  # - vehicle-info-product.yaml
+  # - building-events-product.yaml
+  # - mq-product.yaml
+  # - rabbitmq-product.yaml
+  - datetime-product.yaml
 
 patches:
   - target:
