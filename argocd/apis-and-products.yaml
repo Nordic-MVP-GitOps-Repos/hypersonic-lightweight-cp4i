@@ -7,7 +7,7 @@ spec:
   destination:
     namespace: cp4i
     server: https://kubernetes.default.svc
-  project: default
+  project: cp4i-operands
   source:
     path: ./components/apiconnect/base/apis/
     targetRevision: HEAD
