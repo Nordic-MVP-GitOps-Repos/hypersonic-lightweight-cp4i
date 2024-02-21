@@ -39,6 +39,6 @@ configMapGenerator:
 generatorOptions:
   disableNameSuffixHash: true
 
-#resources:
-#
-#  - products
+resources:
+
+ - products
