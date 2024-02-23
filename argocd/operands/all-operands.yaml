@@ -9,15 +9,15 @@ spec:
         - name: platformnavigator
           namespace: cp4i
           sync-wave: "200"
-        - name: apiconnect
-          namespace: cp4i
-          sync-wave: "300"
-        - name: mq
-          namespace: cp4i
-          sync-wave: "300"
-        - name: appconnect
-          namespace: cp4i
-          sync-wave: "300"
+        #- name: apiconnect
+        #  namespace: cp4i
+        #  sync-wave: "300"
+        #- name: mq
+        #  namespace: cp4i
+        #  sync-wave: "300"
+        #- name: appconnect
+        #  namespace: cp4i
+        #  sync-wave: "300"
         #- name: eventstreams
         #  namespace: cp4i
         #  sync-wave: "300"
@@ -58,7 +58,7 @@ spec:
     spec:
       project: cp4i-operands
       source:
-        path: 'envs/ibm-classic/nonprod/{{name}}/'
+        path: 'envs/odf/nonprod/{{name}}/'
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{namespace}}'
