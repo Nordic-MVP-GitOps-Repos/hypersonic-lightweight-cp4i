@@ -15,7 +15,7 @@ spec:
     toolkitFlow: true
   forceFlowsHTTPS:
     enabled: true
-    secretName: openshift-ingress-cert
+    secretName: default-cert-copy
   dashboardUsers:
     bypassGenerate: false
   version: '12.0'
