@@ -2,7 +2,7 @@
 
 See: 
 
-* https://www.ibm.com/docs/sv/ibm-mq/9.3?topic=operator-version-support-mq
+* https://www.ibm.com/docs/en/ibm-mq/9.3?topic=operator-release-history-mq
 * https://www.ibm.com/docs/en/ibm-mq/9.3?topic=mqibmcomv1beta1-licensing-reference
 
 ### Connectivity from outside the cluster ###
