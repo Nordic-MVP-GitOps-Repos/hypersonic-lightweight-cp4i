@@ -13,8 +13,5 @@ resources:
 
 patches:
   - target:
-      kind: API
-    path: apic-creds.yaml
-  - target:
       kind: Product
     path: apic-creds.yaml

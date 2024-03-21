@@ -30,6 +30,3 @@ metadata:
 spec:
   definition:
     configMap: rabbitmq-queue-api-cm
-  share:
-    apim:
-      providerOrg: providerorg

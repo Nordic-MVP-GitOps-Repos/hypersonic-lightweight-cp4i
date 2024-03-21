@@ -41,6 +41,3 @@ spec:
       name: sample-integrationruntime
       restApi:
         name: datetimeservice
-  share:
-    apim:
-      providerOrg: providerorg

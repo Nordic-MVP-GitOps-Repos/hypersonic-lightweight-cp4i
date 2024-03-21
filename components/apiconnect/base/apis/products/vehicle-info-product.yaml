@@ -55,7 +55,3 @@ metadata:
 spec:
   definition:
     configMap: vehicle-info-all-makes-api-cm
-  share:
-    apim:
-      providerOrg: providerorg
-

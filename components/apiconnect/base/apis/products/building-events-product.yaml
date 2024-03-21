@@ -38,9 +38,6 @@ metadata:
 spec:
   definition:
     configMap: door-badgein-api-cm
-  share:
-    apim:
-      providerOrg: providerorg
 ---
 apiVersion: apiconnect.ibm.com/v1beta1
 kind: API
@@ -49,6 +46,3 @@ metadata:
 spec:
   definition:
     configMap: sensor-readings-api-cm
-  share:
-    apim:
-      providerOrg: providerorg

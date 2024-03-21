@@ -38,6 +38,3 @@ metadata:
 spec:
   definition:
     configMap: countries-gql-api-cm
-  share:
-    apim:
-      providerOrg: providerorg

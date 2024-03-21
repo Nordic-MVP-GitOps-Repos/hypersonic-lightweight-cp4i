@@ -39,9 +39,6 @@ metadata:
 spec:
   definition:
     configMap: cat-facts-api-cm
-  share:
-    apim:
-      providerOrg: providerorg
 ---
 apiVersion: apiconnect.ibm.com/v1beta1
 kind: API
@@ -50,6 +47,3 @@ metadata:
 spec:
   definition:
     configMap: dog-facts-api-cm
-  share:
-    apim:
-      providerOrg: providerorg
