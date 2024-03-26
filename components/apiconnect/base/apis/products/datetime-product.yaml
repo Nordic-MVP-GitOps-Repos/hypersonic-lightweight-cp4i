@@ -13,7 +13,7 @@ spec:
         Illustration of an API that uses an existing App Connect integrationruntime
       version: '1.0'
       categories:
-        - Domain/Payments
+        - Domain/Dates
         - Protocol/REST
     plans:
       default-plan:
@@ -24,20 +24,11 @@ spec:
         description: Default Plan
         approval: false
   apis:
-    apis:
-      - name: datetime-api
+    integrationRuntimes:
+      - name: sample-integrationruntime
+        security:
+          type: NoOp
   share:
     apim:
       providerOrg: providerorg
-      catalog: sandbox
----
-apiVersion: apiconnect.ibm.com/v1beta1
-kind: API
-metadata:
-  name: datetime-api
-spec:
-  definition:
-    integrationRuntime:
-      name: sample-integrationruntime
-      restApi:
-        name: datetimeservice
+      catalog: production-catalog
