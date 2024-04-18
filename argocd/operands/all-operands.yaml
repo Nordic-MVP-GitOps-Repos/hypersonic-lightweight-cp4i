@@ -66,10 +66,6 @@ spec:
         automated:
           selfHeal: true
       ignoreDifferences:
-      - group: appconnect.ibm.com
-        kind: Configuration
-        jsonPointers:
-          - /spec/data
           
       # App Connect operator adds xxx-adminssl Configuration which is not in our 
       # manifest. Ignore this so Argo treats the app as synced. We can't add this to the
@@ -79,3 +75,9 @@ spec:
         kind: IntegrationRuntime
         jqPathExpressions:
           - .spec.configurations[] | select(. | endswith("ir-adminssl"))
+
+      # Ignore replicas so HPA can be used.
+      - group: appconnect.ibm.com
+        kind: IntegrationRuntime
+        jsonPointers:
+        - /spec/replicas

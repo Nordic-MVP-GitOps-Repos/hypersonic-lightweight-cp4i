@@ -1,0 +1,22 @@
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sample-integrationruntime-cpu-usage
+spec:
+  scaleTargetRef:
+    apiVersion: appconnect.ibm.com/v1beta1
+    kind: IntegrationRuntime
+    name: sample-integrationruntime
+  minReplicas: 1
+  maxReplicas: 4
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          averageUtilization: 30
+          type: Utilization
+  behavior:
+    scaleDown:
+      # Short stabilization window for scaling down for illustrative purposes.
+      stabilizationWindowSeconds: 30

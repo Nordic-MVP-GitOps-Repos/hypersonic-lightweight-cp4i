@@ -1,7 +1,0 @@
-apiVersion: integration.ibm.com/v1beta1
-kind: PlatformNavigator
-metadata:
-  name: platform-navigator
-spec:
-  storage:
-    class: efs-sc

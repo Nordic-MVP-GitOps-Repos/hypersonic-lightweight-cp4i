@@ -9,3 +9,4 @@ resources:
   - emptyuser-configuration.yaml
   - serverconf
   - sample-configmap.yaml
+  #- hpa.yaml

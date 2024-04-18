@@ -1,9 +1,0 @@
-apiVersion: integration.ibm.com/v1beta1
-kind: PlatformNavigator
-metadata:
-  name: platform-navigator
-  annotations:
-    integration.ibm.com/reconcile-zen-configmap: "false"
-spec:
-  storage:
-    class: azurefile-csi-nfs
