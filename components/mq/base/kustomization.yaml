@@ -10,6 +10,6 @@ resources:
   - singleinstance-qm
 
   # Resources for QM using certificate from LetsEncrypt
-  #- native-ha-qm-wellknowncerts
+  - native-ha-qm-wellknowncerts
 
   - native-ha-qm-auth

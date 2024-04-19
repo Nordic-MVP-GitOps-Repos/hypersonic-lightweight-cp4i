@@ -61,14 +61,14 @@ spec:
     keys:
       - name: default
         secret:
-          secretName: mq-server-certificate-secret
+          secretName: default-cert-copy
           items:
             - tls.key
             - tls.crt
     trust:
       - name: letsencrypt
         secret:
-          secretName: letsencrypt-chain
+          secretName: default-cert-copy
           items:
             - ca.crt
   web:
