@@ -10,7 +10,6 @@ spec:
   secretName: mq-server-certificate-secret
   duration: 2160h0m0s # 90d
   renewBefore: 360h0m0s # 15d
-  commonName: aro.ceibm.com
   subject:
     organizations:
       - mq

@@ -70,7 +70,6 @@ spec:
         secret:
           secretName: letsencrypt-chain
           items:
-            - root.crt
-            - intermediate.crt
+            - ca.crt
   web:
     enabled: true

@@ -1,11 +1,20 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+# Generate these config maps from mqsc files to support
+# syntax hignlighting in tooling.
+configMapGenerator:
+  - name: native-ha-qm-configmap
+    files:
+      - qm-config/tls.mqsc
+      - qm-config/mq.ini
+
+generatorOptions:
+  disableNameSuffixHash: true
+
 resources: 
-  # Resources for QM using a self signed cerver certificate.
 
   - qm.yaml
-  - configmap.yaml
   - sni-route.yaml
 
   - tls/ca-ss-issuer.yaml
