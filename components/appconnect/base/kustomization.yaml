@@ -3,10 +3,10 @@ kind: Kustomization
 
 resources:
   - dashboard.yaml
-  #- designer.yaml
+  - designer.yaml
 
   - integrationruntime.yaml
   - emptyuser-configuration.yaml
   - serverconf
   - sample-configmap.yaml
-  #- hpa.yaml
+  - hpa.yaml
