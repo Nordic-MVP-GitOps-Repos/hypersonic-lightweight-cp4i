@@ -9,4 +9,5 @@ resources:
   - emptyuser-configuration.yaml
   - serverconf
   - sample-configmap.yaml
+  - dashboard-pvc.yaml
   #- hpa.yaml
