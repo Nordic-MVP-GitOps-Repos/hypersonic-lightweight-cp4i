@@ -16,26 +16,26 @@ spec:
           namespace: cp4i
         - name: mq
           namespace: cp4i
-        #- name: eventstreams
-        #  namespace: cp4i
-        #- name: eventendpointmgmt
-        #  namespace: cp4i
-        #- name: eventprocessing
-        #  namespace: cp4i
-        #- name: flink
-        #  namespace: cp4i
+        - name: eventstreams
+          namespace: cp4i
+        - name: eventendpointmgmt
+          namespace: cp4i
+        - name: eventprocessing
+          namespace: cp4i
+        - name: flink
+          namespace: cp4i
         - name: openshift-logging
           namespace: openshift-logging
-        #- name: openshift-pipelines
-        #  namespace: openshift-operators
+        - name: openshift-pipelines
+          namespace: openshift-operators
         - name: cert-utils
           namespace: cert-utils-operator       
-        #- name: instana-agent
-        #  namespace: openshift-operators
+        - name: instana-agent
+          namespace: openshift-operators
         #- name: clusterresourceoverride
         #  namespace: cp4i
-        #- name: assetrepository
-        #  namespace: cp4i
+        - name: assetrepository
+          namespace: cp4i
   template:
     metadata:
       name: '{{name}}-operator'
