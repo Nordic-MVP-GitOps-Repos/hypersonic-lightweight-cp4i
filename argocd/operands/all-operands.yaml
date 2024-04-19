@@ -9,9 +9,9 @@ spec:
         - name: platformnavigator
           namespace: cp4i
           sync-wave: "200"
-        #- name: apiconnect
-        #  namespace: cp4i
-        #  sync-wave: "300"
+        - name: apiconnect
+          namespace: cp4i
+          sync-wave: "300"
         - name: mq
           namespace: cp4i
           sync-wave: "300"
