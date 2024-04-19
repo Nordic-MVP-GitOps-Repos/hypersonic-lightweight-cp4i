@@ -45,7 +45,7 @@ spec:
       defaultClass: PATCHED_BY_KUSTOMIZE
       queueManager:
         type: persistent
-  version: 9.3.4.0-r1
+  version: 9.3.5.0-r1
   pki:
     keys:
       - name: default
