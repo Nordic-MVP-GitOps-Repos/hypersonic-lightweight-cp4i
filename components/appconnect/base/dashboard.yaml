@@ -2,7 +2,6 @@ apiVersion: appconnect.ibm.com/v1beta1
 kind: Dashboard
 metadata:
   name: dashboard
-  namespace: cp4i
 spec:
   license:
     accept: true

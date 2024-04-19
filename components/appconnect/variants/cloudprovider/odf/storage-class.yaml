@@ -1,6 +1,0 @@
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: dashboard-storage
-spec:
-  storageClassName: ocs-storagecluster-cephfs
