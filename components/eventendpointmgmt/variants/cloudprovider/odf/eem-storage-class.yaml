@@ -1,0 +1,8 @@
+apiVersion: events.ibm.com/v1beta1
+kind: EventEndpointManagement
+metadata:
+  name: eventendpointmgr
+spec:
+  manager:
+    storage:
+      storageClassName: ocs-storagecluster-cephfs

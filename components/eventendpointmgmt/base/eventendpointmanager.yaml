@@ -15,7 +15,8 @@ spec:
     authConfig:
       authType: LOCAL
     storage:
-      type: ephemeral
+      storageClassName: PATCHED_BY_KUSTOMIZE
+      type: persistent-claim
     template:
       pod:
         spec:
