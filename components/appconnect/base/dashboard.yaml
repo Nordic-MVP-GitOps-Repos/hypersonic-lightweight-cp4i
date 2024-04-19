@@ -26,7 +26,8 @@ spec:
             memory: 125Mi
   storage:
     size: 5Gi
-    type: ephemeral
+    type: persistent-claim
+    class: PATCHED_BY_KUSTOMIZE
   replicas: 1
   version: '12.0'
   displayMode: IntegrationRuntimes
