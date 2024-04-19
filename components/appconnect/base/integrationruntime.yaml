@@ -3,6 +3,7 @@ kind: IntegrationRuntime
 metadata:
   name: sample-integrationruntime
   annotations:
+    # https://www.ibm.com/docs/en/app-connect/container?topic=troubleshooting-integration-servers-in-app-connect-dashboard#validatingwebhook__title__1
     appconnect.ibm.com/webhook-barcheck: NONE
 spec:
   license:
