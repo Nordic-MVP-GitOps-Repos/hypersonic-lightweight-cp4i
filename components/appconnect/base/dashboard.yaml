@@ -6,7 +6,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-UAZF-8ZYQDD
+    license: L-KZVS-2G3FW4
     use: CloudPakForIntegrationNonProduction
   pod:
     containers:
