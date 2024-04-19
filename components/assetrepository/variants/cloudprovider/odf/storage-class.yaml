@@ -1,0 +1,10 @@
+apiVersion: integration.ibm.com/v1beta1
+kind: AssetRepository
+metadata:
+  name: assetrepository
+spec:
+  storage:
+    assetDataVolume:
+      class: ocs-storagecluster-ceph-rbd
+    couchVolume:
+      class: ocs-storagecluster-ceph-rbd
