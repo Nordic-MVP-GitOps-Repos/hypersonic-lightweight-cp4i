@@ -61,6 +61,7 @@ spec:
     keys:
       - name: default
         secret:
+          # Use this or create your own certificate by modifying tls/mq-server-certificate.yaml dnsNames.
           secretName: default-cert-copy
           items:
             - tls.key
