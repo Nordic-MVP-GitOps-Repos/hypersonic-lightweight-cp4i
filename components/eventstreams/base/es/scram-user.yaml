@@ -1,0 +1,35 @@
+###############################################################################
+#
+# © Copyright IBM Corp. 2020, 2023
+#
+###############################################################################
+apiVersion: eventstreams.ibm.com/v1beta2
+kind: KafkaUser
+# This kafka user generates SCRAM-SHA-512 credentials for a producer application.
+# It grants permissions to produce any topic, and it grants permission to create the topic if it doesn't exist.
+# It also grants permission to read or upload any schema.
+metadata:
+  name: producer-scram-all-topics-with-create
+  labels:
+    eventstreams.ibm.com/cluster: minimal-prod
+    backup.eventstreams.ibm.com/component: kafkauser
+spec:
+  authentication:
+    type: scram-sha-512
+  authorization:
+    type: simple
+    acls:
+      - resource:
+          type: topic
+          name: '*'
+          patternType: literal
+        operations:
+          - Write
+          - Create
+      - resource:
+          type: topic
+          name: __schema_
+          patternType: prefix
+        operations:
+          - Read
+          - Alter

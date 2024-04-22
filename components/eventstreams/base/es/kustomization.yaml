@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - eventstreams.yaml
+  - scram-user.yaml
