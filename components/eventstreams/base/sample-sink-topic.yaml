@@ -6,5 +6,5 @@ metadata:
   labels:
     eventstreams.ibm.com/cluster: minimal-prod
 spec:
-  replicas: 1
-  partitions: 1
+  replicas: 3
+  partitions: 3
