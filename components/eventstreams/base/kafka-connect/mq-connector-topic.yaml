@@ -1,10 +1,11 @@
 apiVersion: eventstreams.ibm.com/v1beta2
 kind: KafkaTopic
 metadata:
-  name: sample-orders-topic
+  name: mq-connector-topic
   namespace: cp4i
   labels:
     eventstreams.ibm.com/cluster: minimal-prod
 spec:
   replicas: 3
   partitions: 3
+  topicName: MQ.CONNECTOR.TOPIC
