@@ -6,4 +6,5 @@ resources:
   - namespace.yaml
   - operatorgroup.yaml
   - copy-cert
+  - letsencrypt-chain.yaml
   

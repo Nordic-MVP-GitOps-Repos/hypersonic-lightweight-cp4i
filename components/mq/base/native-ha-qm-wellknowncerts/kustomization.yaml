@@ -20,4 +20,3 @@ resources:
   - sni-route.yaml
 
   - tls/mq-server-certificate.yaml
-  - tls/letsencrypt-chain.yaml
