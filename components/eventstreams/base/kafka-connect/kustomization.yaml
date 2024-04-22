@@ -4,9 +4,9 @@ kind: Kustomization
 resources:
 
   - https://raw.githubusercontent.com/IBM/event-automation-demo/main/install/eventstreams/templates/05-kafkaconnect-topics.yaml
-  - https://raw.githubusercontent.com/IBM/event-automation-demo/main/install/eventstreams/templates/08-datagen.yaml
 
   - kafka-connect-user.yaml
+  - datagen.yaml
 
   - kafka-connect.yaml
   - mq-source-connector.yaml

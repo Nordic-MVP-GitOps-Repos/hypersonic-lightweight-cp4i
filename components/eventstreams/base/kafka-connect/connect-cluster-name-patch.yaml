@@ -1,4 +1,0 @@
-# Patch KafkaConnector with correct kafka-connect clustername
-- op: replace
-  path: /metadata/labels/eventstreams.ibm.com~1cluster
-  value: kafka-connect
