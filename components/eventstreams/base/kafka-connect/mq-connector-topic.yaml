@@ -7,4 +7,3 @@ metadata:
 spec:
   replicas: 3
   partitions: 3
-  topicName: MQ.CONNECTOR.TOPIC
