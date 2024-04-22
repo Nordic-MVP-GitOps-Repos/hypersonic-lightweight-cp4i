@@ -12,8 +12,8 @@ metadata:
   labels:
     backup.eventstreams.ibm.com/component: eventstreams
 spec:
-  externalCACertificates:
-    secretName: letsencrypt-chain
+  #externalCACertificates:
+  #  secretName: letsencrypt-chain
   version: latest
   license:
     # By installing this product you accept the license terms at https://ibm.biz/ea-license
