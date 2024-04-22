@@ -3,7 +3,18 @@ kind: Kustomization
 
 resources:
 
+  - https://raw.githubusercontent.com/IBM/event-automation-demo/main/install/eventstreams/templates/05-kafkaconnect-topics.yaml
+
   - kafka-connect-user.yaml
-  
+
   - kafka-connect.yaml
   - mq-source-connector.yaml
+
+namespace: cp4i
+
+patches:
+  - target:
+      version: v1beta2
+      kind: KafkaTopic
+    path: cluster-name-patch.yaml
+

@@ -1,0 +1,3 @@
+- op: replace
+  path: /metadata/labels/eventstreams.ibm.com~1cluster
+  value: minimal-prod
