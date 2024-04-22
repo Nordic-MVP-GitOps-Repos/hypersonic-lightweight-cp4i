@@ -8,4 +8,3 @@ resources:
   - kafka-connect
 
   - sample-orders-topic.yaml
-  - sample-sink-topic.yaml
