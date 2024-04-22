@@ -18,8 +18,4 @@ patches:
       version: v1beta2
       kind: KafkaTopic
     path: cluster-name-patch.yaml
-  - target:
-      version: v1beta2
-      kind: KafkaConnector
-    path: connect-cluster-name-patch.yaml
 
