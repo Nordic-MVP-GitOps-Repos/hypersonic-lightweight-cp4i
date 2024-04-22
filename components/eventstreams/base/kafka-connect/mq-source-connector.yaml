@@ -16,7 +16,7 @@ spec:
     mq.queue.manager: SINGLEINSTANCEQM
     mq.connection.name.list: singleinstance-qm-ibm-mq.cp4i.svc(1414)
     mq.channel.name: SICHL
-    mq.queue: ORDERLOG
+    mq.queue: MQ.QUEUE.STREAMINGQ
     key.converter: org.apache.kafka.connect.storage.StringConverter
     mq.message.body.jms: true
     value.converter: org.apache.kafka.connect.storage.StringConverter
