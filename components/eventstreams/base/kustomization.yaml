@@ -6,9 +6,6 @@ resources:
   - es
 
   - kafka-connect
-  
-  #- kafka-connect.yaml
-  #- mq-source-connector.yaml
 
   - sample-orders-topic.yaml
   - sample-sink-topic.yaml

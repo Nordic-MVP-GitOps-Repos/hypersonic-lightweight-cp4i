@@ -3,5 +3,7 @@ kind: Kustomization
 
 resources:
 
-  - kafka-connect.yaml
   - kafka-connect-user.yaml
+  
+  - kafka-connect.yaml
+  - mq-source-connector.yaml
