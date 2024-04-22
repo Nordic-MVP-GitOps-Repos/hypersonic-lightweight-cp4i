@@ -19,3 +19,8 @@ patches:
     kind: EventStreams
     name: light-insecure
   path: accept-license.yaml
+- target:
+    version: v1beta2
+    kind: EventStreams
+    name: minimal-prod
+  path: accept-license.yaml
