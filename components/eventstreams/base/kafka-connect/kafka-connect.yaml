@@ -14,7 +14,6 @@ spec:
     offset.storage.topic: connect-cluster-offsets
     status.storage.replication.factor: 1
     status.storage.topic: connect-cluster-status
-    auto.create.topics.enable: "false"
   replicas: 1
   authentication:
     certificateAndKey:

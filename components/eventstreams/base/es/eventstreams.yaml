@@ -41,6 +41,7 @@ spec:
         offsets.topic.replication.factor: 3
         default.replication.factor: 3
         min.insync.replicas: 2
+        auto.create.topics.enable: "false"
       listeners:
         # Used for external access
         - name: external
