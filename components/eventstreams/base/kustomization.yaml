@@ -5,6 +5,8 @@ resources:
   
   - es
 
+  - kafka-connect
+  
   #- kafka-connect.yaml
   #- mq-source-connector.yaml
 
