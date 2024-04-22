@@ -50,11 +50,11 @@ spec:
           tls: true
           authentication:
             type: scram-sha-512
-          #configuration:
-          #  brokerCertChainAndKey:
-          #    certificate: tls.crt
-          #    key: tls.key
-          #    secretName: default-cert-copy
+          configuration:
+            brokerCertChainAndKey:
+              certificate: tls.crt
+              key: tls.key
+              secretName: default-cert-copy
         - name: tls
           port: 9093
           type: internal
