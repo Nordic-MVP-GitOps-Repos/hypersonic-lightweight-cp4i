@@ -17,3 +17,8 @@ patches:
     kind: EventStreams
     name: minimal-prod
   path: accept-license-patch.yaml
+- target:
+    version: v1beta2
+    kind: EventStreams
+    name: minimal-prod
+  path: topic-operator-patch.yaml
