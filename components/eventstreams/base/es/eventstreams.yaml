@@ -26,7 +26,7 @@ spec:
   collector: {}
   restProducer: {}
   strimziOverrides:
-    entitytOperator:
+    entityOperator:
       topicOperator: {}
     kafka:
       replicas: 3
