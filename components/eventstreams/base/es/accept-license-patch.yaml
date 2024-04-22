@@ -1,9 +1,0 @@
-- op: replace
-  path: /spec/license/accept
-  value: true
-- op: replace
-  path: /spec/license/license
-  value: L-VTPK-22YZPK
-- op: replace
-  path: /spec/license/use
-  value: CloudPakForIntegrationNonProduction

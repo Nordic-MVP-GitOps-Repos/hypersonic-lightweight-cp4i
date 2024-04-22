@@ -5,7 +5,7 @@ resources:
 
   - https://raw.githubusercontent.com/IBM/event-automation-demo/main/install/eventstreams/templates/05-kafkaconnect-topics.yaml
 
-  - kafka-connect-user.yaml
+  - kafka-connect-tls-user.yaml
   - datagen.yaml
 
   - kafka-connect.yaml

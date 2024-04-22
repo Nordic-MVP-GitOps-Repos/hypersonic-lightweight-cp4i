@@ -42,12 +42,14 @@ spec:
         default.replication.factor: 3
         min.insync.replicas: 2
       listeners:
+        # Used for external access
         - name: external
           port: 9094
           type: route
           tls: true
           authentication:
             type: scram-sha-512
+        # Used by Kakfa Connect
         - name: tls
           port: 9093
           type: internal
