@@ -3,4 +3,5 @@ kind: Kustomization
 
 resources:
 
+  - kafka-connect.yaml
   - kafka-connect-user.yaml

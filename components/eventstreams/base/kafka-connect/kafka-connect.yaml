@@ -15,6 +15,16 @@ spec:
     status.storage.replication.factor: 1
     status.storage.topic: connect-cluster-status
   replicas: 1
+  authentication:
+    certificateAndKey:
+      certificate: user.crt
+      key: user.key
+      secretName: kafka-connect-user
+    type: tls
+  tls:
+    trustedCertificates:
+      - certificate: ca.crt
+        secretName: minimal-prod-cluster-ca-cert
   resources:
     limits:
       cpu: 2000m
