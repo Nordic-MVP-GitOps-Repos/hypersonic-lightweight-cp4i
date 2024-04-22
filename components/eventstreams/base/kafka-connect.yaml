@@ -5,7 +5,7 @@ metadata:
   annotations:
     eventstreams.ibm.com/use-connector-resources: "true"
 spec:
-  bootstrapServers: light-insecure-kafka-bootstrap.cp4i.svc:9092
+  bootstrapServers: minimal-prod-kafka-bootstrap.cp4i.svc:9093
   config:
     group.id: connect-cluster
     config.storage.replication.factor: 1

@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - https://raw.githubusercontent.com/IBM/ibm-event-automation/main/event-streams/cr-examples/eventstreams/openshift/minimal-prod.yaml
+
+namespace: cp4i
+
+patches:
+- target:
+    version: v1beta2
+    kind: EventStreams
+    name: minimal-prod
+  path: storage-class-patch.yaml
+- target:
+    version: v1beta2
+    kind: EventStreams
+    name: minimal-prod
+  path: accept-license-patch.yaml

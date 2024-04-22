@@ -1,0 +1,6 @@
+- op: replace
+  path: /spec/strimziOverrides/kafka/storage/class
+  value: ocs-storagecluster-ceph-rbd
+- op: replace
+  path: /spec/strimziOverrides/zookeeper/storage/class
+  value: ocs-storagecluster-ceph-rbd

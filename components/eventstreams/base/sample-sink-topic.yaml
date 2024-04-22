@@ -4,7 +4,7 @@ metadata:
   name: sample-sink-topic
   namespace: cp4i
   labels:
-    eventstreams.ibm.com/cluster: dev-scram
+    eventstreams.ibm.com/cluster: minimal-prod
 spec:
   replicas: 1
   partitions: 1
