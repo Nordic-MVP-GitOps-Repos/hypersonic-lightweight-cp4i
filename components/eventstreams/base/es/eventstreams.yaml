@@ -52,7 +52,7 @@ spec:
             type: scram-sha-512
           configuration:
             brokerCertChainAndKey:
-              certificate: ca.crt
+              certificate: tls.crt
               key: tls.key
               secretName: default-cert-copy
         - name: tls
