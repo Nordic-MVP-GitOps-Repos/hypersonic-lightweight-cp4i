@@ -13,7 +13,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-  #  repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
     path: ./components/common/base
   syncPolicy:
     automated:
