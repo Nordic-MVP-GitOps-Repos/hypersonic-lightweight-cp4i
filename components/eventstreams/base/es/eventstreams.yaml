@@ -40,7 +40,7 @@ spec:
         num.replica.fetchers: 3
         offsets.topic.replication.factor: 3
         default.replication.factor: 3
-        min.insync.replicas: 2
+        min.insync.replicas: 1
         auto.create.topics.enable: "false"
       listeners:
         # Used for external access
