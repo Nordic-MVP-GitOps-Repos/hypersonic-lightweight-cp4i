@@ -2,4 +2,16 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+
+  # To install with the top level CR and self signed certificates 
   - apiconnect-cluster.yaml
+
+  # To install with the top level CR and custom certificates,
+  # update the ingress subdomain and refer your custom certificates in apiconnect-cluster-custom-certs.yaml
+  # 
+  # APIC certificates reference: https://www.ibm.com/docs/en/api-connect/10.0.x?topic=information-api-connect-tls-certificates
+  #
+  # Certificates that callers to published APIs see is configured in each gateway service in cloud manager, see: 
+  # https://www.ibm.com/docs/en/api-connect/10.0.x?topic=topology-registering-gateway-service 
+  #
+  # - apiconnect-cluster-custom-certs.yaml

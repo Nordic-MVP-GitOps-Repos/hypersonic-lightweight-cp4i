@@ -1,0 +1,92 @@
+apiVersion: apiconnect.ibm.com/v1beta1
+kind: APIConnectCluster
+metadata:
+  name: apic-cluster
+  annotations: 
+    apiconnect-operator/backups-not-configured: "true"
+  labels:
+    app.kubernetes.io/instance: apiconnect
+    app.kubernetes.io/managed-by: ibm-apiconnect
+    app.kubernetes.io/name: apiconnect-small
+spec:
+  license:
+    accept: true
+    license: L-MMBZ-295QZQ
+    metric: VIRTUAL_PROCESSOR_CORE
+    use: PATCHED_BY_KUSTOMIZE
+  management:
+    testAndMonitor:
+      enabled: true
+      autoTestEnabled: true
+    apiManagerEndpoint:
+      annotations:
+        haproxy.router.openshift.io/timeout: 240s
+      hosts:
+        - name: apimanager.apps.INGRESS_SUBDOMAIN
+          secretName: default-cert-copy
+    cloudManagerEndpoint:
+      annotations:
+        haproxy.router.openshift.io/timeout: 240s
+      hosts:
+        - name: cloudmanager.apps.INGRESS_SUBDOMAIN
+          secretName: default-cert-copy
+    platformAPIEndpoint:
+      annotations:
+        haproxy.router.openshift.io/timeout: 240s
+      hosts:
+        - name: platform-api.apps.INGRESS_SUBDOMAIN
+          secretName: default-cert-copy
+    consumerAPIEndpoint:
+      annotations:
+        haproxy.router.openshift.io/timeout: 240s
+      hosts:
+        - name: consumer-api.apps.INGRESS_SUBDOMAIN
+          secretName: default-cert-copy
+  analytics:
+    storage:
+      enabled: true
+      type: shared
+    #external:
+    #  offload: 
+    #    enabled: true
+    #    output: |
+    #    http {
+    #      url => "https://<ENGINE_URL>/engine?structure=ibm-apiconnect"
+    #      http_method => "post"
+    #      codec => "json"
+    #      content_type => "application/json"
+    #      headers => ["x-nn-source-index", "<INDEX>", "x-nn-source-key", "<KEY>"]
+    #      id => "noname-offload"
+    #    }    
+  profile: n1xc7.m48
+  version: 10.0.7.0
+  storageClassName: PATCHED_BY_KUSTOMIZE
+  gateway:
+  #  jaegerTracing:
+  #    samplingType: const
+  #    propagationFormat: w3c
+  #    samplingRate: '1'
+  #    agentImage: 'icr.io/instana/instana-dp-agent-image:latest'
+  #    tls:
+  #      disabled: true
+  #      skipHostVerify: false
+  #    env:
+  #      - name: INSTANA_AGENT_HOST
+  #        valueFrom:
+  #          fieldRef:
+  #            apiVersion: v1
+  #            fieldPath: status.hostIP
+    podAutoScaling:
+      hpa:
+        maxReplicas: 3
+        minReplicas: 1
+        targetCPUUtilizationPercentage: 90
+        targetMemoryUtilizationPercentage: 80
+      method: HPA
+  portal:
+    portalUIEndpoint:
+      annotations:
+        haproxy.router.openshift.io/timeout: 240s
+      hosts:
+        - name: portal-web.apps.INGRESS_SUBDOMAIN
+          secretName: default-cert-copy
