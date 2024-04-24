@@ -3,7 +3,7 @@ apiVersion: route.openshift.io/v1
 metadata:
   name: nativehaqmchl-route
 spec:
-  host: nativehaqmchl.chl.mq.ibm.com
+  host: haqmchl.chl.mq.ibm.com
   to:
     kind: Service
     name: nativeha-qm-ibm-mq
