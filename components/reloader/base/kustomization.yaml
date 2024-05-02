@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
 
-  - https://github.com/stakater/Reloader/deployments/kubernetes
+  - https://github.com/stakater/Reloader/deployments/kubernetes?submodules=false
   # - https://github.com/stakater/Reloader/deployments/kubernetes?ref=v1.0.38&submodules=false #https://github.com/stakater/Reloader/issues/482
 
 namespace: cp4i
