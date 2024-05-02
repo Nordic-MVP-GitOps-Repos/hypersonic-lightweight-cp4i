@@ -8,7 +8,7 @@ resources:
 
 namespace: cp4i
 
-patchesJson6902:
+patches:
 - target:
     version: v1
     kind: Deployment
