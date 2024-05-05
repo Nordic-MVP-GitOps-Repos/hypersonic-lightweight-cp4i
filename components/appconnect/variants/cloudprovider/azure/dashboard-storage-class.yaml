@@ -1,0 +1,7 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: Dashboard
+metadata:
+  name: dashboard
+spec:
+  storage:
+    class: managed-csi
