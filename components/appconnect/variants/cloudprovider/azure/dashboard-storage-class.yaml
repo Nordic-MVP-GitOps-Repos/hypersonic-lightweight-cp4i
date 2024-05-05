@@ -4,4 +4,4 @@ metadata:
   name: dashboard
 spec:
   storage:
-    class: managed-csi
+    class: azurefile-csi
