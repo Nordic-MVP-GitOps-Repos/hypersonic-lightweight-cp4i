@@ -1,7 +1,7 @@
 apiVersion: eventstreams.ibm.com/v1beta2
 kind: EventStreams
 metadata:
-  name: eventstreams
+  name: minimal-prod
   namespace: cp4i
 spec:
   strimziOverrides:
