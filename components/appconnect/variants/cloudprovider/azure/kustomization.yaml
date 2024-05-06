@@ -1,5 +1,17 @@
 apiVersion: kustomize.config.k8s.io/v1alpha1
 kind: Component
 
-patchesStrategicMerge:
-- dashboard-storage-class.yaml
+# Azure ARO storage class azurefile-csi has additional requirements for setting uid, so by default we use
+# ephemeral storage for dashboard.
+# See: 
+# https://www.ibm.com/docs/en/app-connect/container?topic=resources-dashboard-reference#rhosseccontraints 
+# https://docs.openshift.com/container-platform/4.14/post_installation_configuration/storage-configuration.html#azure-file-considerations_post-install-storage-configuration
+#  
+
+patches:
+  - target:
+      group: appconnect.ibm.com
+      version: v1beta1
+      kind: Dashboard
+      name: dashboard
+    path: ephemeral-storage-for-azure.yaml
