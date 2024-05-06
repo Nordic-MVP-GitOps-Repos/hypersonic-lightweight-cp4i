@@ -42,6 +42,8 @@ spec:
         privileged: false
         readOnlyRootFilesystem: true
         runAsNonRoot: true
+    buildConfig:
+        pullSecret: ibm-entitlement-key
     pod:
       metadata:
         annotations:
