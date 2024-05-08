@@ -74,6 +74,7 @@ spec:
         type: persistent-claim
         size: 4Gi
         class: PATCHED_BY_KUSTOMIZE
+        deleteClaim: true # ensure claim is owned by CR
     zookeeper:
       replicas: 3
       metricsConfig:
@@ -86,3 +87,4 @@ spec:
         type: persistent-claim
         size: 2Gi
         class: PATCHED_BY_KUSTOMIZE
+        deleteClaim: true # ensure claim is owned by CR
