@@ -44,7 +44,7 @@ spec:
     storage:
       defaultClass: PATCHED_BY_KUSTOMIZE
       queueManager:
-        type: persistent
+        type: persistent-claim
   version: 9.3.5.0-r2
   pki:
     keys:
