@@ -12,7 +12,7 @@ metadata:
   labels:
     backup.eventstreams.ibm.com/component: eventstreams
 spec:   
-  version: latest
+  version: '11.4.0'
   license:
     # By installing this product you accept the license terms at https://ibm.biz/ea-license
     accept: true

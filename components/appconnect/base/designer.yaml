@@ -16,7 +16,7 @@ spec:
       schedule: Every 15 days
   license:
     accept: true
-    license: L-KZVS-2G3FW4
+    license: L-QECF-MBXVLU
     use: CloudPakForIntegrationNonProduction
   replicas: 1
   version: '12.0'

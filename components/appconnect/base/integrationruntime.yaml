@@ -8,8 +8,8 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-KZVS-2G3FW4
-    use: AppConnectEnterpriseNonProductionFREE
+    license: L-QECF-MBXVLU
+    use: CloudPakForIntegrationNonProduction
   restApiHTTPS:
     enabled: true
   flowType:

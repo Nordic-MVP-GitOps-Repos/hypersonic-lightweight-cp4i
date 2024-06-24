@@ -11,7 +11,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-MMBZ-295QZQ
+    license: L-DZZQ-MGVN8V
     metric: VIRTUAL_PROCESSOR_CORE
     use: PATCHED_BY_KUSTOMIZE
   management:
