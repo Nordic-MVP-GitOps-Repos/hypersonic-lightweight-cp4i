@@ -22,7 +22,7 @@ spec:
       - name: mq-topic-api
   share:
     apim:
-      providerOrg: test
+      providerOrg: providerorg
       catalog: sandbox
       credentialsSecret: apim-credentials
 ---

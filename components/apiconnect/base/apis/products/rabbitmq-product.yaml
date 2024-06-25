@@ -20,7 +20,7 @@ spec:
       - name: rabbitmq-queue-api
   share:
     apim:
-      providerOrg: test
+      providerOrg: providerorg
       catalog: sandbox
       credentialsSecret: apim-credentials
 ---
