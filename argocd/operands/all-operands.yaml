@@ -21,9 +21,9 @@ spec:
         - name: eventstreams
           namespace: cp4i
           sync-wave: "300"
-        #- name: eventendpointmgmt
-        #  namespace: cp4i
-        #  sync-wave: "200"
+        - name: eventendpointmgmt
+          namespace: cp4i
+          sync-wave: "200"
         #- name: flink
         #  namespace: cp4i
         #  sync-wave: "200"
