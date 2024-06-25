@@ -35,7 +35,7 @@ spec:
     #      id => "noname-offload"
     #    }    
   profile: n1xc7.m48
-  version: 10.0.7.0
+  version: 10.0.8.0
   storageClassName: PATCHED_BY_KUSTOMIZE
   gateway:
   #  jaegerTracing:
