@@ -8,7 +8,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-QECF-MBXVLU
+    license: L-XRNH-47FJAW
     use: CloudPakForIntegrationNonProduction
   restApiHTTPS:
     enabled: true
