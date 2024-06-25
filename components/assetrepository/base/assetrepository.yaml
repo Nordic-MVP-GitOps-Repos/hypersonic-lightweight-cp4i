@@ -5,7 +5,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-JTPV-KYG8TFK
+    license: L-BMSF-5YDSLR
   replicas: 1
   singleReplicaOnly: true
   storage:
