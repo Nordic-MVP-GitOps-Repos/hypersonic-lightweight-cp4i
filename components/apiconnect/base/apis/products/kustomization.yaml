@@ -10,8 +10,3 @@ resources:
   - mq-product.yaml
   - rabbitmq-product.yaml
   - datetime-product.yaml
-
-patches:
-  - target:
-      kind: Product
-    path: apic-creds.yaml

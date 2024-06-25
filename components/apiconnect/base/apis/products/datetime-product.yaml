@@ -23,12 +23,13 @@ spec:
         title: Default Plan
         description: Default Plan
         approval: false
+  share:
+    apim:
+      providerOrg: providerorg
+      catalog: sandbox
+      credentialsSecret: apim-credentials
   apis:
     integrationRuntimes:
       - name: sample-integrationruntime
         security:
           type: NoOp
-  share:
-    apim:
-      providerOrg: providerorg
-      catalog: sandbox

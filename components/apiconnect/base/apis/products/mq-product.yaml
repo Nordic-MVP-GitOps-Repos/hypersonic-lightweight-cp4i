@@ -24,6 +24,8 @@ spec:
     apim:
       providerOrg: providerorg
       catalog: sandbox
+      credentialsSecret: apim-credentials
+
 ---
 apiVersion: apiconnect.ibm.com/v1beta1
 kind: API
