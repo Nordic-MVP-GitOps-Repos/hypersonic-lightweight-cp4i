@@ -6,13 +6,11 @@
 apiVersion: eventstreams.ibm.com/v1beta2
 kind: EventStreams
 metadata:
-  annotations:
-    eventstreams.ibm.com/apicurio-registry-version: ">=2.4"
   name: minimal-prod
   labels:
     backup.eventstreams.ibm.com/component: eventstreams
 spec:   
-  version: '11.4.0'
+  version: latest
   license:
     # By installing this product you accept the license terms at https://ibm.biz/ea-license
     accept: true
