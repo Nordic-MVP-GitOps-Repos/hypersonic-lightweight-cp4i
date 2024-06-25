@@ -16,7 +16,7 @@ spec:
   license:
     # By installing this product you accept the license terms at https://ibm.biz/ea-license
     accept: true
-    license: L-VTPK-22YZPK
+    license: L-JTPV-KYG8TF
     use: CloudPakForIntegrationNonProduction
   adminApi: {}
   adminUI:
