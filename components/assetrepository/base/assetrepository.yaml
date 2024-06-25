@@ -13,4 +13,4 @@ spec:
       class: PATCHED_BY_KUSTOMIZE
     couchVolume:
       class: PATCHED_BY_KUSTOMIZE
-  version: 2023.4.1
+  version: 4.0-sc2
