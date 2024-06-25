@@ -22,10 +22,9 @@ spec:
       - name: mq-topic-api
   share:
     apim:
-      providerOrg: providerorg
+      providerOrg: test
       catalog: sandbox
       credentialsSecret: apim-credentials
-
 ---
 apiVersion: apiconnect.ibm.com/v1beta1
 kind: API

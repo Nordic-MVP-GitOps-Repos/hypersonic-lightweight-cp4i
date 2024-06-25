@@ -10,3 +10,10 @@ resources:
   - mq-product.yaml
   - rabbitmq-product.yaml
   - datetime-product.yaml
+
+patches:
+  - target:
+      version: v1beta1
+      group: apiconnect.ibm.com
+      kind: Product
+    path: add-apim-credentials.yaml
