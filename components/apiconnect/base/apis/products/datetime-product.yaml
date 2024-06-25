@@ -31,4 +31,4 @@ spec:
   share:
     apim:
       providerOrg: providerorg
-      catalog: production-catalog
+      catalog: sandbox
