@@ -1,0 +1,1 @@
+https://www.ibm.com/docs/en/cloud-paks/cp-integration/16.1.0?topic=integrations-using-messaging-server
