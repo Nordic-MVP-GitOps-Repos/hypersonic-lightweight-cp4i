@@ -9,4 +9,3 @@ spec:
       defaultClass: ocs-storagecluster-ceph-rbd
     availability:
       type: NativeHA
-  version: 16.1.0
