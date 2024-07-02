@@ -8,4 +8,4 @@ spec:
   queue:
     type: Local
     name: QUEUEA
-  defaultPersistence: true
+    defaultPersistence: true
