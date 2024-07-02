@@ -3,7 +3,7 @@ kind: Subscription
 metadata:
   name: ibm-mq
 spec:
-  channel: v3.1
+  channel: v3.2-sc2
   name: ibm-mq
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace

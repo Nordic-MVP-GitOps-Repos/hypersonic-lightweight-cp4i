@@ -36,6 +36,7 @@ spec:
     apim:
       providerOrg: providerorg
       catalog: sandbox
+      credentialsSecret: apim-credentials
 ---
 apiVersion: apiconnect.ibm.com/v1beta1
 kind: API
@@ -44,9 +45,6 @@ metadata:
 spec:
   definition:
     configMap: vehicle-info-all-manufacturers-api-cm
-  share:
-    apim:
-      providerOrg: providerorg
 ---
 apiVersion: apiconnect.ibm.com/v1beta1
 kind: API
