@@ -1,0 +1,15 @@
+kind: MessagingUser
+apiVersion: integration.ibm.com/v1beta1
+metadata:
+  name: user1
+spec:
+  user:
+    channel:
+      name: channel1
+    queues:
+      - name: queue-a
+        auth:
+          - PASSALL
+      - name: queue-b
+        auth:
+          - PASSALL

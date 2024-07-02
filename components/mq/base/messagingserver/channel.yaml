@@ -1,0 +1,9 @@
+kind: MessagingChannel
+apiVersion: integration.ibm.com/v1beta1
+metadata:
+  name: channel1
+spec:
+  messagingServer:
+    name: sample-messagingserver
+  channel:
+    type: ServerConnMTLS

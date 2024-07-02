@@ -1,0 +1,12 @@
+kind: MessagingServer
+apiVersion: integration.ibm.com/v1beta1
+metadata:
+  name: sample-messagingserver
+spec:
+  queueManager:
+    name: MSGSERVERQM
+    storage:
+      defaultClass: ocs-storagecluster-ceph-rbd
+    availability:
+      type: NativeHA
+  version: 16.1.0
