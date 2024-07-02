@@ -29,6 +29,7 @@ rules:
       - events.ibm.com
       - apps
       - batch
+      - operator.autoscaling.openshift.io
       - ""
     resources:
       - '*'

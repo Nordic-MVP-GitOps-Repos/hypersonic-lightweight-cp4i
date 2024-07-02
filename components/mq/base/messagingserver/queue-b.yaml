@@ -1,0 +1,11 @@
+kind: MessagingQueue
+apiVersion: integration.ibm.com/v1beta1
+metadata:
+  name: queue-b
+spec:
+  messagingServer:
+    name: sample-messagingserver
+  queue:
+    type: Local
+    name: QUEUEB
+    defaultPersistence: true

@@ -13,5 +13,7 @@ resources:
 
 patches:
   - target:
+      version: v1beta1
+      group: apiconnect.ibm.com
       kind: Product
-    path: apic-creds.yaml
+    path: add-apim-credentials.yaml

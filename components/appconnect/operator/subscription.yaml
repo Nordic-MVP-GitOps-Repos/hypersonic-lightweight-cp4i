@@ -3,7 +3,7 @@ kind: Subscription
 metadata:
   name: ibm-appconnect
 spec:
-  channel: v11.3
+  channel: v12.0-sc2
   name: ibm-appconnect
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
