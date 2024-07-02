@@ -10,11 +10,6 @@ resources:
   - queue-b.yaml
 
 patches:
-  #- target:
-  #    version: v1beta1
-  #    group: integration.ibm.com
-  #    kind: MessagingChannel
-  #  path: add-license-and-version.yaml
   - target:
       version: v1beta1
       group: integration.ibm.com
