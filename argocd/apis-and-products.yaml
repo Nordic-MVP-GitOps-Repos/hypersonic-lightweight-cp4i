@@ -10,7 +10,7 @@ spec:
   project: cp4i-operands
   source:
     path: ./components/apiconnect/base/apis/
-    targetRevision: update-16.1.0
+    targetRevision: HEAD
     repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
   syncPolicy:
     automated:
