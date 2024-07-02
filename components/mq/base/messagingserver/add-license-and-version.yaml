@@ -1,4 +1,7 @@
 # To override settings in the products if necessary
 - op: add
-  path: /spec
-  value: {"version": "16.1.0", "license": {"accept": true, "license": "L-JTPV-KYG8TF", "use": "CloudPakForIntegrationNonProduction"}}
+  path: /spec/version
+  value: "16.1.0"
+- op: add
+  path: /spec/license
+  value: {"accept": true, "license": "L-JTPV-KYG8TF", "use": "CloudPakForIntegrationNonProduction"}
