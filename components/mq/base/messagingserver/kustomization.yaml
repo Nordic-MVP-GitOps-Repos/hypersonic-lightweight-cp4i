@@ -20,9 +20,4 @@ patches:
       group: integration.ibm.com
       kind: MessagingQueue
     path: add-license-and-version.yaml
-  - target:
-      version: v1beta1
-      group: integration.ibm.com
-      kind: MessagingUser
-    path: add-license-and-version.yaml
   
