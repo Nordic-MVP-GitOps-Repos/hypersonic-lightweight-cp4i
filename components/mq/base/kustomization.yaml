@@ -9,7 +9,7 @@ resources:
 
   - singleinstance-qm
 
-  #- messagingserver
+  - messagingserver
 
   # Resources for QM using certificate from LetsEncrypt
   #- native-ha-qm-wellknowncerts
