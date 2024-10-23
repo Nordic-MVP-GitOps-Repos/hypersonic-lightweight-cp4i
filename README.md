@@ -54,6 +54,9 @@ The [all-operands.yaml](argocd/operands/all-operands.yaml) ApplicationSet genera
 
 If you have enabled the webhook earlier, ArgoCD will refresh and trigger install of the capabilities. If you didn't, open ArgoCD and refresh the bootstrap application in the UI. This happens automatically after 3 minutes.
 
+### Login to platform navigator ###
+
+See https://www.ibm.com/docs/en/cloud-paks/cp-integration/16.1.0?topic=management-getting-initial-administrator-password
 
 ### Create index patterns for OpenShift Logging
 
