@@ -5,3 +5,6 @@ patches:
   - target:
       kind: QueueManager
     path: storage-class.yaml
+  - target:
+      kind: MessagingServer
+    path: messaging-service-storage-class.yaml

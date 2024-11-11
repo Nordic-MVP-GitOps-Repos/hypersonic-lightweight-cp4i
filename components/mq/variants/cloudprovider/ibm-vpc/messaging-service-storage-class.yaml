@@ -4,8 +4,5 @@ metadata:
   name: sample-messagingserver
 spec:
   queueManager:
-    name: MSGSERVERQM
     storage:
-      defaultClass: PATCHED_BY_KUSTOMZIE
-    availability:
-      type: NativeHA
+      defaultClass: ibmc-vpc-block-10iops-tier
