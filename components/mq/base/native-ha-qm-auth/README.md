@@ -9,4 +9,6 @@ openssl pkcs12 -export -in tls.crt -inkey tls.key -out certificate.p12 -name “
 keytool -importkeystore -srckeystore certificate.p12 -srcstoretype pkcs12 -destkeystore keystore-client.jks
 ```
 
+Currently, the cert-utils-operator generated keystore.jks and truststore.jks can't be used with MQ Explorer since those use PKCS8 format. See: https://github.com/pavlo-v-chernykh/keystore-go/issues/52
+
 See also https://community.ibm.com/community/user/integration/blogs/arthur-barr/2022/11/24/authenticating-to-ibm-mq-using-tls-certificates
