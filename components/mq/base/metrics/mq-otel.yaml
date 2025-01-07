@@ -1,0 +1,104 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: otel-config-file
+  namespace: cp4i
+data:
+  file: |-
+    #
+    # This is the section of the configuration file
+    # that is common for all collectors. You must combine it
+    # with the collector-specific portion from the relevant
+    # subdirectory to create the complete configuration file.
+    global:
+      useObjectStatus: true
+      useResetQStats: false
+      usePublications: true
+      logLevel: INFO 
+      metaprefix: ""
+      pollInterval: 30s
+      rediscoverInterval: 1h
+      tzOffset: 0h
+    connection:
+        queueManager: SINGLEINSTANCEQM
+    # You can point at a CCDT here. You probably will have to use this
+    # for TLS client connections to a queue manager
+    #    ccdtUrl:
+    # For simple client configurations, set the connName and channel
+        connName: singleinstance-qm-ibm-mq.cp4i.svc(1414)
+        channel: METRICS
+    # If none of the channel-related attributes are set, then this can
+    # be set to true to force client connectivity and the usual environment
+    # variables such as MQSERVER are used.
+        clientConnection: false
+    # If a user is set, then a password must be passed somehow. It can
+    # be done in this file, on a command line, as the content of a named file or 
+    # passed via stdin
+    #    user: mqadmin
+    #    password: passw0rd                                             
+    #    passwordFile: /mnt/pw.txt
+    # Which queue should be used as the template for replies from the qmgr. This will 
+    # usually be a QMODEL
+        replyQueue: SYSTEM.DEFAULT.MODEL.QUEUE
+    # If 'replyQueue' is set to a QLOCAL, then you must also set
+    #   replyQueue2: A.DIFFERENT.QLOCAL
+    # Using durable subscriptions for queue metrics reduces the need for MAXHANDS to be increased.
+    # Setting this to a non-empty value switches the collectors to use durable subs. And then the
+    # replyQueue and replyQueue2 values MUST refer to distinct QLOCALs. The value of this attribute must be
+    # unique for any collector program connecting to this queue manager
+        durableSubPrefix: 
+    # Maximum time (seconds) to wait for a status response from qmgr. 
+        waitInterval: 3
+    # Metadata Tags and Values which allow setting of additional descriptive information about the queue
+    # manager such as the environment (eg DEV/TEST/PROD). 
+    #    metadataTags:
+    #    - ENV
+    #    metadataValues:
+    #    - PROD
+    # "channels" is for all the traditional MQ channels including SVRCONNs. "amqpChannels" shows
+    # status for the AMQP objects
+    objects:
+        queues:
+        - APP.*
+        - "!SYSTEM.*"
+        - "!AMQ.*"
+        - QM*
+        channels:
+        - SYSTEM.*
+        - TO.*
+        topics:
+        subscriptions:
+    #    amqpChannels:
+    #    - "*"
+    # The "filters" section gives additional control over what is collected for various
+    # object types. Some fields in here used to be in other sections, but those
+    # attributes now give an error to force configurations to move to this model.
+    filters:
+        # Setting this to "true" reduces the unique sets of data in the database, at the cost of
+        # hiding metrics from separate instances. 
+        hideSvrConnJobname: false
+        # Setting this to "true" shows all channels, not just those that have some kind of active status
+        showInactiveChannels: false
+        # Similar to the hideSvrJobname attribute, but for AMQP channels. Reduces the number of unique
+        # elements when set to "true"
+        hideAMQPClientId: false
+        # The number of subscriptions can be reduced by selecting a subset of types. Set to "NONE" to 
+        # ignore all published queue metrics (but still keeping all queue manager metrics). The set
+        # shown here gives best balance for number of subscriptions and useful metrics. If this is an empty 
+        # list, all queue metrics are collected.
+        queueSubscriptionSelector:
+        - PUT
+        - GET
+        - GENERAL
+    # Collector-specific configuration will also need to be added here. Some of the sample build
+    # scripts will concatenate default definitions from the cmd/mq_* directories.
+    otel:
+      # Destination endpoint for exporting metrics via GRPC.
+      # Set to empty to use stdout
+      endpoint: http://otel-collector.openshift-opentelemetry-operator.svc.cluster.local:4318
+      # Use unprotected protocol to GRPC server
+      insecure: true
+      # Logging within the OTEL libraries
+      logLevel: INFO
+      interval: 10s
+      maxErrors: 10
