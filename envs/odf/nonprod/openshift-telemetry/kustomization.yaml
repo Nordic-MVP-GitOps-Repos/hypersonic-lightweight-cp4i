@@ -6,4 +6,5 @@ kind: Kustomization
 
 resources:
 - ../../../../components/openshift-telemetry/base
-- ../../../../components/openshift-telemetry/base/odf
+# Uncomment to create a Noobaa bucket
+#- ../../../../components/openshift-telemetry/base/odf
