@@ -21,6 +21,14 @@ spec:
         - env:
             - name: MQSNOAUT
               value: "yes"
+            #- name: LOG_LEVEL
+            #  value: debug
+            #- name: MONITOR_LEVEL
+            #  value: debug
+            #- name: SPAN_FORMAT
+            #  value: otel
+            #- name: OTLP_EXPORTER_GRPC_ENDPOINT
+            #  value: 'tempo-tempostack-distributor.openshift-tempo-operator.svc.cluster.local:4317'
           name: qmgr
   queueManager:
     mqsc:
@@ -45,7 +53,7 @@ spec:
       defaultClass: PATCHED_BY_KUSTOMIZE
       queueManager:
         type: persistent-claim
-  version: 9.4.0.0-r1
+  version: 9.4.1.0-r2
   pki:
     keys:
       - name: default
