@@ -18,3 +18,5 @@ stringData:
   access_key_secret: <secret key>
 type: Opaque
 ```
+
+Also make sure that a secret named `s3-ca` containing the CA for the s3 endpoint if a secure endpoint is being used. Otherwise remove the reference from the TempoStack object.
