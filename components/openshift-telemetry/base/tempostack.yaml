@@ -6,7 +6,7 @@ spec:
   storageSize: 20Gi 
   storage:
     secret: 
-      name: tempostack-ibmcos
+      name: tempostack-s3
       type: s3 
     tls: 
       enabled: true
