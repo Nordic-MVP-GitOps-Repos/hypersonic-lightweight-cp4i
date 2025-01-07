@@ -5,6 +5,7 @@ metadata:
 spec:
   queueManager:
     storage:
+      defaultClass: gp3
       queueManager:
         class: gp3
       persistedData:
