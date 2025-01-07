@@ -1,0 +1,16 @@
+apiVersion: objectbucket.io/v1alpha1
+kind: ObjectBucketClaim
+metadata:
+  name: tempo-bucket
+  namespace: openshift-tempo-operator
+  labels:
+    app: noobaa
+    bucket-provisioner: openshift-storage.noobaa.io-obc
+    noobaa-domain: openshift-storage.noobaa.io
+spec:
+  additionalConfig:
+    bucketclass: noobaa-default-bucket-class
+  bucketName: tempo-bucket
+  objectBucketName: obc-openshift-tempo-operator-tempo-bucket
+  storageClassName: openshift-storage.noobaa.io
+

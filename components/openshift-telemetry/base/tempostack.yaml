@@ -1,0 +1,21 @@
+apiVersion: tempo.grafana.com/v1alpha1
+kind: TempoStack
+metadata:
+  name: tempostack
+spec:
+  storageSize: 20Gi 
+  storage:
+    secret: 
+      name: tempostack-ibmcos
+      type: s3 
+    tls: 
+      enabled: true
+      caName: s3-ca
+  template:
+    queryFrontend:
+      jaegerQuery:
+        enabled: true
+        ingress:
+          route:
+            termination: edge
+          type: route
