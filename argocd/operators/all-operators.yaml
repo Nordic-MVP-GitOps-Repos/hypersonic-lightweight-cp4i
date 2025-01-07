@@ -26,6 +26,8 @@ spec:
           namespace: cp4i
         - name: openshift-logging
           namespace: openshift-logging
+        - name: openshift-telemetry
+          namespace: openshift-tempo-operator
         - name: openshift-pipelines
           namespace: openshift-operators
         - name: cert-utils
