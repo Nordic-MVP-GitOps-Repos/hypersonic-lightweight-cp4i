@@ -7,10 +7,10 @@ metadata:
     configmap.reloader.stakater.com/reload: "singleinstance-qm-configmap"
     secret.reloader.stakater.com/reload: "mq-external-tls-secret"
 spec:
- # telemetry:
- #   tracing:
- #     instana:
- #       enabled: true
+  telemetry:
+    tracing:
+      instana:
+        enabled: true
   license:
     accept: true
     license: PATCHED_BY_KUSTOMIZE
@@ -21,14 +21,14 @@ spec:
         - env:
             - name: MQSNOAUT
               value: "yes"
-            #- name: LOG_LEVEL
-            #  value: debug
-            #- name: MONITOR_LEVEL
-            #  value: debug
-            #- name: SPAN_FORMAT
-            #  value: otel
-            #- name: OTLP_EXPORTER_GRPC_ENDPOINT
-            #  value: 'tempo-tempostack-distributor.openshift-tempo-operator.svc.cluster.local:4317'
+            - name: LOG_LEVEL
+              value: debug
+            - name: MONITOR_LEVEL
+              value: debug
+            - name: SPAN_FORMAT
+              value: otel
+            - name: OTLP_EXPORTER_GRPC_ENDPOINT
+              value: 'tempo-tempostack-distributor.openshift-tempo-operator.svc.cluster.local:4317'
           name: qmgr
   queueManager:
     mqsc:
