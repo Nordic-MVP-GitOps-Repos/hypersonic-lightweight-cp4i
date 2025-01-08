@@ -14,10 +14,7 @@ spec:
     exporters:
       debug: {}
       otlp/tempo:
-        endpoint: tempo-tempostack-ingester.openshift-tempo-operator.svc.cluster.local:9095
-        tls:
-          insecure: true
-          insecure_skip_verify: true
+        endpoint: tempo-tempostack-distributor.openshift-tempo-operator.svc.cluster.local:4317
     processors:
       batch: {}
       memory_limiter:
