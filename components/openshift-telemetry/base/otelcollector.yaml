@@ -22,16 +22,21 @@ spec:
       tempo:
         endpoint: tempo-tempostack-ingester.openshift-tempo-operator.svc.cluster.local:9095
     service:
-      telemetry:
-        metrics:
-          address: 0.0.0.0:8888
       pipelines:
         traces:
           receivers:
             - otlp
-          processors: [memory_limiter,batch]
-          exporters: [debug, tempo]
+          processors:
+            - memory_limiter
+            - batch
+          exporters:
+            - debug
+            - tempo
         metrics:
-          receivers: [otlp]
-          processors: [memory_limiter,batch]
-          exporters: [debug]
+          receivers:
+            - otlp
+          processors:
+            - memory_limiter
+            - batch
+          exporters:
+            - debug
