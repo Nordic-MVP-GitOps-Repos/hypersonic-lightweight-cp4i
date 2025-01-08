@@ -13,7 +13,7 @@ spec:
             endpoint: 0.0.0.0:4317
     exporters:
       debug: {}
-      otlp:
+      otlp/tempo:
         endpoint: tempo-tempostack-ingester.openshift-tempo-operator.svc.cluster.local:9095
     processors:
       batch: {}
@@ -37,7 +37,7 @@ spec:
         traces:
           exporters:
             - debug
-            - tempo
+            - otlp/tempo
           processors:
             - memory_limiter
             - batch
