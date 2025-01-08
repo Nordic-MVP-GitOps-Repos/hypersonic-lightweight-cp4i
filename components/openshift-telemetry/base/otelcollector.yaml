@@ -11,12 +11,12 @@ spec:
         protocols:
           grpc:
             endpoint: 0.0.0.0:4317
-            tls:
-              insecure: true
     exporters:
       debug: {}
       otlp/tempo:
         endpoint: tempo-tempostack-distributor.openshift-tempo-operator.svc.cluster.local:4317
+        tls:
+          insecure: true
     processors:
       batch: {}
       memory_limiter:
