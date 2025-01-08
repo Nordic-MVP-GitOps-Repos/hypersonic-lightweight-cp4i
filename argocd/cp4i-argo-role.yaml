@@ -32,6 +32,7 @@ rules:
       - operator.autoscaling.openshift.io
       - objectbucket.io
       - tempo.grafana.com
+      - opentelemetrycollectors.opentelemetry.io
       - ""
     resources:
       - '*'
