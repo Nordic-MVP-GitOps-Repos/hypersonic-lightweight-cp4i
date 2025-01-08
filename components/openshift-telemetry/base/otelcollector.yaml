@@ -1,0 +1,33 @@
+apiVersion: opentelemetry.io/v1alpha1
+kind: OpenTelemetryCollector
+metadata:
+  name: otel
+  namespace: openshift-opentelemetry-operator
+spec:
+  mode: deployment
+  config: |
+    receivers: 
+      otlp:
+        protocols:
+          grpc:
+            endpoint: 0.0.0.0:4317
+    processors: 
+      batch: {}
+      memory_limiter:
+        check_interval: 1s
+        limit_percentage: 50
+        spike_limit_percentage: 30
+    exporters: 
+      debug: {}
+      tempo:
+        endpoint: tempo-tempostack-ingester.openshift-tempo-operator.svc.cluster.local:9095
+    service:
+      pipelines:
+        traces:
+          receivers: [otlp]
+          processors: [memory_limiter,batch]
+          exporters: [debug, tempo]
+        metrics:
+          receivers: [otlp]
+          processors: [memory_limiter,batch]
+          exporters: [debug]
