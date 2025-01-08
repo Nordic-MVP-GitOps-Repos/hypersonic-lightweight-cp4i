@@ -6,37 +6,40 @@ metadata:
 spec:
   mode: deployment
   config: |
-    receivers: 
+    receivers:
       otlp:
         protocols:
           grpc:
             endpoint: 0.0.0.0:4317
-    processors: 
+    exporters:
+      debug: {}
+      tempo:
+        endpoint: tempo-tempostack-ingester.openshift-tempo-operator.svc.cluster.local:9095
+    processors:
       batch: {}
       memory_limiter:
         check_interval: 1s
         limit_percentage: 50
         spike_limit_percentage: 30
-    exporters: 
-      debug: {}
-      tempo:
-        endpoint: tempo-tempostack-ingester.openshift-tempo-operator.svc.cluster.local:9095
     service:
+      telemetry:
+        metrics:
+          address: 0.0.0.0:8888
       pipelines:
-        traces:
-          receivers:
-            - otlp
+        metrics:
+          exporters:
+            - debug
           processors:
             - memory_limiter
             - batch
+          receivers:
+            - otlp
+        traces:
           exporters:
             - debug
             - tempo
-        metrics:
-          receivers:
-            - otlp
           processors:
             - memory_limiter
             - batch
-          exporters:
-            - debug
+          receivers:
+            - otlp
