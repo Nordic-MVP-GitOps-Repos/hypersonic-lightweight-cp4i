@@ -5,6 +5,9 @@ metadata:
   namespace: openshift-opentelemetry-operator
 spec:
   mode: deployment
+  observability:
+    metrics:
+      enableMetrics: true
   config: |
     receivers:
       otlp:
