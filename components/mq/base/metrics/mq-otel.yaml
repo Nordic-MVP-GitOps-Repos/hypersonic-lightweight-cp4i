@@ -20,12 +20,12 @@ data:
       rediscoverInterval: 1h
       tzOffset: 0h
     connection:
-        queueManager: SINGLEINSTANCEQM
+        queueManager: NATIVEHAQM
     # You can point at a CCDT here. You probably will have to use this
     # for TLS client connections to a queue manager
     #    ccdtUrl:
     # For simple client configurations, set the connName and channel
-        connName: singleinstance-qm-ibm-mq.cp4i.svc(1414)
+        connName: native-ha-qm-ibm-mq(1414)
         channel: METRICS
     # If none of the channel-related attributes are set, then this can
     # be set to true to force client connectivity and the usual environment
