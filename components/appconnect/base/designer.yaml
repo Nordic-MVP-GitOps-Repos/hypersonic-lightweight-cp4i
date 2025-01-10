@@ -16,7 +16,7 @@ spec:
       schedule: Every 15 days
   license:
     accept: true
-    license: L-XRNH-47FJAW
+    license: L-QYVA-B365MB
     use: CloudPakForIntegrationNonProduction
   replicas: 1
-  version: '12.0'
+  version: '13.0.1.0-r2'

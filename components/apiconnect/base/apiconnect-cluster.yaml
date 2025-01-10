@@ -9,7 +9,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-DZZQ-MGVN8V
+    license: L-QYVA-B365MB
     metric: VIRTUAL_PROCESSOR_CORE
     use: PATCHED_BY_KUSTOMIZE
   management:
@@ -33,7 +33,7 @@ spec:
     #      id => "noname-offload"
     #    }    
   profile: n1xc7.m48
-  version: 10.0.8.0
+  version: 10.0.9.0
   storageClassName: PATCHED_BY_KUSTOMIZE
   gateway:
   #  jaegerTracing:

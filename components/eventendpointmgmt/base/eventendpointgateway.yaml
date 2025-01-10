@@ -6,7 +6,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-JTPV-KYG8TF
+    license: L-QYVA-B365MB
     metric: VIRTUAL_PROCESSOR_CORE
     use: CloudPakForIntegrationNonProduction
   template:

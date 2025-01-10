@@ -5,7 +5,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-HRZF-DWHH7A
+    license: L-QYVA-B365MB
     use: EventAutomationNonProduction
   flink:
     endpoint: ibm-flink-rest.cp4i.svc:8081

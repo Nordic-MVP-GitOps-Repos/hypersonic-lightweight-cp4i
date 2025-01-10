@@ -8,7 +8,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-XRNH-47FJAW
+    license: L-QYVA-B365MB
     use: CloudPakForIntegrationNonProduction
   restApiHTTPS:
     enabled: true
@@ -19,7 +19,7 @@ spec:
     secretName: default-cert-copy
   dashboardUsers:
     bypassGenerate: false
-  version: '12.0'
+  version: '13.0.1.0-r2'
   template:
     spec:
       volumes:
