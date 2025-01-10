@@ -8,3 +8,6 @@ resources:
   - empty-metrics-credentials.yaml
   - deployment.yaml
   - podmonitor.yaml
+  - buildconfig-otel.yaml
+  - deployment-otel.yaml
+  - mq-otel.yaml

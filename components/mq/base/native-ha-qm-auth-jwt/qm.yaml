@@ -1,0 +1,76 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: native-ha-qm-auth-jwt
+  annotations:
+    certmanager.k8s.io/disable-auto-restart: "true"
+    configmap.reloader.stakater.com/reload: "jwtqm-configmap"
+    secret.reloader.stakater.com/reload: "mq-nativeha-internal-tls-secret,mq-external-tls-secret"
+spec:
+  license:
+    accept: true
+    license: PATCHED_BY_KUSTOMIZE
+    metric: VirtualProcessorCore
+    use: PATCHED_BY_KUSTOMIZE
+  securityContext:
+    supplementalGroups: [99]
+  queueManager:
+    route:
+      enabled: true
+    name: JWTQM
+    availability:
+      type: NativeHA
+      tls:
+        secretName: mq-nativeha-internal-tls-secret
+    storage:
+      queueManager:
+        class: PATCHED_BY_KUSTOMIZE
+        deleteClaim: true
+      persistedData:
+        enabled: false
+        class: PATCHED_BY_KUSTOMIZE
+        deleteClaim: true
+      recoveryLogs:
+        enabled: false
+        class: PATCHED_BY_KUSTOMIZE
+        deleteClaim: true
+    resources:
+      limits:
+        cpu: 1
+        memory: 1Gi
+      requests:
+        cpu: 100m
+        memory: 0.5Gi
+    mqsc:
+      - configMap:
+          name: jwtqm-configmap
+          items:
+            - tls.mqsc
+    ini:
+      - configMap:
+          name: jwtqm-configmap
+          items:
+            - mq.ini
+  version: 9.4.1.0-r2
+  pki:
+    keys:
+      - name: default
+        secret:
+          secretName: mq-external-tls-secret
+          items:
+            - tls.key
+            - tls.crt
+    trust:
+      - name: trust
+        secret:
+          secretName: mq-external-tls-secret
+          items:
+            - tls.crt
+            - ca.crt
+      - name: keycloaktrust
+        secret:
+          secretName: default-cert-copy
+          items:
+            - tls.crt
+  web:
+    enabled: true

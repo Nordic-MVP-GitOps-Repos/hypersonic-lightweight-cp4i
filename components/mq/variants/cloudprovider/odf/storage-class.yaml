@@ -5,6 +5,7 @@ metadata:
 spec:
   queueManager:
     storage:
+      defaultClass: ocs-storagecluster-ceph-rbd
       queueManager:
         class: ocs-storagecluster-ceph-rbd
       persistedData:

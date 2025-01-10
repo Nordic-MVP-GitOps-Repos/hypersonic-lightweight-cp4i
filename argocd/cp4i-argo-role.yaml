@@ -30,6 +30,9 @@ rules:
       - apps
       - batch
       - operator.autoscaling.openshift.io
+      - objectbucket.io
+      - tempo.grafana.com
+      - opentelemetry.io
       - ""
     resources:
       - '*'

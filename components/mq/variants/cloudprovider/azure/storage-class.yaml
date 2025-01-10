@@ -5,6 +5,7 @@ metadata:
 spec:
   queueManager:
     storage:
+      defaultClass: managed-csi 
       queueManager:
         class: managed-csi
       persistedData:

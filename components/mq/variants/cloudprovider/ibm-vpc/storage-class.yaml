@@ -5,6 +5,7 @@ metadata:
 spec:
   queueManager:
     storage:
+      defaultClass: ibmc-vpc-block-10iops-tier
       queueManager:
         class: ibmc-vpc-block-10iops-tier
       persistedData:

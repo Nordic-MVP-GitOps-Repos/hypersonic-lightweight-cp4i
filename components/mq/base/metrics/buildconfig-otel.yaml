@@ -1,0 +1,29 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  name: mq-metrics-otel
+---
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: mq-metrics-otel-build
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'mq-metrics-otel:latest'
+  strategy:
+    type: Docker
+    dockerStrategy:
+      env:
+        - name: EXPORTER
+          value: mq_otel
+      imageOptimizationPolicy: SkipLayers
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/ibm-messaging/mq-metric-samples/'
+      ref: master
+  triggers:
+    - type: ConfigChange
+  runPolicy: Serial

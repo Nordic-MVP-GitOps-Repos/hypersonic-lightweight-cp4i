@@ -1,0 +1,616 @@
+----------------------------------START FFST------------------------------------
+/Users/tma/work/customers/nav/hypersonic-lightweight-cp4i-otel/components/mq/base/native-ha-qm-auth-jwt/jwtmqclient/app/FFDC/JMSCC0002.FDC PID:82100
+
+                                    IBM MQ classes for JMS and Java (AllClient packaging) First Failure Symptom Report
+                                            
+
+Product          :- IBM MQ classes for JMS and Java (AllClient packaging)
+Date/Time        :- Thu Dec 12 17:14:50 CET 2024
+System time      :- 1734020090552
+Operating System :- Mac OS X
+UserID           :- tma
+Java Vendor      :- Eclipse Adoptium
+Java Version     :- 21.0.5+11-LTS
+
+Source Class     :- com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection
+Source Method    :- getNonFipsSocketFactory()
+ProbeID          :- 01
+Thread           :- name=Test worker priority=5 group=main ccl=jdk.internal.loader.ClassLoaders$AppClassLoader@63c12fb0
+
+                                      Data
+                                      ----
+
+|   Description        :-  Error retrieving certificates from keystore
+|   Exception message  :-  corrupt private key
+
+                              Version information
+                              -------------------
+
+IBM MQ JMS Provider
+9.4.0.0
+p940-L240605.1
+Production
+Component Title: IBM MQ JMS Provider
+Component Name:  com.ibm.msg.client.wmq
+Version:         9.4.0.0
+Class Name:      class com.ibm.msg.client.wmq.factories.WMQComponent
+CMVC:            p940-L240605.1
+Jar location:    file:/Users/tma/.gradle/caches/modules-2/files-2.1/com.ibm.mq/com.ibm.mq.allclient/9.4.0.0/1fa1594eaa98aab07e48333f511108ef024eaf1d/com.ibm.mq.allclient-9.4.0.0.jar
+Factory Class:   class com.ibm.msg.client.wmq.factories.WMQFactoryFactory
+
+Common Services for Java Platform, Standard Edition
+9.4.0.0
+p940-L240605.1
+Production
+Component Title: Common Services for Java Platform, Standard Edition
+Component Name:  com.ibm.msg.client.commonservices.j2se
+Version:         9.4.0.0
+Class Name:      class com.ibm.msg.client.commonservices.j2se.J2SEComponent
+CMVC:            p940-L240605.1
+Jar location:    file:/Users/tma/.gradle/caches/modules-2/files-2.1/com.ibm.mq/com.ibm.mq.allclient/9.4.0.0/1fa1594eaa98aab07e48333f511108ef024eaf1d/com.ibm.mq.allclient-9.4.0.0.jar
+Factory Class:   class com.ibm.msg.client.commonservices.j2se.CommonServicesImplementation
+
+Java Message Service Client
+9.4.0.0
+p940-L240605.1
+Production
+Component Title: Java Message Service Client
+Component Name:  com.ibm.msg.client.jms
+Version:         9.4.0.0
+Class Name:      class com.ibm.msg.client.jms.internal.JMSComponent
+CMVC:            p940-L240605.1
+Jar location:    file:/Users/tma/.gradle/caches/modules-2/files-2.1/com.ibm.mq/com.ibm.mq.allclient/9.4.0.0/1fa1594eaa98aab07e48333f511108ef024eaf1d/com.ibm.mq.allclient-9.4.0.0.jar
+Factory Class:   null
+
+IBM MQ classes for Java Message Service
+9.4.0.0
+p940-L240605.1
+Production
+Component Title: IBM MQ classes for Java Message Service
+Component Name:  com.ibm.mq.jms
+Version:         9.4.0.0
+BuiltWith:       IBM Corporation  8.0.5.17 - pxa6480sr5fp17-20180627_01(SR5 FP17) Linux
+Class Name:      class com.ibm.mq.jms.MQJMSComponent
+CMVC:            p940-L240605.1
+Jar location:    file:/Users/tma/.gradle/caches/modules-2/files-2.1/com.ibm.mq/com.ibm.mq.allclient/9.4.0.0/1fa1594eaa98aab07e48333f511108ef024eaf1d/com.ibm.mq.allclient-9.4.0.0.jar
+Factory Class:   null
+
+IBM MQ classes for Java
+9.4.0.0
+p940-L240605.1
+Production
+Component Title: IBM MQ classes for Java
+Component Name:  com.ibm.mq
+Version:         9.4.0.0
+BasedOn:         
+Class Name:      class com.ibm.mq.MQJavaComponent
+CMVC:            p940-L240605.1
+Jar location:    file:/Users/tma/.gradle/caches/modules-2/files-2.1/com.ibm.mq/com.ibm.mq.allclient/9.4.0.0/1fa1594eaa98aab07e48333f511108ef024eaf1d/com.ibm.mq.allclient-9.4.0.0.jar
+APARs:           
+title:           
+Factory Class:   null
+
+
+
+                                  Stack trace
+                                  -----------
+
+Stack trace to show the location of the FFST call
+|   FFST Location  :-  java.lang.Exception
+|   	at com.ibm.msg.client.commonservices.trace.Trace.getCurrentPosition(Trace.java:2186)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.createFFSTString(Trace.java:2093)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.ffstInternal(Trace.java:1957)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.ffst(Trace.java:1762)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.getNonFipsSocketFactory(RemoteTCPConnection.java:3202)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.chooseSocketFactory(RemoteTCPConnection.java:2922)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.makeSocketSecure(RemoteTCPConnection.java:2529)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.bindAndConnectSocket(RemoteTCPConnection.java:887)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.protocolConnect(RemoteTCPConnection.java:1544)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteConnection.connect(RemoteConnection.java:1019)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteConnectionSpecification.getNewConnection(RemoteConnectionSpecification.java:691)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteConnectionSpecification.getSessionFromNewConnection(RemoteConnectionSpecification.java:283)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteConnectionSpecification.getSession(RemoteConnectionSpecification.java:170)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteConnectionPool.getSession(RemoteConnectionPool.java:128)
+|   	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.jmqiConnect(RemoteFAP.java:13407)
+|   	at com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.access$100(RemoteFAP.java:13201)
+|   	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1451)
+|   	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1392)
+|   	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiConnect(InterceptedJmqiImpl.java:377)
+|   	at com.ibm.mq.ese.jmqi.ESEJMQI.jmqiConnect(ESEJMQI.java:562)
+|   	at com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:417)
+|   	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createV7ProviderConnection(WMQConnectionFactory.java:9070)
+|   	at com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createProviderConnection(WMQConnectionFactory.java:8410)
+|   	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl._createConnection(JmsConnectionFactoryImpl.java:322)
+|   	at com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl.createContext(JmsConnectionFactoryImpl.java:609)
+|   	at org.example.MQJWTExample.callMq(MQJWTExample.java:58)
+|   	at org.example.AppTest.testMqConnection(AppTest.java:11)
+|   	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+|   	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+|   	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+|   	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+|   	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+|   	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+|   	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+|   	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+|   	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+|   	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+|   	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+|   	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+|   	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+|   	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+|   	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+|   	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+|   	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+|   	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+|   	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+|   	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+|   	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+|   	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+|   	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+|   	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+|   	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+|   	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+|   	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+|   	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+|   	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+|   	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+|   	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+|   	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+|   	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+|   	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+|   	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+|   	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+|   	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+|   	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+|   	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+|   	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+|   	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+|   	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+|   	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+|   	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+|   	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+|   	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+|   	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+|   	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
+|   	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
+|   	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
+|   	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+|   	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+|   	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+|   	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+|   	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+|   	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+|   	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+|   	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
+|   	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+|   	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+|   	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+|   	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+|   	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+|   	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121)
+|   	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+|   	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+|   	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+|   
+
+                            Property Store Contents
+                            -----------------------
+
+All currently set properties
+|   apple.awt.application.name           :-  GradleWorkerMain
+|   com.ibm.mq.cfg.SSL.outboundSNI       :-  HOSTNAME
+|   com.ibm.mq.cfg.useIBMCipherMappings  :-  false
+|   file.encoding                        :-  UTF-8
+|   file.separator                       :-  /
+|   java.class.path                      :-  /Users/tma/.gradle/caches/8.10.2/workerMain/gradle-worker.jar:/Users/tma/work/customers/nav/hypersonic-lightweight-cp4i-otel/components/mq/base/native-ha-qm-auth-jwt/jwtmqclient/app/build/classes/java/test:/Users/tma/work/customers/nav/hypersonic-lightweight-cp4i-otel/components/mq/base/native-ha-qm-auth-jwt/jwtmqclient/app/build/classes/java/main:/Users/tma/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/32.1.3-jre/f306708742ce2bf0fb0901216183bc14073feae/guava-32.1.3-jre.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/com.ibm.mq/com.ibm.mq.allclient/9.4.0.0/1fa1594eaa98aab07e48333f511108ef024eaf1d/com.ibm.mq.allclient-9.4.0.0.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-params/5.10.1/c8f15d4e99940c4564098af78c10809c00fdca06/junit-jupiter-params-5.10.1.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-engine/5.10.1/6c9ff773f9aa842b91d1f2fe4658973252ce2428/junit-jupiter-engine-5.10.1.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter-api/5.10.1/eb90c7d8bfaae8fdc97b225733fcb595ddd72843/junit-jupiter-api-5.10.1.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-launcher/1.10.1/ce85bf5e38bee0989ded9bd468dd4ff78dc0cfa8/junit-platform-launcher-1.10.1.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-engine/1.10.1/f32ae4af74fde68414b8a3d2b7cf1fb43824a83a/junit-platform-engine-1.10.1.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/org.junit.platform/junit-platform-commons/1.10.1/2bfcd4a4e38b10c671b6916d7e543c20afe25579/junit-platform-commons-1.10.1.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/org.junit.jupiter/junit-jupiter/5.10.1/6e5c7dd668d6349cb99e52ab8321e73479a309bc/junit-jupiter-5.10.1.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.37.0/ba74746d38026581c12166e164bb3c15e90cc4ea/checker-qual-3.37.0.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.21.1/6d9b10773b5237df178a7b3c1b4208df7d0e7f94/error_prone_annotations-2.21.1.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk18on/1.78.1/17b3541f736df97465f87d9f5b5dfa4991b37bb3/bcpkix-jdk18on-1.78.1.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcutil-jdk18on/1.78.1/5353ca39fe2f148dab9ca1d637a43d0750456254/bcutil-jdk18on-1.78.1.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk18on/1.78.1/39e9e45359e20998eb79c1828751f94a818d25f8/bcprov-jdk18on-1.78.1.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/javax.jms/javax.jms-api/2.0.1/5faaa3864ff6025ce69809b60d65bda3e358610c/javax.jms-api-2.0.1.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/org.json/json/20240303/ebb88e8fb5122b7506d5cf1d69f1ccdb790d22a/json-20240303.jar:/Users/tma/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.3.0/152ea56b3a72f655d4fd677fc0ef2596c3dd5e6e/opentest4j-1.3.0.jar
+|   java.class.version                   :-  65.0
+|   java.home                            :-  /Users/tma/.gradle/jdks/eclipse_adoptium-21-x86_64-os_x.2/jdk-21.0.5+11/Contents/Home
+|   java.io.tmpdir                       :-  /var/folders/gz/y4bmq8nd7bq_qgl20zvn0j7m0000gp/T/
+|   java.library.path                    :-  /Users/tma/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+|   java.runtime.name                    :-  OpenJDK Runtime Environment
+|   java.runtime.version                 :-  21.0.5+11-LTS
+|   java.specification.name              :-  Java Platform API Specification
+|   java.specification.vendor            :-  Oracle Corporation
+|   java.specification.version           :-  21
+|   java.vendor                          :-  Eclipse Adoptium
+|   java.vendor.url                      :-  https://adoptium.net/
+|   java.vendor.url.bug                  :-  https://github.com/adoptium/adoptium-support/issues
+|   java.vendor.version                  :-  Temurin-21.0.5+11
+|   java.version                         :-  21.0.5
+|   java.version.date                    :-  2024-10-15
+|   java.vm.compressedOopsMode           :-  Zero based
+|   java.vm.info                         :-  mixed mode
+|   java.vm.name                         :-  OpenJDK 64-Bit Server VM
+|   java.vm.specification.name           :-  Java Virtual Machine Specification
+|   java.vm.specification.vendor         :-  Oracle Corporation
+|   java.vm.specification.version        :-  21
+|   java.vm.vendor                       :-  Eclipse Adoptium
+|   java.vm.version                      :-  21.0.5+11-LTS
+|   javax.net.ssl.keyStore               :-  /Users/tma/Downloads/keystore.jks
+|   javax.net.ssl.keyStorePassword       :-  ********
+|   javax.net.ssl.trustStore             :-  /Users/tma/Downloads/truststore.jks
+|   javax.net.ssl.trustStorePassword     :-  ********
+|   jdk.debug                            :-  release
+|   line.separator                       :-  
+|   
+|   native.encoding                      :-  UTF-8
+|   org.gradle.internal.worker.tmpdir    :-  /Users/tma/work/customers/nav/hypersonic-lightweight-cp4i-otel/components/mq/base/native-ha-qm-auth-jwt/jwtmqclient/app/build/tmp/test/work
+|   org.gradle.test.worker               :-  53
+|   os.arch                              :-  x86_64
+|   os.name                              :-  Mac OS X
+|   os.version                           :-  15.1.1
+|   otel.exporter.otlp.endpoint          :-  http://tempo-grpc-openshift-tempo-operator.itzroks-50f1njf3h5-7hmmnn-1615bdf0ff9ba5518cb8d7760c84e878-0000.eu-de.containers.appdomain.cloud
+|   otel.exporter.otlp.protocol          :-  grpc
+|   otel.javaagent.logging               :-  none
+|   otel.logs.exporter                   :-  none
+|   otel.metrics.exporter                :-  none
+|   otel.resource.attributes             :-  service.name=javaPut
+|   otel.trace.exporter                  :-  otlp
+|   otel.trace.exporter.otlp.protocol    :-  grpc
+|   path.separator                       :-  :
+|   stderr.encoding                      :-  UTF-8
+|   stdout.encoding                      :-  UTF-8
+|   sun.arch.data.model                  :-  64
+|   sun.boot.library.path                :-  /Users/tma/.gradle/jdks/eclipse_adoptium-21-x86_64-os_x.2/jdk-21.0.5+11/Contents/Home/lib
+|   sun.cpu.endian                       :-  little
+|   sun.io.unicode.encoding              :-  UnicodeBig
+|   sun.java.command                     :-  worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 53'
+|   sun.java.launcher                    :-  SUN_STANDARD
+|   sun.jnu.encoding                     :-  UTF-8
+|   sun.management.compiler              :-  HotSpot 64-Bit Tiered Compilers
+|   user.country                         :-  SE
+|   user.dir                             :-  /Users/tma/work/customers/nav/hypersonic-lightweight-cp4i-otel/components/mq/base/native-ha-qm-auth-jwt/jwtmqclient/app
+|   user.home                            :-  /Users/tma
+|   user.language                        :-  sv
+|   user.name                            :-  tma
+|   user.timezone                        :-  Europe/Stockholm
+|   user.variant                         :-  
+
+                           WorkQueueMananger Contents
+                           --------------------------
+
+|   Current ThreadPool size      :-  0
+|   Maintain ThreadPool size     :-  false
+|   Maximum ThreadPool size      :-  -1
+|   ThreadPool inactive timeout  :-  0
+
+                               Runtime properties
+                               ------------------
+
+|   Available processors         :-  16
+|   Free memory in bytes (now)   :-  4116136
+|   Max memory in bytes          :-  536870912
+|   Total memory in bytes (now)  :-  28311552
+
+                           Component Manager Contents
+                           --------------------------
+
+Common Services Components:
+|   CMVC             :-  p940-L240605.1
+|   Class Name       :-  class com.ibm.msg.client.commonservices.j2se.J2SEComponent
+|   Component Name   :-  com.ibm.msg.client.commonservices.j2se
+|   Component Title  :-  Common Services for Java Platform, Standard Edition
+|   Factory Class    :-  class com.ibm.msg.client.commonservices.j2se.CommonServicesImplementation
+|   Jar location     :-  file:/Users/tma/.gradle/caches/modules-2/files-2.1/com.ibm.mq/com.ibm.mq.allclient/9.4.0.0/1fa1594eaa98aab07e48333f511108ef024eaf1d/com.ibm.mq.allclient-9.4.0.0.jar
+|   Version          :-  9.4.0.0
+
+Messaging Provider Components:
+|   CMVC             :-  p940-L240605.1
+|   Class Name       :-  class com.ibm.msg.client.wmq.factories.WMQComponent
+|   Component Name   :-  com.ibm.msg.client.wmq
+|   Component Title  :-  IBM MQ JMS Provider
+|   Factory Class    :-  class com.ibm.msg.client.wmq.factories.WMQFactoryFactory
+|   Jar location     :-  file:/Users/tma/.gradle/caches/modules-2/files-2.1/com.ibm.mq/com.ibm.mq.allclient/9.4.0.0/1fa1594eaa98aab07e48333f511108ef024eaf1d/com.ibm.mq.allclient-9.4.0.0.jar
+|   Version          :-  9.4.0.0
+
+
+
+
+                         Provider Specific Information
+                         -----------------------------
+
+Overview of JMS System
+Num. Contexts    : 0
+Num. Connections : 0
+Num. Sessions    : 0
+Num. Consumers   : 0
+Num. Producers   : 0
+
+Detailed JMS System Information
+Contexts      : 
+Connections      : 
+Sessions         : 
+Consumers        : 
+Producers        : 
+
+All Thread Information
+
+                          Name : Notification Thread
+                      Priority : 9
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 26
+                         State : RUNNABLE
+
+                          Name : Test worker
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 1
+                         State : RUNNABLE
+                         Stack : java.lang.Thread.dumpThreads(Thread.java:-2)
+                               : java.lang.Thread.getAllStackTraces(Thread.java:2522)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.generateThreadInfo(DefaultTracer.java:1435)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.access$1200(DefaultTracer.java:151)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer$10.run(DefaultTracer.java:1382)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer$10.run(DefaultTracer.java:1306)
+                               : java.security.AccessController.executePrivileged(AccessController.java:778)
+                               : java.security.AccessController.doPrivileged(AccessController.java:319)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.ffst(DefaultTracer.java:1306)
+                               : com.ibm.msg.client.commonservices.j2se.wmqsupport.TracerImpl.ffst(TracerImpl.java:176)
+                               : com.ibm.msg.client.commonservices.trace.Trace.ffstInternal(Trace.java:1962)
+                               : com.ibm.msg.client.commonservices.trace.Trace.ffst(Trace.java:1762)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.getNonFipsSocketFactory(RemoteTCPConnection.java:3202)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.chooseSocketFactory(RemoteTCPConnection.java:2922)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.makeSocketSecure(RemoteTCPConnection.java:2529)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.bindAndConnectSocket(RemoteTCPConnection.java:887)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.protocolConnect(RemoteTCPConnection.java:1544)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteConnection.connect(RemoteConnection.java:1019)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteConnectionSpecification.getNewConnection(RemoteConnectionSpecification.java:691)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteConnectionSpecification.getSessionFromNewConnection(RemoteConnectionSpecification.java:283)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteConnectionSpecification.getSession(RemoteConnectionSpecification.java:170)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteConnectionPool.getSession(RemoteConnectionPool.java:128)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.jmqiConnect(RemoteFAP.java:13407)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP$Connector.access$100(RemoteFAP.java:13201)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1451)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiConnect(RemoteFAP.java:1392)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiConnect(InterceptedJmqiImpl.java:377)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.jmqiConnect(ESEJMQI.java:562)
+                               : com.ibm.msg.client.wmq.internal.WMQConnection.<init>(WMQConnection.java:417)
+                               : com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createV7ProviderConnection(WMQConnectionFactory.java:9070)
+                               : com.ibm.msg.client.wmq.factories.WMQConnectionFactory.createProviderConnection(WMQConnectionFactory.java:8410)
+                               : com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl._createConnection(JmsConnectionFactoryImpl.java:322)
+                               : com.ibm.msg.client.jms.admin.JmsConnectionFactoryImpl.createContext(JmsConnectionFactoryImpl.java:609)
+                               : org.example.MQJWTExample.callMq(MQJWTExample.java:58)
+                               : org.example.AppTest.testMqConnection(AppTest.java:11)
+                               : java.lang.invoke.LambdaForm$DMH/0x00000008001dc000.invokeVirtual(LambdaForm$DMH:-1)
+                               : java.lang.invoke.LambdaForm$MH/0x0000000800134800.invoke(LambdaForm$MH:-1)
+                               : java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder:-1)
+                               : jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:153)
+                               : jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+                               : java.lang.reflect.Method.invoke(Method.java:580)
+                               : org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+                               : org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+                               : org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+                               : org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+                               : org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+                               : org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+                               : org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor$$Lambda/0x00000008001ac000.apply(null:-1)
+                               : org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+                               : org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall$$Lambda/0x00000008001ac400.apply(null:-1)
+                               : org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+                               : org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$$Lambda/0x00000008001d7210.apply(null:-1)
+                               : org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+                               : org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+                               : org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+                               : org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+                               : org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+                               : org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+                               : org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+                               : org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor$$Lambda/0x00000008001d36f0.execute(null:-1)
+                               : org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+                               : org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+                               : org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+                               : org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000008001c70d0.execute(null:-1)
+                               : org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000008001c6eb8.invoke(null:-1)
+                               : org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000008001c6ab0.execute(null:-1)
+                               : org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+                               : org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService$$Lambda/0x00000008001c7b98.accept(null:-1)
+                               : java.util.ArrayList.forEach(ArrayList.java:1596)
+                               : org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000008001c70d0.execute(null:-1)
+                               : org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000008001c6eb8.invoke(null:-1)
+                               : org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000008001c6ab0.execute(null:-1)
+                               : org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+                               : org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService$$Lambda/0x00000008001c7b98.accept(null:-1)
+                               : java.util.ArrayList.forEach(ArrayList.java:1596)
+                               : org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000008001c70d0.execute(null:-1)
+                               : org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000008001c6eb8.invoke(null:-1)
+                               : org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask$$Lambda/0x00000008001c6ab0.execute(null:-1)
+                               : org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+                               : org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+                               : org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+                               : org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+                               : org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+                               : org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+                               : org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+                               : org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+                               : org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+                               : org.junit.platform.launcher.core.EngineExecutionOrchestrator$$Lambda/0x00000008001b26a0.accept(null:-1)
+                               : org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+                               : org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+                               : org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+                               : org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+                               : org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+                               : org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
+                               : org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
+                               : org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
+                               : org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+                               : java.lang.invoke.LambdaForm$DMH/0x0000000800134000.invokeInterface(LambdaForm$DMH:-1)
+                               : java.lang.invoke.LambdaForm$MH/0x0000000800134800.invoke(LambdaForm$MH:-1)
+                               : java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder:-1)
+                               : jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(DirectMethodHandleAccessor.java:153)
+                               : jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+                               : java.lang.reflect.Method.invoke(Method.java:580)
+                               : org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+                               : org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+                               : org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+                               : org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+                               : jdk.proxy1.$Proxy4.stop(null:-1)
+                               : org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+                               : org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+                               : org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+                               : org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+                               : org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+                               : org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121)
+                               : org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+                               : worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+                               : worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+
+                          Name : Signal Dispatcher
+                      Priority : 9
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 11
+                         State : RUNNABLE
+
+                          Name : /127.0.0.1:51186 to /127.0.0.1:51185 workers Thread 2
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 30
+                         State : WAITING
+                         Stack : jdk.internal.misc.Unsafe.park(Unsafe.java:-2)
+                               : java.util.concurrent.locks.LockSupport.park(LockSupport.java:371)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:519)
+                               : java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3780)
+                               : java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3725)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1712)
+                               : org.gradle.internal.remote.internal.hub.queue.EndPointQueue.take(EndPointQueue.java:49)
+                               : org.gradle.internal.remote.internal.hub.MessageHub$ConnectionDispatch.run(MessageHub.java:322)
+                               : org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+                               : org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+                               : java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+                               : java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+                               : java.lang.Thread.runWith(Thread.java:1596)
+                               : java.lang.Thread.run(Thread.java:1583)
+
+                          Name : Finalizer
+                      Priority : 8
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 10
+                         State : WAITING
+                         Stack : java.lang.Object.wait0(Object.java:-2)
+                               : java.lang.Object.wait(Object.java:366)
+                               : java.lang.Object.wait(Object.java:339)
+                               : java.lang.ref.NativeReferenceQueue.await(NativeReferenceQueue.java:48)
+                               : java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:158)
+                               : java.lang.ref.NativeReferenceQueue.remove(NativeReferenceQueue.java:89)
+                               : java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:173)
+
+                          Name : Common-Cleaner
+                      Priority : 8
+                   ThreadGroup : java.lang.ThreadGroup[name=InnocuousThreadGroup,maxpri=10]
+                            ID : 27
+                         State : TIMED_WAITING
+                         Stack : jdk.internal.misc.Unsafe.park(Unsafe.java:-2)
+                               : java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1852)
+                               : java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+                               : java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+                               : java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+                               : jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
+                               : java.lang.Thread.runWith(Thread.java:1596)
+                               : java.lang.Thread.run(Thread.java:1583)
+                               : jdk.internal.misc.InnocuousThread.run(InnocuousThread.java:186)
+
+                          Name : /127.0.0.1:51186 to /127.0.0.1:51185 workers Thread 3
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 31
+                         State : RUNNABLE
+                         Stack : sun.nio.ch.KQueue.poll(KQueue.java:-2)
+                               : sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:125)
+                               : sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
+                               : sun.nio.ch.SelectorImpl.select(SelectorImpl.java:147)
+                               : org.gradle.internal.remote.internal.inet.SocketConnection$SocketInputStream.read(SocketConnection.java:190)
+                               : com.esotericsoftware.kryo.io.Input.fill(Input.java:146)
+                               : com.esotericsoftware.kryo.io.Input.require(Input.java:178)
+                               : com.esotericsoftware.kryo.io.Input.readByte(Input.java:295)
+                               : org.gradle.internal.serialize.kryo.KryoBackedDecoder.readByte(KryoBackedDecoder.java:88)
+                               : org.gradle.internal.remote.internal.hub.InterHubMessageSerializer$MessageReader.read(InterHubMessageSerializer.java:64)
+                               : org.gradle.internal.remote.internal.hub.InterHubMessageSerializer$MessageReader.read(InterHubMessageSerializer.java:52)
+                               : org.gradle.internal.remote.internal.inet.SocketConnection.receive(SocketConnection.java:86)
+                               : org.gradle.internal.remote.internal.hub.MessageHub$ConnectionReceive.run(MessageHub.java:270)
+                               : org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+                               : org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+                               : java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+                               : java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+                               : java.lang.Thread.runWith(Thread.java:1596)
+                               : java.lang.Thread.run(Thread.java:1583)
+
+                          Name : JMSCCThreadPoolMaster
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 45
+                         State : WAITING
+                         Stack : java.lang.Object.wait0(Object.java:-2)
+                               : java.lang.Object.wait(Object.java:366)
+                               : java.lang.Object.wait(Object.java:339)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.waitForNotification(WorkQueueManagerImplementation.java:678)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.waitForNotification(WorkQueueManagerImplementation.java:648)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.run(WorkQueueManagerImplementation.java:918)
+
+                          Name : Reference Handler
+                      Priority : 10
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 9
+                         State : RUNNABLE
+                         Stack : java.lang.ref.Reference.waitForReferencePendingList(Reference.java:-2)
+                               : java.lang.ref.Reference.processPendingReferences(Reference.java:246)
+                               : java.lang.ref.Reference$ReferenceHandler.run(Reference.java:208)
+
+                          Name : /127.0.0.1:51186 to /127.0.0.1:51185 workers
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 29
+                         State : WAITING
+                         Stack : jdk.internal.misc.Unsafe.park(Unsafe.java:-2)
+                               : java.util.concurrent.locks.LockSupport.park(LockSupport.java:371)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:519)
+                               : java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3780)
+                               : java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3725)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1712)
+                               : org.gradle.internal.remote.internal.hub.queue.EndPointQueue.take(EndPointQueue.java:49)
+                               : org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:403)
+                               : org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+                               : org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+                               : java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+                               : java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+                               : java.lang.Thread.runWith(Thread.java:1596)
+                               : java.lang.Thread.run(Thread.java:1583)
+
+First Failure Symptom Report completed at Thu Dec 12 17:14:50 CET 2024
+------------------------------------END FFST------------------------------------

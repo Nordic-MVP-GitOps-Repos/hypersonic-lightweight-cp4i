@@ -1,0 +1,12 @@
+endpoint=https://<keycloak-instance>/realms/cloudpak/protocol/openid-connect/token
+username=<user>
+password=<password>
+clientid=admin-cli
+
+truststoreLocation=/path-to-queuemanager-truststore/truststore.jks
+truststorePassword=changeme
+
+queueManagerHost=native-ha-qm-auth-jwt-ibm-mq-qm-cp4i.apps.t9xdnubu.eastus.aroapp.io
+queueManager=JWTQM
+channel=HAQMCHL
+queue=QUEUE1

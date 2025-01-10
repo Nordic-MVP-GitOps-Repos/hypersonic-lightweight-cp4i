@@ -7,7 +7,7 @@ metadata:
     configmap.reloader.stakater.com/reload: "native-ha-qm-configmap"
     secret.reloader.stakater.com/reload: "mq-nativeha-internal-tls-secret,mq-external-tls-secret"
 spec:
-  # telemetry:
+  #telemetry:
   #  tracing:
   #    instana:
   #      enabled: true
@@ -27,6 +27,15 @@ spec:
             # For instana tracing,
             #- name: IBMMQ_RFH2_HEADERS_TO_EXPOSE
             #  value: 'usr.<custome element1>, usr.<custom element 2>'
+            # For otel tracing
+            #- name: LOG_LEVEL
+            #  value: debug
+            #- name: MONITOR_LEVEL
+            #  value: debug
+            #- name: SPAN_FORMAT
+            #  value: otel
+            #- name: OTLP_EXPORTER_GRPC_ENDPOINT
+            #  value: 'tempo-tempostack-distributor.openshift-tempo-operator.svc.cluster.local:4317'
           name: qmgr
   queueManager:
     route:
@@ -63,7 +72,7 @@ spec:
           name: native-ha-qm-configmap
           items:
             - mq.ini
-  version: 9.4.0.0-r1
+  version: 9.4.1.0-r2
   pki:
     keys:
       - name: default
