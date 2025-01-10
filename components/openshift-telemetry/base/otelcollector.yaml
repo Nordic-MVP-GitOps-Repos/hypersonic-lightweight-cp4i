@@ -18,14 +18,14 @@ spec:
             endpoint: 0.0.0.0:4318
     exporters:
       debug: {}
-      prometheus:
-        endpoint: 0.0.0.0:8889
-        resource_to_telemetry_conversion:
-          enabled: true
       otlp/tempo:
         endpoint: tempo-tempostack-distributor.openshift-tempo-operator.svc.cluster.local:4317
         tls:
           insecure: true
+      prometheus:
+        endpoint: 0.0.0.0:8889
+        resource_to_telemetry_conversion:
+          enabled: true
     processors:
       batch: {}
       memory_limiter:
