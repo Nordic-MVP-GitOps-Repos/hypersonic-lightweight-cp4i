@@ -51,7 +51,7 @@ spec:
           name: jwtqm-configmap
           items:
             - mq.ini
-  version: 9.4.0.0-r1
+  version: 9.4.1.0-r2
   pki:
     keys:
       - name: default

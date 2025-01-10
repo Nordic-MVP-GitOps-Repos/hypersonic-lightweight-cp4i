@@ -22,10 +22,10 @@ public class MQJWTExample {
 
     public void callMq() throws Exception {
         
-		String token = fetchToken(getLocalProperty("endpoint"),
-			getLocalProperty("username"),
-			getLocalProperty("password"),
-			getLocalProperty("clientid"));		
+		// String token = fetchToken(getLocalProperty("endpoint"),
+		// 	getLocalProperty("username"),
+		// 	getLocalProperty("password"),
+		// 	getLocalProperty("clientid"));		
 
 		// Set the truststore to a store containing the MQ server certificate, after calling the token endpoint
 		// which uses a cert from a well-known CA. 
@@ -39,7 +39,7 @@ public class MQJWTExample {
 			getLocalProperty("queueManager"), 
 			getLocalProperty("channel"));
 
-		try (JMSContext context = cf.createContext(null, token)) {
+		try (JMSContext context = cf.createContext(null, null)) {
 			String queueName = getLocalProperty("queue");
 			Destination destination = context.createQueue("queue:///" + queueName);
 
@@ -50,12 +50,12 @@ public class MQJWTExample {
 
 			System.out.println("Sent message to Queue");
 
-            /* 
+            
 			JMSConsumer consumer = context.createConsumer(destination);
 			String body = consumer.receiveBody(String.class, 5000);
 
 			System.out.println("Message body: " +  body);
-            */
+            
 		} 
 	}
 
