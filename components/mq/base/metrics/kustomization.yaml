@@ -9,6 +9,5 @@ resources:
   - deployment.yaml
   - podmonitor.yaml
   - buildconfig-otel.yaml
-  - metrics-configuration-otel.yaml
   - deployment-otel.yaml
   - mq-otel.yaml
