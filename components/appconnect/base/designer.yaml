@@ -19,4 +19,4 @@ spec:
     license: L-KPRV-AUG9NC
     use: CloudPakForIntegrationNonProduction
   replicas: 1
-  version: '13.0.1.0-r2'
+  version: '13.0.1.1-r1'
