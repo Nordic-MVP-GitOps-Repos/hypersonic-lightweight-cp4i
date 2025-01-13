@@ -8,7 +8,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-QYVA-B365MB
+    license: L-KPRV-AUG9NC
     use: CloudPakForIntegrationNonProduction
   restApiHTTPS:
     enabled: true

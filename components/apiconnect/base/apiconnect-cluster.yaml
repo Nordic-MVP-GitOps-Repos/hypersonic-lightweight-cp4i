@@ -9,7 +9,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-QYVA-B365MB
+    license: L-WPTV-3V8RK2
     metric: VIRTUAL_PROCESSOR_CORE
     use: PATCHED_BY_KUSTOMIZE
   management:
