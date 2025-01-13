@@ -31,7 +31,7 @@ spec:
       authorization:
         type: simple
       config:
-        inter.broker.protocol.version: "3.8"
+        inter.broker.protocol.version: "3.9"
         log.cleaner.threads: 6
         num.io.threads: 24
         num.network.threads: 9
