@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: ./argocd
-    targetRevision: HEAD
+    targetRevision: 16.1.1
     repoURL: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
   syncPolicy:
     automated:
