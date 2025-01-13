@@ -5,7 +5,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-BMSF-5YDSLR
+    license: L-QYVA-B365MB
   replicas: 1
   singleReplicaOnly: true
   storage:
@@ -13,4 +13,4 @@ spec:
       class: PATCHED_BY_KUSTOMIZE
     couchVolume:
       class: PATCHED_BY_KUSTOMIZE
-  version: 4.0-sc2
+  version: 4.1
