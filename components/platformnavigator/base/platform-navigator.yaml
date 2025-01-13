@@ -7,6 +7,6 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-JTPV-KYG8TF
+    license: L-QYVA-B365MB
   replicas: 1
   version: 16.1.1
