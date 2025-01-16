@@ -16,7 +16,7 @@ spec:
         - secretName: letsencrypt-chain
           certificate: ca.crt
     authConfig:
-      authType: LOCAL
+      authType: INTEGRATION_KEYCLOAK
     storage:
       storageClassName: PATCHED_BY_KUSTOMIZE
       type: persistent-claim

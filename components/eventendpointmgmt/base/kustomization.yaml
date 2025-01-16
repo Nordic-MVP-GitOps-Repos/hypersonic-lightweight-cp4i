@@ -5,4 +5,3 @@ resources:
   - eventendpointmanager.yaml
   - eventendpointgateway.yaml
   - roles-secret.yaml
-  - users-secret.yaml

@@ -26,3 +26,10 @@ spec:
         operations:
           - Read
           - Alter
+      - resource:
+          type: group
+          name: '*'
+          patternType: literal
+        operations:
+          - Read
+          - Describe
