@@ -7,10 +7,10 @@ TLS_CLIENT_PROFILE_NAME=eem-tls-client-profile
 EVENT_GATEWAY_NAME=eem-gateway
 
 # Define names of the existing CRs in OpenShift
-EEM_MANAGER_CR_NAME=my-eem-manager
-EEM_GATEWAY_CR_NAME=my-eem-gateway
-EEM_NAMESPACE=event-automation-ns
-EEM_CA_SECRET_NAME=$EEM_MANAGER_CR_NAME-ibm-eem-manager
+EEM_MANAGER_CR_NAME=eventendpointmgr
+EEM_GATEWAY_CR_NAME=quick-start-gw
+EEM_NAMESPACE=cp4i
+EEM_CA_SECRET_NAME=$EEM_MANAGER_CR_NAME-ibm-eem-manager-ca
 
 # Directory to write and read files from
 WORKING_DIR=/tmp/setup-remote-gw
@@ -52,13 +52,9 @@ echo "$keystore_json_payload" > $WORKING_DIR/$KEYSTORE_NAME-IN.json
 platform_api_endpoint=$(oc get -n cp4i apiconnectcluster/apic-cluster -o json | jq -r '.status.endpoints | .[] | select(.name=="platformApi") | .uri')
 echo 'Platform API endpoint is' $platform_api_endpoint
 
-# APIC CLI needs the trailing /api removed
-platform_api_endpoint=$(echo $platform_api_endpoint | sed 's/.\{4\}$//')
-echo 'Platform API endpoint corrected for CLI is' $platform_api_endpoint
-
 apic client-creds:clear
 apic client-creds:set $APIC_CLIENT_CREDS
-apic login --server $platform_api_endpoint --sso
+apic login --context admin --server $platform_api_endpoint --sso
 
 # Create truststore
 apic truststores:create $WORKING_DIR/$TRUSTSTORE_NAME-IN.json --org admin --server $platform_api_endpoint 
@@ -72,7 +68,6 @@ apic keystores:get $KEYSTORE_NAME --org admin --server $platform_api_endpoint --
 # used when creating the TLS client profile.
 truststore_url=$(cat $WORKING_DIR/$TRUSTSTORE_NAME.json | jq ' .url ')
 keystore_url=$(cat $WORKING_DIR/$KEYSTORE_NAME.json | jq ' .url ')
-
 
 # Create TLS client profile input file for APIC CLI
 tls_client_profile_json_payload='{"title":'${TLS_CLIENT_PROFILE_NAME}',
