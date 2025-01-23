@@ -54,7 +54,7 @@ spec:
           type: internal
           tls: true
           authentication:
-            type: tls
+            type: scram-sha-512
       metricsConfig:
         type: jmxPrometheusExporter
         valueFrom:

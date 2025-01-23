@@ -1,0 +1,24 @@
+{
+    "type": "kafka",
+    "name": "Door badge events",
+    "alias": "DOOR.BADGEIN",
+    "contact": "andre@loosehangers.com",
+    "description": "Records an employee using their id badge to go through a door. This includes entry into the building overall, as well as entry through internal office doors.\n\nBuilding exits do not require use of id badge, so a door badge in event does not imply that the employee will still be in the building.\n\nNote that door events can take up to 3 minutes to reach the Kafka topic, so the badgetime value in the message payload should be treated as the canonical timestamp for the event.\n\nThis delay can be inconsistent, so messages on the topic are often out of sequence as a result.",
+    "tags": [
+        "operations",
+        "json"
+
+    ],
+    "encoding": "application/json",
+    "sampleMessages": [
+        "{\n    \"recordid\": \"03c850e7-9a9a-4a7b-b778-e95d5bb693de\",\n    \"door\": \"G-0-26\",\n    \"employee\": \"milford.kling\",\n    \"badgetime\": \"2023-05-21 14:47:20.742\"\n}"
+    ],
+    "schema": {
+        "type": "json",
+        "content": "{\n    \"$schema\": \"http://json-schema.org/draft-07/schema#\",\n    \"title\": \"BadgeIn\",\n    \"type\": \"object\",\n    \"properties\": {\n        \"recordid\": {\n            \"type\": \"string\",\n            \"format\": \"uuid\",\n            \"description\": \"Unique identifier for the record.\"\n        },\n        \"door\": {\n            \"type\": \"string\",\n            \"description\": \"ID of the door where the access event occurred. This is made up of a building ID, a floor number, and a door ID - separated by hyphens.\"\n        },\n        \"employee\": {\n            \"type\": \"string\",\n            \"description\": \"Employee's username.\"\n        },\n        \"badgetime\": {\n            \"type\": \"string\",\n            \"pattern\": \"^\\\\d{4}-\\\\d{2}-\\\\d{2} \\\\d{2}:\\\\d{2}:\\\\d{2}\\\\.\\\\d{1,3}$\",\n            \"description\": \"Timestamp when the badge was used, formatted as 'YYYY-MM-DD HH:MM:SS.sss'.\"\n        }\n    },\n    \"required\": [\n        \"recordid\",\n        \"door\",\n        \"employee\",\n        \"badgetime\"\n    ],\n    \"additionalProperties\": false\n}"
+    },
+    "clusterId": "CLUSTERID",
+    "topic": {
+        "name": "DOOR.BADGEIN"
+    }
+}

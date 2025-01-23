@@ -1,0 +1,23 @@
+{
+    "name": "KAFKA_CLUSTER_CR_NAME-kafka-bootstrap.ES_NAMESPACE.svc:9999",
+    "bootstrapServers": [
+        {
+            "host": "KAFKA_CLUSTER_CR_NAME-kafka-bootstrap.ES_NAMESPACE.svc",
+            "port": 9999,
+            "ssl": true,
+            "certificates": [
+                {
+                    "pem": "ES_CERTIFICATE"
+                }
+            ]
+        }
+    ],
+    "credentials": {
+        "type": "SASL",
+        "data": {
+            "username": "KAFKA_USER_SECRET",
+            "password": "ES_PASSWORD",
+            "mechanism": "SCRAM-SHA-512"
+        }
+    }
+}

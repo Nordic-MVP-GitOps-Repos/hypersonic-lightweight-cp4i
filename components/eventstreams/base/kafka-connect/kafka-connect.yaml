@@ -16,11 +16,11 @@ spec:
     status.storage.topic: connect-cluster-status
   replicas: 1
   authentication:
-    certificateAndKey:
-      certificate: user.crt
-      key: user.key
-      secretName: kafka-connect-user
-    type: tls
+    passwordSecret:
+      secretName: scram-user
+      password: password
+    type: scram-sha-512
+    username: scram-user
   tls:
     trustedCertificates:
       - certificate: ca.crt
