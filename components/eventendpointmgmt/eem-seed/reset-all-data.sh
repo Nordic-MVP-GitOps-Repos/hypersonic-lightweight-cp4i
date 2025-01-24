@@ -123,7 +123,7 @@ echo "> (2/3) Submitting Event Streams cluster information"
 (
     set +e
 
-    RESPONSE=$(curl -X POST -s -k -v \
+    RESPONSE=$(curl -X POST -s -k \
                 --dump-header eem-api-header \
                 -H 'Accept: application/json' \
                 -H 'Content-Type: application/json' \
@@ -180,7 +180,9 @@ rm -f eem-response-new-cluster.json
 
 echo "> (3/3) Submitting Kafka topics"
 
-topics=("CANCELLATIONS" "CUSTOMERS.NEW" "DOOR.BADGEIN" "ORDERS.ONLINE" "ORDERS.NEW" "STOCK.NOSTOCK" "SENSOR.READINGS" "STOCK.MOVEMENT" "PRODUCT.RETURNS" "PRODUCT.REVIEWS")
+topics=("DOOR.BADGEIN" "SENSOR.READINGS" "STOCK.MOVEMENT")
+
+#topics=("CANCELLATIONS" "CUSTOMERS.NEW" "DOOR.BADGEIN" "ORDERS.ONLINE" "ORDERS.NEW" "STOCK.NOSTOCK" "SENSOR.READINGS" "STOCK.MOVEMENT" "PRODUCT.RETURNS" "PRODUCT.REVIEWS")
 for topic in "${topics[@]}"
 do
     echo "         $topic"
