@@ -67,3 +67,7 @@ Click the Logging menu item in the OpenShift Console. In the Kibana interface, c
 ### (Optional) Enable the LetsEncrypt issuer
 
 In the file [components/platformnavigator/base/kustomization.yaml](components/platformnavigator/base/kustomization.yaml) uncomment the line referring to 'letsencrypt-clusterissuer.yaml'
+
+### Integrate  EEM and APIC 
+
+Please follow this [integration guide](components/apiconnect/apic-eem.md)
