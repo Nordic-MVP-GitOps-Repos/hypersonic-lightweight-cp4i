@@ -3,8 +3,9 @@
 # Find API Connect platform api endpoint
 
 apic_platform_uri=$(oc get -n cp4i apiconnectcluster/apic-cluster -o json | jq '.status.endpoints | .[] | select(.name=="platformApi") | .uri')
+jwks_uri=$(oc get -n cp4i apiconnectcluster/apic-cluster -o json | jq '.status.endpoints | .[] | select(.name=="jwksUrl") | .uri')
 
-echo $apic_platform_uri
+echo "jwks_uri is" $jwks_uri
 
 set -x 
 
