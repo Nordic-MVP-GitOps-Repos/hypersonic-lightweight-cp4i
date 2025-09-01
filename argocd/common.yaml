@@ -13,6 +13,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
+    targetRevision: 16.1.2
     path: ./components/common/base
   syncPolicy:
     automated:
