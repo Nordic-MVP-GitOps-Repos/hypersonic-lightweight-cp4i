@@ -10,7 +10,7 @@ resources:
 
   - common.yaml
 
-  - operators/all-operators.yaml
+ # - operators/all-operators.yaml
   
   #- operands/all-operands.yaml
  
