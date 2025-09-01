@@ -1,7 +1,7 @@
 # To override settings in the products if necessary
 - op: add
   path: /spec/version
-  value: "16.1.1"
+  value: "16.1.2"
 - op: add
   path: /spec/license
-  value: {"accept": true, "license": "L-QYVA-B365MB", "use": "CloudPakForIntegrationNonProduction"}
+  value: {"accept": true, "license": "L-CYPF-CRPF3H", "use": "CloudPakForIntegrationNonProduction"}

@@ -7,6 +7,6 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-QYVA-B365MB
+    license: L-CYPF-CRPF3H
   replicas: 1
-  version: 16.1.1
+  version: 16.1.2

@@ -5,9 +5,9 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-QYVA-B365MB
+    license: L-CYBH-K48BZQ
     metric: VIRTUAL_PROCESSOR_CORE
-    use: CloudPakForIntegrationNonProduction
+    use: EventAutomationNonProduction
   manager:
     tls: 
       ui:

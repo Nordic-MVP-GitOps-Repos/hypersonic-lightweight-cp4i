@@ -5,7 +5,7 @@ metadata:
   labels:
     operators.coreos.com/ibm-eventautomation-flink.openshift-operators: ''
 spec:
-  channel: v1.2
+  channel: v1.4
   installPlanApproval: Automatic
   name: ibm-eventautomation-flink
   source: ibm-operator-catalog

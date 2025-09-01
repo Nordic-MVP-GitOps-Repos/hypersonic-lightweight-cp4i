@@ -3,7 +3,7 @@ kind: Subscription
 metadata:
   name: ibm-eventendpointmanagement
 spec:
-  channel: v11.4
+  channel: v11.6
   name: ibm-eventendpointmanagement
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace

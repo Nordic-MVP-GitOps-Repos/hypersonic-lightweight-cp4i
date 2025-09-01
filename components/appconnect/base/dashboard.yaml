@@ -28,7 +28,7 @@ spec:
     type: persistent-claim
     class: PATCHED_BY_KUSTOMIZE
   replicas: 1
-  version: 13.0.1.1-r1
+  version: 13.0.4.1-r1
   displayMode: IntegrationRuntimes
   logFormat: basic
   logLevel: info
