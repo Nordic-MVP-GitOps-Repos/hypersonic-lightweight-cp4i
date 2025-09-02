@@ -5,4 +5,4 @@ metadata:
 spec:
   queueManager:
     storage:
-      defaultClass: ocs-storagecluster-ceph-rbd
+      defaultClass: ocs-external-storagecluster-ceph-rbd
