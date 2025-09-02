@@ -13,4 +13,4 @@ spec:
       class: PATCHED_BY_KUSTOMIZE
     couchVolume:
       class: PATCHED_BY_KUSTOMIZE
-  version: 4.2
+  version: "4.2"
