@@ -12,6 +12,8 @@ spec:
           namespace: cp4i
         - name: apiconnect
           namespace: cp4i
+        - name: datapower
+          namespace: cp4i
         - name: appconnect
           namespace: cp4i
         - name: mq
