@@ -17,6 +17,7 @@ rules:
       - image.openshift.io
       - route.openshift.io
       - triggers.tekton.dev
+      - datapower.ibm.com
       - monitoringcontroller.cloud.ibm.com
       - autoscaling
       - logging.openshift.io
