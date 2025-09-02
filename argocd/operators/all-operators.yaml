@@ -30,8 +30,8 @@ spec:
           namespace: openshift-logging
         - name: openshift-telemetry
           namespace: openshift-tempo-operator
-        - name: openshift-pipelines
-          namespace: openshift-operators
+        #- name: openshift-pipelines
+        #  namespace: openshift-operators
         - name: cert-utils
           namespace: cert-utils-operator       
         - name: instana-agent
