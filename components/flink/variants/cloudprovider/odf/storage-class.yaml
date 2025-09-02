@@ -3,4 +3,4 @@ apiVersion: v1
 metadata:
   name: ibm-flink-pvc
 spec:
-  storageClassName: ocs-storagecluster-cephfs
+  storageClassName: ocs-external-storagecluster-cephfs
