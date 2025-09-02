@@ -7,4 +7,4 @@ metadata:
     app.kubernetes.io/managed-by: ibm-apiconnect
     app.kubernetes.io/name: apiconnect-small
 spec:
-  storageClassName: ocs-storagecluster-ceph-rbd
+  storageClassName: ocs-external-storagecluster-ceph-rbd
