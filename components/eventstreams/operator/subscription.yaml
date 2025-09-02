@@ -3,7 +3,7 @@ kind: Subscription
 metadata:
   name: ibm-eventstreams
 spec:
-  channel: v12
+  channel: v3.8
   name: ibm-eventstreams
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
