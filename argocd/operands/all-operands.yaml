@@ -39,9 +39,9 @@ spec:
         #- name: openshift-telemetry
         #  namespace: openshift-tempo-operator
         #  sync-wave: "200"
-        #- name: reloader
-        #  namespace: cp4i
-        #  sync-wave: "200"
+        - name: reloader
+          namespace: cp4i
+          sync-wave: "200"
         #- name: instana-agent
         #  namespace: instana-agent
         #  sync-wave: "200"
