@@ -15,6 +15,11 @@ spec:
       trustedCertificates:
         - secretName: letsencrypt-chain
           certificate: ca.crt
+        - secretName: apim-cpd
+          certificate: ca.crt
+    apic:
+      jwks:
+        endpoint: https://apic-clust-c5f21b07-platform-api-cp4i.apps.itz-5rbxsk.infra01-lb.fra02.techzone.ibm.com/api/cloud/oauth2/certs
     authConfig:
       authType: INTEGRATION_KEYCLOAK
     storage:
