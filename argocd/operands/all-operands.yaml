@@ -48,9 +48,9 @@ spec:
         #- name: clusterresourceoverride
         #  namespace: cp4i
         #  sync-wave: "200"
-        #- name: assetrepository
-        #  namespace: cp4i
-        #  sync-wave: "200"
+        - name: assetrepository
+          namespace: cp4i
+          sync-wave: "200"
   template:
     metadata:
       name: '{{name}}'
