@@ -60,7 +60,6 @@ spec:
       project: cp4i-operands
       source:
         path: 'envs/odf/nonprod/{{name}}/'
-        targetRevision: 16.1.2
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{namespace}}'

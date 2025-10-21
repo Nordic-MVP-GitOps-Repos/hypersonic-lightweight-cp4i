@@ -27,7 +27,6 @@ patches:
       value: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
     - op: add
       path: /spec/source/targetRevision
-      value: 16.1.2
 - target:
     group: argoproj.io
     kind: ApplicationSet
@@ -37,4 +36,3 @@ patches:
       value: https://github.com/Nordic-MVP-GitOps-Repos/hypersonic-lightweight-cp4i.git
     - op: add
       path: /spec/template/spec/source/targetRevision
-      value: 16.1.2
