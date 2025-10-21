@@ -5,4 +5,4 @@ metadata:
 spec:
   authoring:
     storage:
-      storageClassName: ocs-storagecluster-ceph-rbd
+      storageClassName: ocs-external-storagecluster-ceph-rbd

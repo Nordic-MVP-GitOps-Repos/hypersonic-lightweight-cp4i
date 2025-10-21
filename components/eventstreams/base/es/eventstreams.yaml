@@ -1,21 +1,21 @@
 ###############################################################################
 #
-# © Copyright IBM Corp. 2020, 2023
+# © Copyright IBM Corp. 2020, 2023, 2024
 #
 ###############################################################################
 apiVersion: eventstreams.ibm.com/v1beta2
 kind: EventStreams
 metadata:
-  name: minimal-prod
   labels:
     backup.eventstreams.ibm.com/component: eventstreams
-spec:   
+  name: minimal-prod
+spec:
   version: latest
   license:
     # By installing this product you accept the license terms at https://ibm.biz/ea-license
     accept: true
-    license: L-JTPV-KYG8TF
-    use: CloudPakForIntegrationNonProduction
+    license: "L-CYBH-K48BZQ"
+    use: "EventAutomationProduction"
   adminApi: {}
   adminUI:
     authentication:
@@ -24,31 +24,25 @@ spec:
   collector: {}
   restProducer: {}
   strimziOverrides:
-    entityOperator:
-      topicOperator: {}
     kafka:
-      replicas: 3
       authorization:
         type: simple
       config:
-        inter.broker.protocol.version: "3.8"
         log.cleaner.threads: 6
         num.io.threads: 24
         num.network.threads: 9
         num.replica.fetchers: 3
         offsets.topic.replication.factor: 3
         default.replication.factor: 3
-        min.insync.replicas: 1
-        auto.create.topics.enable: "false"
+        min.insync.replicas: 2
+        auto.create.topics.enable: 'false'
       listeners:
-        # Used for external access
         - name: external
           port: 9094
           type: route
           tls: true
           authentication:
             type: scram-sha-512
-        # Used by Kakfa Connect
         - name: tls
           port: 9093
           type: internal
@@ -73,16 +67,20 @@ spec:
         size: 4Gi
         class: PATCHED_BY_KUSTOMIZE
         deleteClaim: true # ensure claim is owned by CR
-    zookeeper:
-      replicas: 3
-      metricsConfig:
-        type: jmxPrometheusExporter
-        valueFrom:
-          configMapKeyRef:
-            key: zookeeper-metrics-config.yaml
-            name: minimal-prod-metrics-config
-      storage:
-        type: persistent-claim
-        size: 2Gi
-        class: PATCHED_BY_KUSTOMIZE
-        deleteClaim: true # ensure claim is owned by CR
+    nodePools:
+      - name: kafka
+        replicas: 3
+        storage:
+          type: persistent-claim
+          size: 2Gi
+          class: PATCHED_BY_KUSTOMIZE
+        roles:
+          - broker
+      - name: controller
+        replicas: 3
+        storage:
+          type: persistent-claim
+          size: 2Gi
+          class: PATCHED_BY_KUSTOMIZE
+        roles:
+          - controller

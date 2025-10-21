@@ -6,7 +6,23 @@ spec:
   strimziOverrides:
     kafka:
       storage:
-        class: ocs-storagecluster-ceph-rbd
-    zookeeper:
-      storage:
-        class: ocs-storagecluster-ceph-rbd
+        class: ocs-external-storagecluster-ceph-rbd
+    nodePools:
+      - name: kafka
+        replicas: 3
+        storage:
+          class: ocs-external-storagecluster-ceph-rbd
+          type: persistent-claim
+          size: 2Gi
+        roles:
+          - broker
+      - name: controller
+        replicas: 3
+        storage:
+          class: ocs-external-storagecluster-ceph-rbd
+          type: persistent-claim
+          size: 2Gi
+        roles:
+          - controller
+
+   

@@ -4,4 +4,4 @@ metadata:
   name: dashboard
 spec:
   storage:
-    class: ocs-storagecluster-cephfs
+    class: ocs-external-storagecluster-cephfs
