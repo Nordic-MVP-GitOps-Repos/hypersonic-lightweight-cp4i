@@ -9,7 +9,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-RAWZ-DSFFFV
+    license: L-SJZL-NMUUCT
     metric: VIRTUAL_PROCESSOR_CORE
     use: PATCHED_BY_KUSTOMIZE
   management:

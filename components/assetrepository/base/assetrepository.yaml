@@ -5,7 +5,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-CYPF-CRPF3H
+    license: L-SJZL-NMUUCT
   replicas: 1
   singleReplicaOnly: true
   storage:

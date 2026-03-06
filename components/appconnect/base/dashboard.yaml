@@ -5,7 +5,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-KPRV-AUG9NC
+    license: L-SJZL-NMUUCT
     use: CloudPakForIntegrationNonProduction
   pod:
     containers:
