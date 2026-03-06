@@ -4,7 +4,7 @@ metadata:
   name: ibm-datapower-operator
   namespace: cp4i
 spec:
-  channel: v1.15
+  channel: v1.17
   name: datapower-operator
   source: ibm-operator-catalog
   sourceNamespace: openshift-marketplace
