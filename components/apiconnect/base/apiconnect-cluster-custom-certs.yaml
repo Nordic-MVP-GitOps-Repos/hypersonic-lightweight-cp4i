@@ -11,7 +11,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-SJZL-NMUUCT
+    license: L-KYAL-S3RCBM
     metric: VIRTUAL_PROCESSOR_CORE
     use: PATCHED_BY_KUSTOMIZE
   management:
