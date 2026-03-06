@@ -16,7 +16,7 @@ spec:
       schedule: Every 15 days
   license:
     accept: true
-    license: L-SJZL-NMUUCT
+    license: L-CKFT-S6CHZW
     use: CloudPakForIntegrationNonProduction
   replicas: 1
   version: '13.0.6.2-r1'

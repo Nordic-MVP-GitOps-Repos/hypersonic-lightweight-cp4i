@@ -8,7 +8,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-SJZL-NMUUCT
+    license: L-CKFT-S6CHZW
     use: CloudPakForIntegrationNonProduction
   restApiHTTPS:
     enabled: true
