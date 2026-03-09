@@ -39,9 +39,9 @@ spec:
         #- name: reloader
         #  namespace: cp4i
         #  sync-wave: "200"
-        #- name: instana-agent
-        #  namespace: instana-agent
-        #  sync-wave: "200"
+        - name: instana-agent
+          namespace: instana-agent
+          sync-wave: "200"
         #- name: clusterresourceoverride
         #  namespace: cp4i
         #  sync-wave: "200"
